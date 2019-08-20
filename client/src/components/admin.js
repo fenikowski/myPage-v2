@@ -23,14 +23,12 @@ class Admin extends React.Component {
   }
 
   getMessages = () => {
-    axios("/api/getMessages")
-      .then(data => data.json())
-      .then(data => {
-        if (data.received !== false) {
-          console.log(data.received);
-          this.setState({ messages: data.received });
-        }
-      });
+    axios("/api/getMessages").then(data => {
+      if (data.received !== false) {
+        console.log(data.received);
+        this.setState({ messages: data.received });
+      }
+    });
   };
 
   checkIfUserIsLogged = () => {
