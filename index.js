@@ -12,7 +12,7 @@ const app = express();
 app.use(cors());
 
 // Serve the static files from the React app
-app.use(express.static(path.join(__dirname, "/client/build")));
+app.use(express.static(path.join(__dirname, "client/build")));
 
 const router = express.Router();
 
@@ -112,7 +112,7 @@ router.get("/getMessages", (req, res) => {
   });
 });
 
-router.get("*", function(req, res) {
+app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "/client/build/index.html"));
 });
 
