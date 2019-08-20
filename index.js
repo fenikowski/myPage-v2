@@ -36,6 +36,26 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(logger("dev"));
 
+// append /api for our http requests
+app.use("/api", router);
+
+router.get("/getMessages", (req, res) => {
+  const db = client.db("myPage");
+  const messages = db.collection("messages");
+
+  messages.find({}).toArray((err, data) => {
+    if (err) {
+      console.log("Failed to download messages");
+      res.json({ received: false });
+      res.end();
+    } else {
+      console.log("Received messages: ", data.length);
+      res.json({ received: data });
+      res.end();
+    }
+  });
+});
+
 router.post("/login", (req, res) => {
   const db = client.db("myPage");
   const users = db.collection("users");
@@ -95,28 +115,8 @@ router.post("/deleteMessage", (req, res) => {
   });
 });
 
-router.get("/getMessages", (req, res) => {
-  const db = client.db("myPage");
-  const messages = db.collection("messages");
-
-  messages.find({}).toArray((err, data) => {
-    if (err) {
-      console.log("Failed to download messages");
-      res.json({ received: false });
-      res.end();
-    } else {
-      console.log("Received messages: ", data.length);
-      res.json({ received: data });
-      res.end();
-    }
-  });
-});
-
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "/client/build/index.html"));
 });
-
-// append /api for our http requests
-app.use("/api", router);
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
