@@ -14,7 +14,7 @@ class Login extends React.Component {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3001/api/login", {
+      .post("/api/login", {
         username: this.state.login,
         password: this.state.password
       })

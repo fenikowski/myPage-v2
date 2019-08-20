@@ -23,7 +23,7 @@ class Admin extends React.Component {
   }
 
   getMessages = () => {
-    fetch("http://localhost:3001/api/getMessages")
+    fetch("/api/getMessages")
       .then(data => data.json())
       .then(data => {
         if (data.received !== false) {
@@ -39,9 +39,7 @@ class Admin extends React.Component {
 
   handleDelete = id => {
     console.log(id);
-    axios
-      .post("http://localhost:3001/api/deleteMessage", { id })
-      .then(() => this.getMessages());
+    axios.post("/api/deleteMessage", { id }).then(() => this.getMessages());
   };
 
   handleLogout = () => {

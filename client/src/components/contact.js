@@ -68,7 +68,7 @@ class Contact extends React.Component {
     const { userName, email, message } = this.state;
 
     axios
-      .post("http://localhost:3001/api/message", {
+      .post("/api/message", {
         userName,
         email,
         message
