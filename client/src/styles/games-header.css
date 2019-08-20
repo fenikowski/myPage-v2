@@ -1,0 +1,241 @@
+div.background-games {
+  width: 100%;
+  height: 110vh;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+div.background-games img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+h1.name.juegos {
+  top: 4vh;
+  color: #9643c9;
+  text-shadow: 4px 2px white;
+}
+
+h2.specialty.juegos {
+  top: 24vh;
+  color: #9643c9;
+  text-shadow: 2px 1px white;
+}
+
+h2.specialty.juegos span {
+  animation: miganie 0.8s 5;
+}
+
+@keyframes miganie {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1200px) and (orientation: portrait) {
+  div.background-games {
+    height: 100vh;
+  }
+
+  div.background-games img {
+    width: initial;
+    height: 100%;
+    transform: translate(-10%);
+  }
+
+  h1.name.juegos {
+    font-size: 130px;
+    transform: translate(0, 5vh);
+  }
+
+  h2.specialty.juegos {
+    font-size: 70px;
+    transform: translate(-250px, 0vh);
+    word-wrap: break-word;
+    /* width: 200px; */
+    /* white-space: normal; */
+  }
+}
+
+@media (max-width: 900px) and (orientation: portrait) {
+  h1.name.juegos {
+    font-size: 140px;
+    transform: translate(0, 8vh);
+  }
+
+  h2.specialty.juegos {
+    text-align: center;
+    font-size: 55px;
+    transform: translate(185px, 24vh);
+    word-wrap: break-word;
+    width: 400px;
+    white-space: normal;
+    animation: none;
+  }
+}
+
+@media (max-width: 420px) and (orientation: portrait) {
+  div.background-games {
+    height: 100vh;
+  }
+
+  div.background-games img {
+    width: initial;
+    height: 100%;
+    transform: translate(-20%);
+  }
+
+  h1.name.juegos {
+    font-size: 90px;
+    transform: translate(20px, 8vh);
+  }
+
+  h2.specialty.juegos {
+    text-align: center;
+    font-size: 35px;
+    transform: translate(170px, 18vh);
+    word-wrap: break-word;
+    width: 200px;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 376px) and (orientation: portrait) {
+  h2.specialty.juegos {
+    font-size: 30px;
+    transform: translate(200px, 20vh);
+    word-wrap: break-word;
+    width: 180px;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 374px) and (orientation: portrait) {
+  h1.name.juegos {
+    transform: translate(20px, -35px);
+  }
+
+  h2.specialty.juegos {
+    transform: translate(150px, 37vh);
+  }
+}
+
+@media (max-width: 360px) and (orientation: portrait) {
+  h1.name.juegos {
+    transform: translate(20px, 0px);
+  }
+
+  h2.specialty.juegos {
+    transform: translate(120px, 18vh);
+  }
+}
+
+@media (max-width: 1440px) and (orientation: landscape) {
+  h1.name.juegos {
+    font-size: 120px;
+  }
+
+  h2.specialty.juegos {
+    transform: translate(-10vw, 1vh);
+  }
+
+  div.background-games {
+    height: 110vh;
+  }
+
+  div.background-games img {
+    height: 100%;
+  }
+}
+
+@media (max-width: 1440px) and (min-height: 900px) and (orientation: landscape) {
+  h1.name.juegos {
+    font-size: 140px;
+  }
+}
+
+@media (max-width: 1200px) and (orientation: landscape) {
+  h1.name.juegos {
+    font-size: 100px;
+    transform: translate(0, 4vh);
+  }
+
+  h2.specialty.juegos {
+    transform: translate(-20vw, 1vh);
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+  h1.name.juegos {
+    font-size: 80px;
+    transform: translate(115vw, 5vh);
+    animation: none;
+  }
+
+  h2.specialty.juegos {
+    text-align: center;
+    transform: translate(20vw, 10vh);
+    font-size: 50px;
+    width: 40vw;
+    white-space: normal;
+    animation: none;
+  }
+}
+
+@media (max-width: 800px) and (orientation: landscape) {
+  h1.name.juegos {
+    font-size: 80px;
+    transform: translate(125vw, 5vh);
+    animation: none;
+  }
+
+  h2.specialty.juegos {
+    transform: translate(15vw, 15vh);
+    font-size: 50px;
+    width: 60vw;
+    white-space: normal;
+    animation: none;
+  }
+}
+
+@media (max-width: 700px) and (orientation: landscape) {
+  h1.name.juegos {
+    font-size: 70px;
+    transform: translate(140vw, 5vh);
+    animation: none;
+  }
+
+  h2.specialty.juegos {
+    transform: translate(15vw, 15vh);
+    font-size: 40px;
+    width: 50vw;
+    white-space: normal;
+    animation: none;
+  }
+}
+
+@media (max-width: 600px) and (orientation: landscape) {
+  h1.name.juegos {
+    font-size: 60px;
+    transform: translate(160vw, 5vh);
+    animation: none;
+  }
+
+  h2.specialty.juegos {
+    transform: translate(10vw, 15vh);
+    font-size: 35px;
+    width: 50vw;
+    white-space: normal;
+    animation: none;
+  }
+}

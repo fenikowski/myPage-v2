@@ -1,0 +1,234 @@
+div.footer {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  width: 100%;
+  height: 10vh;
+  background-color: #000;
+  text-align: center;
+  line-height: 10vh;
+  font-family: "Barlow Condensed";
+  font-weight: 500;
+  font-size: 2.65vh;
+  color: white;
+  z-index: 20;
+}
+
+div.footer div {
+  flex-basis: 33.3%;
+  flex-grow: 1;
+  position: relative;
+  background-color: #222;
+}
+
+div.footer div span {
+  font-weight: 600;
+}
+
+div.footer div button {
+  display: inline-block;
+  position: absolute;
+  width: 5.5vh;
+  height: 5.5vh;
+  border-radius: 5.5vh;
+  border: none;
+  background-color: #272626;
+  overflow: hidden;
+  left: 72%;
+  top: 24%;
+  transition: 0.3s;
+}
+
+div.footer div button i {
+  position: absolute;
+  top: -80%;
+  left: 50%;
+  color: #444;
+  transform: translate(-50%) rotate(180deg);
+  font-size: 5vh;
+  text-shadow: 0 -1.75vh #444, 0 -3.5vh #444;
+  animation: btndown 2s linear infinite;
+  transition: 1s;
+}
+
+div.footer div.go-up button:hover i {
+  animation: btndown 1s linear infinite;
+  color: #555;
+  text-shadow: 0 -1.75vh #555, 0 -3.5vh #555;
+  cursor: pointer;
+}
+
+div.footer div.go-up button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 0 3px #222, 0 0 0 6px rgba(0, 255, 0, 0.3);
+}
+
+div.footer div.go-up button:focus {
+  outline: none;
+}
+
+div.author.scene {
+  flex-basis: 33.3%;
+  perspective: 20vh;
+  border: none;
+  background-color: #000;
+}
+
+div.author.scene:hover {
+  cursor: default;
+}
+
+div.author .box {
+  width: 100%;
+  height: 10vh;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-10vh);
+  transition: transform 1s;
+}
+
+div.author .box.show-front {
+  transform: translateZ(-10vh);
+}
+div.author .box.show-back {
+  transform: translateZ(-10vh) rotateX(-180deg);
+}
+div.author .box.show-top {
+  transform: translateZ(-10vh) rotateX(-90deg);
+}
+div.author .box.show-bottom {
+  transform: translateZ(-10vh) rotateX(90deg);
+}
+
+div.author .box__face {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  background-color: #222;
+  overflow: hidden;
+}
+
+div.author .box__face--front,
+div.author .box__face--back {
+  width: 100%;
+  height: 10vh;
+  line-height: 10vh;
+}
+
+div.author .box__face--top,
+div.author .box__face--bottom {
+  width: 100%;
+  height: 10vh;
+  top: 5vh;
+  line-height: 10vh;
+}
+
+div.author .box__face--bottom {
+  top: -5vh;
+}
+
+div.author .box__face--back {
+  transform: rotate(180deg);
+}
+
+div.author .box__face--front {
+  transform: rotateY(0deg) translateZ(5vh);
+}
+div.author .box__face--back {
+  transform: rotateY(180deg) translateZ(5vh) rotate(180deg);
+}
+div.author .box__face--top {
+  transform: rotateX(90deg) translateZ(10vh);
+}
+div.author .box__face--bottom {
+  transform: rotateX(-90deg) translateZ(10vh);
+}
+
+div.author a {
+  color: lime;
+}
+
+@keyframes btndown {
+  0% {
+    top: 100%;
+  }
+
+  100% {
+    top: -180%;
+  }
+}
+
+@media (max-width: 1400px) and (orientation: portrait) {
+  div.footer div.localization {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) and (orientation: portrait) {
+  div.footer div.author {
+    flex-basis: 40%;
+  }
+  div.footer div button {
+    left: 80%;
+  }
+}
+
+@media (max-width: 500px) and (orientation: portrait) {
+  div.footer div.author {
+    flex-basis: 75%;
+  }
+  div.footer div.go-up {
+    flex-basis: 25%;
+    font-size: 0;
+  }
+  div.footer div button {
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (max-width: 1400px) and (orientation: landscape) {
+  div.footer div button {
+    left: 77%;
+  }
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+  div.footer div button {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    left: 80%;
+    top: 25%;
+  }
+
+  div.footer div button i {
+    top: -80%;
+    left: 50%;
+    font-size: 20px;
+  }
+
+  div.footer div {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) and (orientation: landscape) {
+  div.footer div button {
+    width: 15px;
+    height: 15px;
+    border-radius: 8px;
+    left: 80%;
+    top: 25%;
+  }
+
+  div.footer div button i {
+    top: -80%;
+    left: 50%;
+    font-size: 15px;
+  }
+
+  div.footer div {
+    font-size: 14px;
+  }
+}

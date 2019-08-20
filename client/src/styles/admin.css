@@ -1,0 +1,68 @@
+div.messages-box {
+  height: 60vh;
+  width: 60vw;
+  position: absolute;
+  top: 15vh;
+  left: 3vw;
+  border: 5px black solid;
+  background-color: #222;
+
+  display: flex;
+  flex-direction: column;
+}
+
+div.messages-box div.headers {
+  flex-basis: 10%;
+  background-color: #333;
+  color: white;
+
+  display: flex;
+  flex-direction: row;
+}
+
+div.messages-box div.headers div {
+  flex-basis: 20%;
+  text-align: center;
+  padding-top: 10px;
+}
+
+div.messages-box div.headers div:nth-child(2) {
+  flex-basis: 30%;
+}
+div.messages-box div.headers div:nth-child(3) {
+  flex-basis: 50%;
+}
+
+div.messages-box div.message {
+  background-color: #444;
+  color: white;
+
+  display: flex;
+  flex-direction: row;
+}
+
+div.messages-box div.message:nth-child(2n-1) {
+  background-color: rgb(83, 83, 83);
+}
+
+div.messages-box div.message div {
+  flex-basis: 20%;
+  padding: 5px;
+}
+
+div.messages-box div.message div:nth-child(2) {
+  flex-basis: 30%;
+}
+div.messages-box div.message div:nth-child(3) {
+  flex-basis: 50%;
+}
+div.messages-box div.message div:nth-child(4) {
+  text-align: center;
+}
+div.messages-box div.message div:nth-child(4) i:hover {
+  cursor: pointer;
+}
+
+button.logout {
+  margin-left: 100px;
+}

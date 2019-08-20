@@ -1,0 +1,22 @@
+div.admin {
+  height: 90vh;
+}
+
+div.admin form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5vh 3vh;
+  border: 3px lime solid;
+}
+
+div.admin label {
+  display: block;
+}
+div.admin label input {
+  display: block;
+  border: grey 1px solid;
+  padding: 2px;
+  margin: 2px 0;
+}

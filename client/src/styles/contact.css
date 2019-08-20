@@ -1,0 +1,371 @@
+section.documents {
+  background-color: #111;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 40vh;
+  width: 100%;
+}
+
+section.documents a.cv {
+  display: flex;
+  flex-basis: 35%;
+  height: 60%;
+  box-shadow: 0px 0px 0px 1vh #222;
+  border-radius: 1px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+section.documents a.cv:hover,
+section.documents a.cv:active {
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 1vh #111, 0px 0px 0px 2vh rgba(0, 255, 0, 0.3);
+}
+
+section.documents a.cv:focus {
+  outline: none;
+}
+
+section.documents a.cv i {
+  flex-basis: 30%;
+  text-align: center;
+  font-size: 6vw;
+  color: white;
+}
+
+section.documents a.cv p {
+  flex-basis: 70%;
+  text-align: center;
+  color: white;
+  font-size: 3.5vw;
+}
+
+section.contact {
+  background-color: #111;
+  padding-bottom: 30px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+
+.contact div.form {
+  flex-basis: 49%;
+  flex-grow: 1;
+  text-align: center;
+  display: inline-block;
+}
+
+.contact input,
+.contact textarea,
+.contact button {
+  width: 80%;
+  height: 36px;
+  margin: 29px 0;
+  font-family: "Barlow Condensed";
+  font-size: 14px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.contact #message {
+  height: 160px;
+}
+
+.contact button {
+  transition: 0.5s;
+  width: 80%;
+  height: 42px;
+  border: 1px white solid;
+  background-color: transparent;
+  color: white;
+  text-transform: uppercase;
+}
+
+.contact p.message-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: right;
+  padding-right: 40px;
+  color: white;
+  width: 100%;
+  font-size: 18px;
+}
+
+.contact p.message-info span {
+  color: lime;
+  padding-right: 10px;
+}
+
+.contact p.message-info img {
+  display: inline-block;
+  height: 40px;
+  padding-left: 5px;
+}
+
+.contact button:hover {
+  color: black;
+  background-color: floralwhite;
+  cursor: pointer;
+}
+
+.contact .address {
+  padding-left: 30px;
+  flex-basis: 49%;
+  flex-grow: 1;
+}
+
+.contact div.address .address-box {
+  display: block;
+  width: 50%;
+  height: 50px;
+  color: white;
+  margin: 3% 10% 5%;
+  transform: translate(200%, 0%);
+  transition: 1s;
+}
+
+.contact div.address .address-box.active {
+  transform: translate(0%, 0%);
+}
+
+.contact div.address .address-box p {
+  display: block;
+  float: left;
+  box-sizing: content-box;
+  line-height: 60px;
+  padding-left: 30px;
+  font-family: "Barlow Condensed";
+  font-size: 3.25vh;
+  margin-top: 5px;
+}
+
+.contact div.address .address-box img {
+  border-radius: 30px;
+  margin: 7px 0;
+  float: left;
+  transition: 0.2s;
+  width: 60px;
+}
+
+.contact div.address .address-box:hover img {
+  cursor: pointer;
+  box-shadow: 0 0 0 4px #000, 0 0 0 8px rgba(0, 255, 0, 0.3);
+}
+
+.contact div.address .address-box img:focus {
+  outline: none;
+}
+
+.github-contact {
+  filter: brightness(200%);
+}
+
+/* tooltip css */
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  min-width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 10px 5px 10px;
+  position: absolute;
+  z-index: 5;
+  bottom: 75%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.address-box.tooltip input {
+  opacity: 0;
+}
+
+@media (max-width: 1100px) and (orientation: portrait) {
+  section.documents {
+    height: 20vh;
+  }
+
+  .contact .address {
+    padding-left: 30px;
+    flex-basis: 49%;
+    flex-grow: 1;
+  }
+
+  .contact div.address .address-box {
+    display: block;
+    width: 80%;
+    height: 60px;
+    color: white;
+    margin: 5% 10%;
+    transform: translate(200%, 0%);
+    transition: 1s;
+  }
+
+  .contact div.address .address-box p {
+    line-height: 60px;
+    padding-left: 30px;
+    font-size: 24px;
+    margin-top: 5px;
+  }
+
+  .contact div.address .address-box img {
+    width: 50px;
+    border-radius: 50px;
+  }
+}
+
+@media (max-width: 420px) and (orientation: portrait) {
+  section.documents {
+    height: 15vh;
+  }
+
+  section.documents a.cv {
+    height: 45%;
+  }
+
+  section.contact {
+    background-color: #111;
+    padding-bottom: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact div.address .address-box p {
+    margin-top: 0px;
+  }
+}
+
+@media (max-width: 400px) and (orientation: portrait) {
+  section.contact {
+    background-color: #111;
+    padding-bottom: 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contact div.address .address-box p {
+    margin-top: 0px;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 350px) and (orientation: portrait) {
+  .contact div.address .address-box p {
+    line-height: 60px;
+    padding-left: 30px;
+    font-size: 20px;
+    margin-top: -4px;
+  }
+
+  .contact div.address .address-box img {
+    width: 40px;
+    border-radius: 40px;
+  }
+}
+
+@media (max-width: 1200px) and (orientation: landscape) {
+  section.documents {
+    height: 30vh;
+  }
+
+  section.documents a.cv {
+    height: 50%;
+  }
+
+  .contact div.address .address-box {
+    width: 70%;
+    height: 60px;
+  }
+
+  .contact div.address .address-box p {
+    box-sizing: content-box;
+    line-height: 60px;
+    padding-left: 30px;
+    font-family: "Barlow Condensed";
+    font-size: 24px;
+    margin-top: 5px;
+  }
+
+  .contact div.address .address-box img {
+    width: 50px;
+    border-radius: 50px;
+  }
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+  section.documents {
+    height: 30vh;
+  }
+
+  section.documents a.cv {
+    height: 60%;
+  }
+
+  .contact div.address .address-box {
+    width: 90%;
+    height: 60px;
+  }
+}
+@media (max-width: 800px) and (orientation: landscape) {
+  .contact div.address .address-box {
+    width: 90%;
+    height: 60px;
+  }
+  .contact div.address .address-box p {
+    box-sizing: content-box;
+    line-height: 60px;
+    padding-left: 30px;
+    font-family: "Barlow Condensed";
+    font-size: 22px;
+    margin-top: 5px;
+  }
+}
+@media (max-width: 700px) and (orientation: landscape) {
+  .contact div.address .address-box {
+    width: 90%;
+    height: 60px;
+  }
+  .contact div.address .address-box p {
+    box-sizing: content-box;
+    line-height: 60px;
+    padding-left: 30px;
+    font-family: "Barlow Condensed";
+    font-size: 18px;
+    margin-top: 5px;
+  }
+
+  .contact div.address .address-box img {
+    width: 40px;
+    border-radius: 40px;
+  }
+}

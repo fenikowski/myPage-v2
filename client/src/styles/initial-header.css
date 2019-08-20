@@ -1,0 +1,82 @@
+div.background-wrapper {
+  width: 100%;
+  height: 120vh;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  /* background-color: rgb(192, 191, 223); */
+  background-image: url(../img/bgc0.png);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.bgc1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.bgc2 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 3;
+}
+
+.bgc3 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 5;
+}
+
+.bgc4 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 7;
+}
+
+.bgc5 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 9;
+}
+
+@media (max-width: 1200px) and (orientation: portrait) {
+  .bgc1 {
+    width: 130vh;
+  }
+  .bgc2 {
+    width: 130vh;
+  }
+  .bgc3 {
+    width: 130vh;
+  }
+  .bgc4 {
+    width: 130vh;
+  }
+  .bgc5 {
+    width: 130vh;
+  }
+}
+
+@media (max-width: 420px) and (orientation: portrait) {
+  .bgc1 {
+    width: 180vh;
+  }
+  .bgc2 {
+    width: 180vh;
+  }
+  .bgc3 {
+    width: 180vh;
+  }
+  .bgc4 {
+    width: 180vh;
+  }
+  .bgc5 {
+    width: 180vh;
+  }
+}

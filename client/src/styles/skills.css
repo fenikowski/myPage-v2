@@ -1,0 +1,318 @@
+section.skills {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+}
+
+div.skill {
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+}
+
+div.skill-header {
+  flex-basis: 25%;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: left;
+  align-items: center;
+  background-color: #000;
+}
+
+div.skill-gradient {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background-image: linear-gradient(
+    to right,
+    #efff00,
+    #ecbb0b,
+    #cd7e29,
+    #9a4e32,
+    #5b2b2a,
+    #3e1f21,
+    #221416,
+    #000000,
+    #000000,
+    #000000,
+    #000000,
+    #000000
+  );
+}
+
+@keyframes skill-open {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+div.skill:nth-of-type(2) div.skill-header div.skill-gradient {
+  background-image: linear-gradient(
+    to right,
+    #3b3f00,
+    #3e3001,
+    #392207,
+    #2f180d,
+    #20100d,
+    #190b0b,
+    #0f0607,
+    #000000,
+    #000000,
+    #000000,
+    #000000,
+    #000000
+  );
+}
+div.skill:nth-of-type(3) div.skill-header div.skill-gradient {
+  background-image: linear-gradient(
+    to right,
+    #7846dd,
+    #7d2ca1,
+    #6e1a6e,
+    #541344,
+    #351024,
+    #260e19,
+    #19080e,
+    #000000,
+    #000000,
+    #000000,
+    #000000,
+    #000000
+  );
+}
+div.skill:nth-of-type(4) div.skill-header div.skill-gradient {
+  background-image: linear-gradient(
+    to right,
+    #32cd32,
+    #7e9900,
+    #876700,
+    #723d13,
+    #49201b,
+    #331718,
+    #1e0f11,
+    #000000,
+    #000000,
+    #000000,
+    #000000,
+    #000000
+  );
+}
+div.skill:nth-of-type(5) div.skill-header div.skill-gradient {
+  background-image: linear-gradient(
+    to right,
+    #dcdcdc,
+    #afafaf,
+    #848484,
+    #5b5b5b,
+    #353535,
+    #252525,
+    #161616,
+    #000000,
+    #000000,
+    #000000,
+    #000000,
+    #000000
+  );
+}
+div.skill:nth-of-type(6) div.skill-header div.skill-gradient {
+  background-image: linear-gradient(
+    to right,
+    #bdb76b,
+    #a98c56,
+    #8a6547,
+    #654439,
+    #3c2827,
+    #2a1d1e,
+    #191213,
+    #000000,
+    #000000,
+    #000000,
+    #000000,
+    #000000
+  );
+}
+
+div.skill-header div.skill-image {
+  display: block;
+  margin: 0 40px 0 20px;
+  height: 8vh;
+  width: 8vh;
+  background-size: contain;
+  box-shadow: 0px 0px 5px 1px black;
+  z-index: 1;
+  flex-grow: 0;
+}
+
+div.skill-header p {
+  display: block;
+  flex-grow: 0;
+  font-size: 6.75vh;
+  font-weight: 900;
+  line-height: 10vh;
+  color: white;
+  text-shadow: 2px 2px 2px lightgray;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  z-index: 1;
+}
+
+@keyframes skill-open {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+div.skill-content {
+  flex-basis: 75%;
+  display: flex;
+  position: relative;
+  background-color: #111;
+  color: white;
+}
+
+div.skill-content img {
+  position: relative;
+  width: 35vw;
+  height: 40vh;
+}
+
+div.skill-content::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40vh;
+  width: 35vw;
+  background-image: linear-gradient(to left, #111, rgba(17, 17, 17, 0));
+  z-index: 100;
+}
+
+div.skill-description {
+  flex-grow: 1;
+  text-align: center;
+  width: 65vw;
+}
+
+div.skill-description p {
+  text-align: right;
+  font-size: 3.5vh;
+  padding: 5% 20%;
+  color: #eee;
+}
+
+@media (max-width: 900px) and (orientation: portrait) {
+  div.skill {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  div.skill-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #111;
+    color: white;
+  }
+
+  div.skill-header {
+    flex-basis: 10%;
+    display: flex;
+    align-items: center;
+  }
+
+  div.skill-header div.skill-image {
+    margin: 0 40px 0 20px;
+    box-shadow: 0px 0px 5px 1px black;
+  }
+
+  div.skill-header p {
+    font-size: 50px;
+    font-weight: 900;
+    color: white;
+    text-shadow: 2px 2px 2px lightgray;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  @keyframes skill-open {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 200%;
+    }
+  }
+
+  div.skill-content img {
+    position: relative;
+    flex-basis: 35%;
+    width: 100%;
+    height: 40vh;
+  }
+
+  div.skill-content::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 40vh;
+    width: 100%;
+    background-image: linear-gradient(to top, #111, rgba(17, 17, 17, 0));
+    z-index: 100;
+  }
+
+  div.skill-description {
+    flex-grow: 1;
+    text-align: unset;
+    position: relative;
+  }
+
+  div.skill-description p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 30px;
+    padding: 0;
+    width: 80%;
+  }
+}
+
+@media (max-width: 420px) and (orientation: portrait) {
+  div.skill-description p {
+    font-size: 26px;
+  }
+  div.skill-description p {
+    top: 0;
+    left: 0;
+    transform: none;
+    padding: 5vh 10vw 0;
+    width: 100vw;
+  }
+}
+@media (max-width: 400px) and (orientation: portrait) {
+  div.skill-description p {
+    font-size: 24px;
+  }
+}
+@media (max-width: 360px) and (orientation: portrait) {
+  div.skill-description p {
+    font-size: 22px;
+  }
+  div.skill-header p {
+    font-size: 40px;
+  }
+}

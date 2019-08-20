@@ -1,0 +1,141 @@
+div.background-abilities {
+  width: 100%;
+  height: 110vh;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+div.background-abilities img:nth-of-type(1) {
+  position: fixed;
+  z-index: -6;
+  width: 100%;
+  height: 110vh;
+}
+div.background-abilities img:nth-of-type(2) {
+  width: 100%;
+  height: 110vh;
+  position: absolute;
+  z-index: -5;
+}
+
+/* balls */
+.ball-stage {
+  position: absolute;
+  top: -15vh;
+  display: inline-block;
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+@keyframes falling {
+  0% {
+    top: -15vh;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+.ball {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(
+    circle at 50% 120%,
+    #362f57,
+    #252c4b 10%,
+    #032c50 80%,
+    #04182b 100%
+  );
+}
+
+.ball-image {
+  width: 55%;
+  height: 55%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.2s;
+}
+
+.ball:hover .ball-image {
+  width: 60%;
+  height: 60%;
+}
+.ball-stage:hover .ball-image {
+  width: 60%;
+  height: 60%;
+}
+.ball-image:hover {
+  width: 60%;
+  height: 60%;
+}
+
+.ball:before:hover {
+  width: 60%;
+  height: 60%;
+}
+
+.ball:before {
+  content: "";
+  position: absolute;
+  top: 1%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 0px,
+    #ffffff,
+    rgba(255, 255, 255, 0) 58%
+  );
+  filter: blur(5px);
+  z-index: 2;
+  opacity: 0.5;
+}
+
+@media (max-width: 1200px) and (orientation: portrait) {
+  div.background-abilities {
+    height: 100vh;
+  }
+
+  div.background-abilities img:nth-of-type(1) {
+    height: 100%;
+    width: unset;
+  }
+  div.background-abilities img:nth-of-type(2) {
+    height: 100%;
+    width: unset;
+  }
+}
+
+@media (max-width: 420px) and (orientation: portrait) {
+  h2.specialty.skills {
+    transform: translate(40px, 140px);
+  }
+}
+
+@media (max-width: 1400px) and (orientation: landscape) {
+  div.background-abilities {
+    height: 100vh;
+    width: 100%;
+  }
+
+  div.background-abilities img:nth-of-type(1) {
+    height: 100%;
+    width: 100%;
+  }
+  div.background-abilities img:nth-of-type(2) {
+    height: 100%;
+    width: 100%;
+  }
+}

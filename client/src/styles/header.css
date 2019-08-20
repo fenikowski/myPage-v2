@@ -1,0 +1,265 @@
+h1.name {
+  position: absolute;
+  z-index: 4;
+  text-transform: uppercase;
+  font-size: 17vh;
+  top: 17vh;
+  left: -850px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  animation: animationh1 60s 1 forwards linear;
+  text-shadow: 0.5vh 0.3vh lightgray;
+  color: white;
+  white-space: nowrap;
+}
+
+@keyframes animationh1 {
+  0% {
+    left: -850px;
+  }
+  1% {
+    left: 30px;
+  }
+  10% {
+    left: 90px;
+  }
+  25% {
+    left: 150px;
+  }
+  65% {
+    left: 60px;
+  }
+  100% {
+    left: 120px;
+  }
+}
+
+h2.specialty {
+  position: absolute;
+  z-index: 6;
+  text-transform: uppercase;
+  font-size: 11vh;
+  top: 38vh;
+  left: 207px;
+  font-weight: 500;
+  animation: animationh2 60s 1 forwards linear;
+  line-break: loose;
+  text-shadow: 0.3vh 0.15vh lightgray;
+  color: white;
+  white-space: nowrap;
+}
+
+@keyframes animationh2 {
+  0% {
+    left: 1500px;
+  }
+
+  1% {
+    left: 360px;
+  }
+  10% {
+    left: 300px;
+  }
+  25% {
+    left: 240px;
+  }
+  65% {
+    left: 330px;
+  }
+  100% {
+    left: 270px;
+  }
+}
+
+@media (max-width: 1200px) and (orientation: portrait) {
+  h1.name {
+    font-size: 110px;
+  }
+
+  h2.specialty {
+    font-size: 70px;
+    transform: translate(-10vw, -8vh);
+  }
+}
+
+@media (max-width: 900px) and (orientation: portrait) {
+  h1.name {
+    font-size: 100px;
+    transform: translate(-3vw, 0vh);
+  }
+
+  h2.specialty {
+    font-size: 60px;
+    transform: translate(-30vw, -8vh);
+  }
+
+  @keyframes animationh1 {
+    0% {
+      left: -850px;
+    }
+    1% {
+      left: 30px;
+    }
+    10% {
+      left: 90px;
+    }
+    25% {
+      left: 120px;
+    }
+    65% {
+      left: 60px;
+    }
+    100% {
+      left: 90px;
+    }
+  }
+
+  @keyframes animationh2 {
+    0% {
+      left: 1500px;
+    }
+
+    1% {
+      left: 360px;
+    }
+    10% {
+      left: 330px;
+    }
+    25% {
+      left: 300px;
+    }
+    65% {
+      left: 330px;
+    }
+    100% {
+      left: 300px;
+    }
+  }
+}
+
+@media (max-width: 420px) and (orientation: portrait) {
+  body {
+    width: 100vw;
+    overflow: hidden;
+  }
+
+  h1.name {
+    font-size: 50px;
+    top: 100px;
+    left: 15px;
+    transform: translate(0, -5px);
+    animation: none;
+  }
+
+  h2.specialty {
+    font-size: 35px;
+    top: 30px;
+    left: 30px;
+    transform: translate(3vh, -12vh);
+    animation: none;
+  }
+}
+
+@media (max-width: 376px) and (orientation: portrait) {
+  h1.name {
+    font-size: 45px;
+    top: 100px;
+    left: 15px;
+  }
+
+  h2.specialty {
+    text-align: center;
+    font-size: 35px;
+    top: 30px;
+    left: -10px;
+  }
+}
+
+@media (max-width: 374px) and (orientation: portrait) {
+  h1.name {
+    font-size: 40px;
+    top: 100px;
+    left: 20px;
+  }
+
+  h2.specialty {
+    text-align: center;
+    font-size: 30px;
+    top: 30px;
+    left: 25px;
+    transform: translate(0px, -80px);
+  }
+}
+
+@media (max-width: 359px) and (orientation: portrait) {
+  h1.name {
+    left: 10px;
+  }
+
+  h2.specialty {
+    transform: translate(0px, -60px);
+  }
+}
+
+@media (max-width: 1400px) and (orientation: landscape) {
+  h1.name {
+    transform: translate(0, 3vh);
+  }
+
+  h2.specialty {
+    transform: translate(-10vh, 3vh);
+  }
+}
+
+@media (max-width: 1200px) and (orientation: landscape) {
+  h1.name {
+    font-size: 110px;
+  }
+
+  h2.specialty {
+    font-size: 70px;
+    transform: translate(-10vw, 2vh);
+  }
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+  h1.name {
+    font-size: 70px;
+    transform: translate(0vw, 0vh);
+  }
+
+  h2.specialty {
+    font-size: 50px;
+    transform: translate(-10vw, 2vh);
+  }
+}
+
+@media (max-width: 800px) and (orientation: landscape) {
+  h1.name {
+    font-size: 65px;
+  }
+
+  h2.specialty {
+    font-size: 50px;
+    transform: translate(-20vw, 0);
+  }
+}
+
+@media (max-width: 700px) and (orientation: landscape) {
+  h1.name {
+    font-size: 60px;
+  }
+
+  h2.specialty {
+    font-size: 40px;
+  }
+}
+@media (max-width: 600px) and (orientation: landscape) {
+  h1.name {
+    font-size: 50px;
+  }
+
+  h2.specialty {
+    font-size: 35px;
+  }
+}
