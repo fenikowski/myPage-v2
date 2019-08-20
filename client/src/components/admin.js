@@ -23,10 +23,11 @@ class Admin extends React.Component {
   }
 
   getMessages = () => {
-    fetch("/api/getMessages")
+    axios("/api/getMessages")
       .then(data => data.json())
       .then(data => {
         if (data.received !== false) {
+          console.log(data.received);
           this.setState({ messages: data.received });
         }
       });
