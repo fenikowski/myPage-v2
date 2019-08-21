@@ -23,8 +23,13 @@ class Admin extends React.Component {
   }
 
   getMessages = () => {
+    const cookies = new Cookies();
+    const logged = cookies.get("logged");
+
     axios
-      .get("http://localhost:5000/api/getMessages")
+      .get("http://localhost:5000/api/getMessages", {
+        logged
+      })
       .then(data => {
         if (data.data.received !== false) {
           this.setState({ messages: data.data.received });

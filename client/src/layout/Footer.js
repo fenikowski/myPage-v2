@@ -63,7 +63,9 @@ class Footer extends React.Component {
             <div className="box__face box__face--back">
               {text.code}{" "}
               <span>
-                <a href="https://github.com/fenikowski/myPage">{text.link}</a>
+                <a href="https://github.com/fenikowski/myPage-v2">
+                  {text.link}
+                </a>
               </span>
             </div>
             <div className="box__face box__face--bottom">
