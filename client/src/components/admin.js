@@ -27,7 +27,7 @@ class Admin extends React.Component {
     const logged = cookies.get("logged");
 
     axios
-      .get("http://localhost:5000/api/getMessages", {
+      .get("/api/getMessages", {
         logged
       })
       .then(data => {
