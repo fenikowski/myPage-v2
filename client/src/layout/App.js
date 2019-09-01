@@ -8,6 +8,9 @@ import Page from "./Page";
 import Header from "./Header";
 import "../styles/App.css";
 
+import Cookies from "universal-cookie";
+import axios from "axios";
+
 class App extends React.Component {
   state = {
     language: "es",
@@ -17,6 +20,7 @@ class App extends React.Component {
   componentDidMount() {
     this.mobilecheck();
     this.languageCheck();
+    this.noteVisit();
   }
 
   handleClickEnglish = () => {
@@ -49,6 +53,14 @@ class App extends React.Component {
           language: "es"
         });
         break;
+    }
+  };
+
+  noteVisit = () => {
+    const cookie = new Cookies();
+    if (!cookie.get("visited")) {
+      cookie.set("visited", true, { maxAge: 60 * 60 * 1000 });
+      axios.post("/api/noteVisit", { referrer: document.referrer });
     }
   };
 

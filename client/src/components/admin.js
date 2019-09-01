@@ -8,7 +8,9 @@ import "simplebar/dist/simplebar.css";
 
 class Admin extends React.Component {
   state = {
-    messages: []
+    messages: [],
+    timesVisited: 0,
+    referrers: []
   };
 
   style = {
@@ -20,6 +22,7 @@ class Admin extends React.Component {
 
   componentDidMount() {
     this.getMessages();
+    this.getStats();
   }
 
   getMessages = () => {
@@ -36,6 +39,15 @@ class Admin extends React.Component {
         }
       })
       .catch(error => console.log(error));
+  };
+
+  getStats = () => {
+    axios.get("/api/getStats").then(data =>
+      this.setState({
+        timesVisited: data.data.visits,
+        referrers: data.data.referrerList
+      })
+    );
   };
 
   checkIfUserIsLogged = () => {
@@ -88,9 +100,20 @@ class Admin extends React.Component {
         </div>
         <div className="stats-box">
           <div className="headers">Statistics</div>
-          <p>Times visited: 56</p>
-          <p>Messages received: 13</p>
-          <p>Messages in the box: 3</p>
+          <p>
+            Messages in the box:{" "}
+            <span style={{ color: "red" }}>{this.state.messages.length}</span>
+          </p>
+          <p>
+            Times visited:{" "}
+            <span style={{ color: "red" }}>{this.state.timesVisited}</span>
+          </p>
+          <p>
+            Referrers:{" "}
+            {this.state.referrers.map(item => (
+              <span style={{ fontSize: "12px", display: "block" }}>{item}</span>
+            ))}
+          </p>
         </div>
       </div>
     );

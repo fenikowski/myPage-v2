@@ -80,6 +80,39 @@ router.post("/login", (req, res) => {
   });
 });
 
+router.post("/noteVisit", (req, res) => {
+  const db = client.db("myPage");
+  const stats = db.collection("page_stats");
+
+  let visits = 0;
+  let referrerList = [];
+
+  stats.findOne({ name: "listOfVisits" }, (err, data) => {
+    visits = data.visits;
+    visits = visits + 1;
+    referrerList = data.referrerList;
+
+    if (req.body.referrer !== "") {
+      referrerList.push(req.body.referrer);
+    }
+
+    stats.updateOne({ name: "listOfVisits" }, { $set: { visits } });
+    stats.updateOne({ name: "listOfVisits" }, { $set: { referrerList } });
+  });
+
+  res.end();
+});
+
+router.get("/getStats", (req, res) => {
+  const db = client.db("myPage");
+  const stats = db.collection("page_stats");
+
+  stats.findOne({ name: "listOfVisits" }, (err, data) => {
+    res.json(data);
+    res.end();
+  });
+});
+
 router.post("/message", (req, res) => {
   const { userName, email, message } = req.body;
   const db = client.db("myPage");
