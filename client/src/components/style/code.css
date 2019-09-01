@@ -118,7 +118,6 @@ div.stripe-container div.stripe div.stripe-filling {
   left: 0%;
   background-color: blue;
   transform: translate(-100%, 0);
-  filter: brightness(0.85);
 }
 
 @keyframes stripe-loading {

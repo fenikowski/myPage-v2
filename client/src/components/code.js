@@ -98,13 +98,13 @@ class Code extends React.Component {
           <img className={this.state.imgMove} src={CSSLogo} alt="" />
           <img className={this.state.imgMove} src={GitLogo} alt="" />
           <div className="levels">
-            {this.createLevelsComponent("yellow", "0.5yr", "40%", text)}
-            {this.createLevelsComponent("violet", "0.5yr", "40%", text)}
-            {this.createLevelsComponent("goldenrod", "0.5yr", "60%", text)}
-            {this.createLevelsComponent("khaki", "0.5yr", "60%", text)}
-            {this.createLevelsComponent("brown", "6yr", "70%", text)}
-            {this.createLevelsComponent("blue", "0.5yr", "40%", text)}
-            {this.createLevelsComponent("#bdb76b", "0.5yr", "70%", text)}
+            {this.createLevelsComponent("#F7DF1E", "0.5yr", "40%", text)}
+            {this.createLevelsComponent("#00D8FF", "0.5yr", "40%", text)}
+            {this.createLevelsComponent("#90C53F", "0.5yr", "60%", text)}
+            {this.createLevelsComponent("#6BB059", "0.5yr", "60%", text)}
+            {this.createLevelsComponent("#5B5442", "6yr", "70%", text)}
+            {this.createLevelsComponent("#2277FF", "0.5yr", "40%", text)}
+            {this.createLevelsComponent("#F05033", "0.5yr", "70%", text)}
           </div>
           <div className="additional-info">
             <p

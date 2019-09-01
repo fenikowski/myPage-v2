@@ -3,7 +3,6 @@ import "./style/skills.css";
 import "./style/projects.css";
 import Projects from "./projects";
 import Code from "./code";
-import Data from "../text";
 
 class Skills extends React.Component {
   state = {};
@@ -35,13 +34,6 @@ class Skills extends React.Component {
   };
 
   render() {
-    let text = "";
-    if (this.props.language === "es") {
-      text = Data.es.skills;
-    } else if (this.props.language === "en") {
-      text = Data.en.skills;
-    }
-
     return (
       <React.Fragment>
         <Projects language={this.props.language} />

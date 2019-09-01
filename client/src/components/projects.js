@@ -74,7 +74,7 @@ class Projects extends React.Component {
     {
       title: "ToDoApp",
       pictures: [ToDoScreen],
-      technologies: [ReactLogo, NodeLogo, MongoLogo],
+      technologies: [JavaSriptLogo, NodeLogo, MongoLogo],
       link: "http://www.todoapp.fenikowski.site/",
       date: "July 2019",
       state: "Finished",
@@ -82,7 +82,8 @@ class Projects extends React.Component {
       design: "Igor Fenikowski",
       code: "Igor Fenikowski",
       language: "eng",
-      frameworks: "express, mongodb"
+      frameworks: "express, mongodb",
+      description: `Simple 'to do' app written in node js with a use of mongo database.`
     },
     {
       title: "Accounting Office Site",
@@ -90,13 +91,15 @@ class Projects extends React.Component {
       technologies: [ReactLogo, NodeLogo, MongoLogo],
       link: "http://www.biurokonfort.pl/",
       date: "August 2019",
-      state: "Unfinished",
+      state: "In progress",
       github: "https://github.com/fenikowski/AccountOfficeWebsite",
       design: "Igor Fenikowski",
       code: "Igor Fenikowski",
       language: "pl",
       frameworks:
-        "axios, react, react-cookie, react-dom, react-router-dom, react-scripts, universal-cookie, body-parser, cors, express, mongodb, morgan, nodemailer"
+        "axios, react, react-cookie, react-dom, react-router-dom, react-scripts, universal-cookie, body-parser, cors, express, mongodb, morgan, nodemailer",
+      description:
+        "Freelance contract project - a website for accounting office. Not finished yet."
     },
     {
       title: "MyPage",
@@ -110,7 +113,8 @@ class Projects extends React.Component {
       code: "Igor Fenikowski",
       language: "esp & eng",
       frameworks:
-        "axios, react, react-cookie, react-dom, react-router-dom, react-scripts, react-simplebar, body-parser, cors, express, mongodb, morgan, nodemailer"
+        "axios, react, react-cookie, react-dom, react-router-dom, react-scripts, react-simplebar, body-parser, cors, express, mongodb, morgan, nodemailer",
+      description: `My portfolio.`
     },
     {
       title: "Super Potato Bros",
@@ -122,12 +126,24 @@ class Projects extends React.Component {
       github: "https://github.com/fenikowski/SuperPotatoBros",
       design: "Igor Fenikowski",
       code: "Igor Fenikowski",
-      language: "eng"
+      language: "eng",
+      frameworks: "No frameworks used",
+      description:
+        "A game written as a part of my growth as a javascript programmer. An idea of my beloved girlfriend materialised."
     },
     {
       title: "projectName",
       pictures: [ReactScreen],
-      technologies: [ReactLogo, NodeLogo]
+      technologies: [ReactLogo, NodeLogo],
+      link: "test",
+      date: "test",
+      state: "test",
+      github: "test",
+      design: "test",
+      code: "test",
+      language: "test",
+      frameworks: "test",
+      description: "test"
     }
   ];
 
