@@ -10,6 +10,7 @@ import MyPageScreen3 from "../img/myPageScreen3.png";
 import SuperPotatoBros from "../img/game3off.gif";
 import SuperPotatoBros2 from "../img/SuperBrosScreen.png";
 import SuperPotatoBros3 from "../img/SuperBrosScreen2.png";
+import SuperPotatoBros4 from "../img/gif2.gif";
 
 import ReactLogo from "../img/ReactLogo.png";
 import NodeLogo from "../img/NodeLogo.png";
@@ -118,7 +119,12 @@ class Projects extends React.Component {
     },
     {
       title: "Super Potato Bros",
-      pictures: [SuperPotatoBros, SuperPotatoBros2, SuperPotatoBros3],
+      pictures: [
+        SuperPotatoBros,
+        SuperPotatoBros4,
+        SuperPotatoBros2,
+        SuperPotatoBros3
+      ],
       technologies: [JavaSriptLogo, GimpLogo],
       link: "http://fenikowski.site/SuperPotatoBros/stage1.html",
       date: "April 2019",
