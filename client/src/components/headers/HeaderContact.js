@@ -1,7 +1,7 @@
 import React from "react";
-import bgcContact from "../img/examplePhoto.jpg";
-import Data from "../text";
-import "../styles/contact-header.css";
+import bgcContact from "../../img/examplePhoto.jpg";
+import Data from "../../text";
+import "./style/contact-header.css";
 
 class HeaderContact extends React.Component {
   state = {

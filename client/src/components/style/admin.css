@@ -65,4 +65,40 @@ div.messages-box div.message div:nth-child(4) i:hover {
 
 button.logout {
   margin-left: 100px;
+  margin-top: 8px;
+  font-size: 18px;
+}
+
+/* stats box */
+
+div.stats-box {
+  height: 60vh;
+  width: 30vw;
+  position: absolute;
+  top: 15vh;
+  right: 3vw;
+  display: flex;
+  flex-direction: column;
+
+  border: 5px black solid;
+  background-color: #222;
+}
+
+div.stats-box div.headers {
+  flex-basis: 10%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+}
+
+div.stats-box p {
+  flex-basis: 10%;
+  background-color: #444;
+  color: white;
+  padding: 5px;
+}
+
+div.stats-box p:nth-child(2n-1) {
+  background-color: rgb(83, 83, 83);
 }

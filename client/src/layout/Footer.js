@@ -42,7 +42,7 @@ class Footer extends React.Component {
         <div className="localization">
           {text.localization}
           <Route path="/" exact render={props => this.location(text)} />
-          <Route path="/skills" exact render={props => this.location(text)} />
+          <Route path="/projects" exact render={props => this.location(text)} />
           <Route path="/games" exact render={props => this.location(text)} />
           <Route path="/contact" exact render={props => this.location(text)} />
         </div>

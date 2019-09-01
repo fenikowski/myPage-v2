@@ -18,7 +18,7 @@ const Page = props => {
           render={() => <Introduction language={props.language} />}
         />
         <Route
-          path="/skills"
+          path="/projects"
           render={() => <Skills language={props.language} />}
         />
         <Route

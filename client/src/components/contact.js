@@ -7,7 +7,7 @@ import Facebook from "../img/contact3.png";
 import LinkedIn from "../img/contact5.png";
 import NodeJS from "../img/NodeLogo.png";
 import Mongo from "../img/MongoLogo.png";
-import "../styles/contact.css";
+import "./style/contact.css";
 import Data from "../text";
 import CVspanish from "../Downloads/Igor Fenikowski CV es.pdf";
 import CVenglish from "../Downloads/Igor Fenikowski CV en.pdf";

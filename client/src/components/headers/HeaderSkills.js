@@ -1,18 +1,18 @@
 import React from "react";
-import bgcSkills from "../img/galaxy.jpg";
-import trees from "../img/trees.png";
-import JavaScriptLogo from "../img/javaScriptLogo.png";
-import ReduxLogo from "../img/ReduxLogo.png";
-import GimpLogo from "../img/GimpLogo.png";
-import ReactLogo from "../img/ReactLogo.png";
-import NativeLogo from "../img/NativeLogo.jpg";
-import GitLogo from "../img/GitLogo.png";
-import NodeLogo from "../img/NodeLogo.png";
-import MongoLogo from "../img/MongoLogo.png";
-import CSSLogo from "../img/CSSLogo.png";
-import HTMLLogo from "../img/HTMLLogo.png";
-import "../styles/abilities-header.css";
-import Data from "../text";
+import bgcSkills from "../../img/galaxy.jpg";
+import trees from "../../img/trees.png";
+import JavaScriptLogo from "../../img/javaScriptLogo.png";
+import ReduxLogo from "../../img/ReduxLogo.png";
+import GimpLogo from "../../img/GimpLogo.png";
+import ReactLogo from "../../img/ReactLogo.png";
+import NativeLogo from "../../img/NativeLogo.jpg";
+import GitLogo from "../../img/GitLogo.png";
+import NodeLogo from "../../img/NodeLogo.png";
+import MongoLogo from "../../img/MongoLogo.png";
+import CSSLogo from "../../img/CSSLogo.png";
+import HTMLLogo from "../../img/HTMLLogo.png";
+import "./style/abilities-header.css";
+import Data from "../../text";
 
 class HeaderProjects extends React.Component {
   state = {
@@ -135,9 +135,7 @@ class HeaderProjects extends React.Component {
 
     // image randomizing
     const randomImg = Math.floor(Math.random() * 10);
-    ballImage.style.backgroundImage = `url(${
-      this.state.bgcImages[randomImg].img
-    })`;
+    ballImage.style.backgroundImage = `url(${this.state.bgcImages[randomImg].img})`;
 
     // action randomazing
     ballStage.addEventListener("click", () => {

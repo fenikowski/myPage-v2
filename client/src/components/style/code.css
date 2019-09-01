@@ -1,0 +1,326 @@
+section.code {
+  background-color: #000;
+  color: white;
+  height: 80vh;
+  position: relative;
+}
+
+section.code div.code {
+  position: absolute;
+  height: 70vh;
+  width: 60%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: row;
+}
+
+div.levels {
+  flex-basis: 60%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+section.code div.code-info div.box__face.box__face--bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+div.code-info.scene {
+  height: 100%;
+  width: 100%;
+  perspective: 20vh;
+  border: none;
+  background-color: #222;
+}
+
+div.code-info.scene:hover {
+  cursor: default;
+}
+
+div.code-info .box {
+  width: 100%;
+  height: 10vh;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-10vh);
+  transition: transform 1s;
+}
+
+div.code-info .box.show-front {
+  transform: translateZ(-10vh);
+}
+div.code-info .box.show-bottom {
+  transform: translateZ(-10vh) rotateX(90deg);
+}
+
+div.code-info .box__face {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  background-color: #000;
+  overflow: hidden;
+}
+
+div.code-info .box__face--front,
+div.code-info .box__face--back {
+  width: 100%;
+  height: 10vh;
+  line-height: 10vh;
+}
+
+div.code-info .box__face--top,
+div.code-info .box__face--bottom {
+  width: 100%;
+  height: 10vh;
+  top: 5vh;
+}
+
+div.code-info .box__face--bottom {
+  top: -5vh;
+}
+
+div.code-info .box__face--front {
+  transform: rotateY(0deg) translateZ(5vh);
+}
+
+div.code-info .box__face--bottom {
+  transform: rotateX(-90deg) translateZ(10vh);
+}
+
+div.stripe-container {
+  flex-basis: 10vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+div.stripe-container div.stripe {
+  flex-basis: 2.5vh;
+  width: 60%;
+  border: white 2px solid;
+  background: none;
+  position: relative;
+  flex-grow: 0;
+  overflow: hidden;
+}
+
+div.stripe-container div.stripe div.stripe-filling {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0%;
+  background-color: blue;
+  transform: translate(-100%, 0);
+  filter: brightness(0.85);
+}
+
+@keyframes stripe-loading {
+  0% {
+    transform: translate(-100%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+div.stripe-container p {
+  display: block;
+  font-size: 1vw;
+  color: white;
+  line-height: normal;
+  padding: 1vh 0;
+  font-weight: 300;
+}
+
+div.additional-info {
+  flex-basis: 40%;
+}
+
+section.code div.code img {
+  height: 12vh;
+  width: 12vh;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  transition: 1s;
+  z-index: 2;
+}
+
+section.code div.code img.code {
+  height: 10vh;
+  width: 8vh;
+  padding: 1vh 0;
+  transform: translate(-120%, 0);
+}
+
+section.code div.code img:nth-of-type(1) {
+  top: 30%;
+  left: 30%;
+}
+section.code div.code img:nth-of-type(2) {
+  top: 30%;
+  left: 42.5%;
+}
+section.code div.code img:nth-of-type(3) {
+  top: 30%;
+  left: 57.5%;
+}
+section.code div.code img:nth-of-type(4) {
+  top: 30%;
+  left: 70%;
+}
+section.code div.code img:nth-of-type(5) {
+  top: 52.5%;
+  left: 50%;
+}
+section.code div.code img:nth-of-type(6) {
+  top: 52.5%;
+  left: 37.5%;
+}
+section.code div.code img:nth-of-type(7) {
+  top: 52.5%;
+  left: 62.5%;
+}
+
+section.code div.code img.code {
+  left: 0;
+}
+
+section.code div.code img.code:nth-of-type(1) {
+  top: 0;
+}
+section.code div.code img.code:nth-of-type(2) {
+  top: 10vh;
+}
+section.code div.code img.code:nth-of-type(3) {
+  top: 20vh;
+}
+section.code div.code img.code:nth-of-type(4) {
+  top: 30vh;
+}
+section.code div.code img.code:nth-of-type(5) {
+  top: 40vh;
+}
+section.code div.code img.code:nth-of-type(6) {
+  top: 50vh;
+}
+section.code div.code img.code:nth-of-type(7) {
+  top: 60vh;
+}
+
+div.additional-info p {
+  transition: 1s;
+  padding: 1vw;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  font-size: 3vh;
+}
+
+@media (orientation: landscape) and (max-width: 1400px) {
+  div.additional-info p {
+    font-size: 2.5vh;
+  }
+}
+
+@media (orientation: portrait) {
+  section.code {
+    height: 160vh;
+  }
+
+  section.code div.code {
+    flex-direction: column;
+    height: 140vh;
+    width: 80%;
+  }
+
+  div.levels {
+    flex-basis: 50%;
+  }
+
+  div.additional-info {
+    position: relative;
+    flex-basis: 50%;
+  }
+
+  div.additional-info p {
+    transition: 1s;
+    padding: 2vw 0 0;
+    line-height: 1.2;
+    letter-spacing: 2px;
+    font-size: 2.75vh;
+
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+
+  div.stripe-container div.stripe {
+    flex-basis: 2.5vh;
+    width: 70%;
+  }
+
+  div.stripe-container {
+    align-items: flex-end;
+  }
+
+  div.stripe-container p {
+    display: block;
+    font-size: 3vw;
+    color: white;
+    line-height: normal;
+    padding: 1vh 0;
+    font-weight: 300;
+  }
+
+  div.additional-info p {
+    padding-top: 6vh;
+  }
+
+  section.code div.code img {
+    height: 8vh;
+    width: 8vh;
+  }
+
+  section.code div.code img:nth-of-type(1) {
+    top: 30%;
+    left: 20%;
+  }
+  section.code div.code img:nth-of-type(2) {
+    top: 30%;
+    left: 40%;
+  }
+  section.code div.code img:nth-of-type(3) {
+    top: 30%;
+    left: 60%;
+  }
+  section.code div.code img:nth-of-type(4) {
+    top: 30%;
+    left: 80%;
+  }
+  section.code div.code img:nth-of-type(5) {
+    top: 40%;
+    left: 50%;
+  }
+  section.code div.code img:nth-of-type(6) {
+    top: 40%;
+    left: 30%;
+  }
+  section.code div.code img:nth-of-type(7) {
+    top: 40%;
+    left: 70%;
+  }
+
+  section.code div.code img.code {
+    left: 20%;
+  }
+}

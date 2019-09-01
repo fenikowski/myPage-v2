@@ -1,10 +1,10 @@
 import React from "react";
-import bgc1 from "../img/bgc1.png";
-import bgc2 from "../img/bgc2.png";
-import bgc3 from "../img/bgc3.png";
-import bgc4 from "../img/bgc4.png";
-import bgc5 from "../img/bgc5.png";
-import "../styles/initial-header.css";
+import bgc1 from "../../img/bgc1.png";
+import bgc2 from "../../img/bgc2.png";
+import bgc3 from "../../img/bgc3.png";
+import bgc4 from "../../img/bgc4.png";
+import bgc5 from "../../img/bgc5.png";
+import "./style/initial-header.css";
 
 class InitialHeader extends React.Component {
   state = {

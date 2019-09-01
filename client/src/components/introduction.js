@@ -1,6 +1,6 @@
 import React from "react";
 import { Redirect } from "react-router";
-import "../styles/introduction.css";
+import "./style/introduction.css";
 import Data from "../text";
 import JavaScriptLogo from "../img/javaScriptLogo.png";
 import ReduxLogo from "../img/ReduxLogo.png";
@@ -184,7 +184,7 @@ class Introduction extends React.Component {
 
   render() {
     if (this.state.redirect) {
-      return <Redirect push to="/skills" />;
+      return <Redirect push to="/projects" />;
     }
 
     const cube = (logo, name) => (

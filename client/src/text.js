@@ -4,7 +4,7 @@ import Browsers from "./img/browsers.png";
 export default {
   es: {
     headers: {
-      skillsh1: "Habilidades",
+      skillsh1: "Proyectos",
       skillsh2: "Lo que uso en mi código",
       gamesh1: `Juegos`,
       gamesh2: `¡Haz clic para despertar el fuego!`,
@@ -13,7 +13,7 @@ export default {
     },
     navigation: {
       start: "Inicio",
-      skills: "Habilidades",
+      skills: "Proyectos",
       games: "Juegos",
       contact: "Contact"
     },
@@ -23,31 +23,46 @@ export default {
   aplicaciones de web usando las tecnologías nuevas y frameworks
   populares. En esta página encontrarás informaciones sobre mi, mis
   habilidades y juegos, así mismo podrás ponerte en contacto conmigo y revisar
-  mi código. Me alegra que decidste echar una vista aquí. `,
+  mi código. Me alegra que decidiste echar una vista aquí. `,
       technologies:
         "Uso tecnologías más recientes para crear aplicaciones web modernas",
       actualInfo:
         "Actualmente vivo en Valéncia adonde llegué hace dos años para acabar mis estudios y me decidí por quedar. Sigo buscando ofertas de trabajo, si estás interesado, escríbeme en sección "
     },
-    skills: [
-      {
-        description: `JavaScript es un lenguaje bastante fresco, pero va creciendo, despertando mucha esperanza para el futuro. Yo lo uso creando tanto front-end de aplicaciónes como el back-end. Utilizandolo y su objetividad escribí unos juegos que encontrarás en otra sección de esta página.`
-      },
-      {
-        description: `Gimp es mi herramienta de edición gráfica preferida. La uso para enfrentar los obstaculos sencillos en trabajo de cada front-end developer, dicho, editar imagenes y crear animaciones de sitios web y juegos.`
-      },
-      {
-        description: `Mi trabajo en JavaScript complemento con el framework muy al tanto de producción de Facebook - React. Compaginandolo con React Native y Redux creo proyectos para varios dispositivos. Gracias a él (y React Router), surgió esta página, su codigo puedes revisar en mi cuenta de GitHub o pulsando `,
-        linkName: "aquí"
-      },
-      {
-        description: `En mi trabajo utilizo Git, el sístema de control de versión más popular del mundo. Todo el codigo que cometos, de esta página así mismo como los juegos y proyectos encontrarás en mi cuenta de GitHub, pulsando `,
-        linkName: "aquí"
-      },
-      {
-        description: `En el lado de server de mis aplicaciones, aprovecho de las tecnologias más ardientes en el mercado, o sea, versión back-end del JavaScript - Node JS. Juntos con Express y mongoDB database, resultan ser una combinación muy poderosa.`
-      }
-    ],
+    skills: {
+      expirience: "Expiriencia: ",
+      info: `En mi trabajo uso las tecnologías más ardientes y modernas, cuales actualmente se están tomando la control del mundo de programación. El front-end basado en React complemento con NodeJS en back-end y mongoDB database. Lo que no puedo crear en CSS, me lo consigo en GIMP - editor de gráfica. Continuamente amplifico mi conjunto de habilidades para volverme en programista cada vez más complejo. Por ahora, estoy buscando
+      una oportunidad para desarrollarme aun más en mi primer empleo en el sector IT.`,
+      skillsComponent: [
+        {
+          description: `JavaScript es un lenguaje bastante fresco, pero va creciendo, despertando mucha esperanza para el futuro. Yo lo uso creando tanto front-end de aplicaciónes como el back-end. Utilizandolo y su objetividad escribí unos juegos que encontrarás en otra sección de esta página.`
+        },
+        {
+          description: `Gimp es mi herramienta de edición gráfica preferida. La uso para enfrentar los obstaculos sencillos en trabajo de cada front-end developer, dicho, editar imagenes y crear animaciones de sitios web y juegos.`
+        },
+        {
+          description: `Mi trabajo en JavaScript complemento con el framework muy al tanto de producción de Facebook - React. Compaginandolo con React Native y Redux creo proyectos para varios dispositivos. Gracias a él (y React Router), surgió esta página, su codigo puedes revisar en mi cuenta de GitHub o pulsando `,
+          linkName: "aquí"
+        },
+        {
+          description: `En mi trabajo utilizo Git, el sístema de control de versión más popular del mundo. Todo el codigo que cometos, de esta página así mismo como los juegos y proyectos encontrarás en mi cuenta de GitHub, pulsando `,
+          linkName: "aquí"
+        },
+        {
+          description: `En el lado de server de mis aplicaciones, aprovecho de las tecnologias más ardientes en el mercado, o sea, versión back-end del JavaScript - Node JS. Juntos con Express y mongoDB database, resultan ser una combinación muy poderosa.`
+        }
+      ]
+    },
+    projects: {
+      title: "Titúlo: ",
+      state: "Estado: ",
+      link: "Enlace: ",
+      date: "Fecha: ",
+      code: "Código: ",
+      design: "Diseño: ",
+      description: "Descripción: ",
+      language: "Lengua: "
+    },
     games: [
       {
         h3: `Es un clásico, todo el mundo conoce las historias de
@@ -145,7 +160,7 @@ export default {
   },
   en: {
     headers: {
-      skillsh1: "Skills",
+      skillsh1: "Projects",
       skillsh2: "what i use in my code",
       gamesh1: `Games`,
       gamesh2: `Click to awake the fire!`,
@@ -154,7 +169,7 @@ export default {
     },
     navigation: {
       start: "Start",
-      skills: "Skills",
+      skills: "Projects",
       games: "Games",
       contact: "Contact"
     },
@@ -165,25 +180,39 @@ export default {
       actualInfo:
         "Currently I live in Valencia where I came two years ago to complete my studies and I decided to stay. I'm searching for job offers, if you're interested in cooperation, write me in section "
     },
-    skills: [
-      {
-        description: `JavaScript is a fresh and exciting language, which is growing providing more and more tools and posibilities for development of modern aplications. I use it creating front-end as well as back-end of my aplications. Taking advantage of it and it's object oriented programming I wrote few games which you'll find in other section.`
-      },
-      {
-        description: `Gimp is my prefered graphic editor, which helps my embrace simple tasks confronting every Front-end developer. I use to create images and animations for my websites and games alike.`
-      },
-      {
-        description: `My JavaScript written projects I complement with modern, up-to-date framework from Facebook's production - React. Hand to hand with React Native and Redux they let me code multiplatform projects. Basing on React (and React Router), surged this page, its code is avaiable to check out on my GitHub account `,
-        linkName: "here"
-      },
-      {
-        description: `In my work I use Git, the most popular verison control system. All the code I commit, of this page as well as the games and projects, you'll find on my GitHub account, clicking `,
-        linkName: "here"
-      },
-      {
-        description: `On the server side of my aplication I take advantage of the hottest technologies currently on the market, back-end version of JavaScript - Node JS. Together with Express and mongoDB database they result to be a powerfull combo.`
-      }
-    ],
+    skills: {
+      expirience: "Expirience: ",
+      info: `In my work I use the hottest, modern technologies, which are currently taking over the programming world. React based front-end I complement with NodeJS on back-end side and mongoDB database. What I cannot create in CSS, I get done in GIMP graphic editor. I'm a self-learning, passionate code lover. I continusly amplify my skillset and become more and more complete programist. Currently I'm looking for a opportunity to develop in my first employment in IT.`,
+      skillsComponent: [
+        {
+          description: `JavaScript is a fresh and exciting language, which is growing providing more and more tools and posibilities for development of modern aplications. I use it creating front-end as well as back-end of my aplications. Taking advantage of it and it's object oriented programming I wrote few games which you'll find in other section.`
+        },
+        {
+          description: `Gimp is my prefered graphic editor, which helps my embrace simple tasks confronting every Front-end developer. I use to create images and animations for my websites and games alike.`
+        },
+        {
+          description: `My JavaScript written projects I complement with modern, up-to-date framework from Facebook's production - React. Hand to hand with React Native and Redux they let me code multiplatform projects. Basing on React (and React Router), surged this page, its code is avaiable to check out on my GitHub account `,
+          linkName: "here"
+        },
+        {
+          description: `In my work I use Git, the most popular verison control system. All the code I commit, of this page as well as the games and projects, you'll find on my GitHub account, clicking `,
+          linkName: "here"
+        },
+        {
+          description: `On the server side of my aplication I take advantage of the hottest technologies currently on the market, back-end version of JavaScript - Node JS. Together with Express and mongoDB database they result to be a powerfull combo.`
+        }
+      ]
+    },
+    projects: {
+      title: "Title: ",
+      state: "State: ",
+      link: "Link: ",
+      date: "Date: ",
+      code: "Code: ",
+      design: "Design: ",
+      description: "Description: ",
+      language: "Language: "
+    },
     games: [
       {
         h3: `It's a game, a classic, all the world knows the stories of Mario, but does it know the battles for cookies of a brave potato?`,

@@ -1,6 +1,6 @@
 import React from "react";
 import { Redirect } from "react-router";
-import "../styles/admin.css";
+import "./style/admin.css";
 import Cookies from "universal-cookie";
 import axios from "axios";
 import SimpleBar from "simplebar-react";
@@ -85,6 +85,12 @@ class Admin extends React.Component {
             <div>Manage</div>
           </div>
           <SimpleBar style={this.style}>{messages}</SimpleBar>
+        </div>
+        <div className="stats-box">
+          <div className="headers">Statistics</div>
+          <p>Times visited: 56</p>
+          <p>Messages received: 13</p>
+          <p>Messages in the box: 3</p>
         </div>
       </div>
     );

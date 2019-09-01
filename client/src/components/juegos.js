@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/juegos.css";
+import "./style/juegos.css";
 import JavaScriptLogo from "../img/javaScriptLogo.png";
 import GitHubLogo from "../img/githubLogo.png";
 import Data from "../text";

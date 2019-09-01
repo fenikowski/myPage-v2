@@ -76,31 +76,31 @@ section.juegos a.gameImage {
   height: 42%;
   width: 40%;
   left: 5%;
-  background-image: url(../img/game3off.gif);
+  background-image: url(../../img/game3off.gif);
   background-size: 96%;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 section.juegos a.gameImage:hover {
-  background-image: url(../img/game3on.gif);
+  background-image: url(../../img/game3on.gif);
   cursor: pointer;
 }
 
 section.juegos:nth-child(2) a.gameImage {
-  background-image: url(../img/game2off.gif);
+  background-image: url(../../img/game2off.gif);
 }
 
 section.juegos:nth-child(2) a.gameImage:hover {
-  background-image: url(../img/game2on.gif);
+  background-image: url(../../img/game2on.gif);
   cursor: pointer;
 }
 section.juegos:nth-child(3) a.gameImage {
-  background-image: url(../img/game1off.gif);
+  background-image: url(../../img/game1off.gif);
 }
 
 section.juegos:nth-child(3) a.gameImage:hover {
-  background-image: url(../img/game1on.gif);
+  background-image: url(../../img/game1on.gif);
   cursor: pointer;
 }
 

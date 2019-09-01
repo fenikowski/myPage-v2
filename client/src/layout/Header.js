@@ -1,9 +1,9 @@
 import React from "react";
 import "../styles/header.css";
-import InitialHeader from "../components/InitialHeader";
-import HeaderGames from "../components/HeaderGames";
-import HeaderContact from "../components/HeaderContact";
-import HeaderSkills from "../components/HeaderSkills";
+import InitialHeader from "../components/headers/InitialHeader";
+import HeaderGames from "../components/headers/HeaderGames";
+import HeaderContact from "../components/headers/HeaderContact";
+import HeaderSkills from "../components/headers/HeaderSkills";
 import { Switch, Route } from "react-router";
 
 const Header = props => {
@@ -15,7 +15,7 @@ const Header = props => {
         render={() => <HeaderGames language={props.language} />}
       />
       <Route
-        path="/skills"
+        path="/projects"
         render={() => (
           <HeaderSkills language={props.language} mobile={props.mobile} />
         )}

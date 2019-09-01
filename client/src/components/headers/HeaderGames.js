@@ -1,8 +1,8 @@
 import React from "react";
-import gif1 from "../img/gif1.gif";
-import gif2 from "../img/gif2.gif";
-import Data from "../text";
-import "../styles/games-header.css";
+import gif1 from "../../img/gif1.gif";
+import gif2 from "../../img/gif2.gif";
+import Data from "../../text";
+import "./style/games-header.css";
 
 class HeaderGames extends React.Component {
   state = {

@@ -256,7 +256,7 @@ section.contact {
     padding-bottom: 30px;
     overflow: hidden;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   .contact div.address .address-box p {
