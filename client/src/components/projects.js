@@ -11,12 +11,22 @@ import SuperPotatoBros from "../img/game3off.gif";
 import SuperPotatoBros2 from "../img/SuperBrosScreen.png";
 import SuperPotatoBros3 from "../img/SuperBrosScreen2.png";
 import SuperPotatoBros4 from "../img/gif2.gif";
+import TaygaScreen from "../img/tayga1.png";
+import TaygaScreen2 from "../img/tayga2.png";
+import CharityScreen from "../img/charity1.png";
+import CharityScreen2 from "../img/charity2.png";
+import CharityScreen3 from "../img/charity3.png";
+import DesignerBarber from "../img/designerbarber1.png";
+import DesignerBarber2 from "../img/designerbarber2.png";
+import NiceBarber from "../img/nicebarber1.png";
+import NiceBarber2 from "../img/nicebarber2.png";
 
 import ReactLogo from "../img/ReactLogo.png";
 import NodeLogo from "../img/NodeLogo.png";
 import MongoLogo from "../img/MongoLogo.png";
 import JavaSriptLogo from "../img/javaScriptLogo.png";
 import GimpLogo from "../img/GimpLogo.png";
+import MySQLLogo from "../img/mysql.svg";
 
 import Data from "../text";
 
@@ -72,6 +82,62 @@ class Projects extends React.Component {
   };
 
   projects = [
+    {
+      title: "Charity website",
+      pictures: [CharityScreen, CharityScreen2, CharityScreen3],
+      technologies: [JavaSriptLogo, ReactLogo],
+      link: "https://template-charity-tayga.herokuapp.com/en/",
+      date: "September 2019",
+      state: "In development",
+      github: "",
+      design: "Igor Fenikowski",
+      code: "Igor Fenikowski",
+      language: "eng",
+      frameworks: "react",
+      description: `A template of a webiste made for a charity.`
+    },
+    {
+      title: "Tayga website",
+      pictures: [TaygaScreen, TaygaScreen2],
+      technologies: [ReactLogo, JavaSriptLogo, NodeLogo, MySQLLogo],
+      link: "http://app.tayga.a2hosted.com/",
+      date: "October 2019",
+      state: "In development",
+      github: "",
+      design: "Igor Fenikowski",
+      code: "Igor Fenikowski",
+      language: "eng",
+      frameworks: "express, react, react router",
+      description: `Website for IT company startup`
+    },
+    {
+      title: "Oldschool barber website",
+      pictures: [NiceBarber, NiceBarber2],
+      technologies: [ReactLogo, JavaSriptLogo],
+      link: "https://barber-template2-tayga.herokuapp.com/",
+      date: "October 2019",
+      state: "Finished",
+      github: "",
+      design: "Igor Fenikowski",
+      code: "Igor Fenikowski",
+      language: "en",
+      frameworks: "react, react router",
+      description: `Website template for a hairdresser`
+    },
+    {
+      title: "Designer barber website",
+      pictures: [DesignerBarber, DesignerBarber2],
+      technologies: [ReactLogo, JavaSriptLogo],
+      link: "https://taygaa09jdad.herokuapp.com/",
+      date: "October 2019",
+      state: "Finished",
+      github: "",
+      design: "Igor Fenikowski",
+      code: "Igor Fenikowski",
+      language: "es",
+      frameworks: "react, react router",
+      description: `Website template for a hairdresser`
+    },
     {
       title: "ToDoApp",
       pictures: [ToDoScreen],
