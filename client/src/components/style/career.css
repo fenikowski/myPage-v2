@@ -1,0 +1,20 @@
+.career {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.left {
+    background-color: #ddd;
+    flex-grow: 1;
+}
+
+.right {
+    background-color: #ccc;
+    flex-grow: 1;
+}
+
+.separator {
+    background-color: #000;
+    width: 1px;
+}

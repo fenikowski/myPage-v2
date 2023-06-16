@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Cookies from "universal-cookie";
-import "../styles/login.css";
+import "./style/login.css";
 
 class Login extends React.Component {
   state = {

@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "../styles/nav.css";
+import "./style/Nav.css";
 import Data from "../text";
 
 const Navigation = props => {

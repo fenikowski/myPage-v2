@@ -1,6 +1,7 @@
 import React from "react";
 import { Redirect } from "react-router";
 import "./style/introduction.css";
+import Career from "../components/career";
 import Data from "../text";
 import JavaScriptLogo from "../img/javaScriptLogo.png";
 import ReduxLogo from "../img/ReduxLogo.png";
@@ -233,6 +234,7 @@ class Introduction extends React.Component {
             <span className={`cursor ${this.state.cursorClass}`}>|</span>
           </div>
         </section>
+        {/* <Career/> */}
         <div className="section-title">
           <p>
             {this.props.language === "en"

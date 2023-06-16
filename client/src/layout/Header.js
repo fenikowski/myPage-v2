@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/header.css";
+import "./style/Header.css";
 import InitialHeader from "../components/headers/InitialHeader";
 import HeaderGames from "../components/headers/HeaderGames";
 import HeaderContact from "../components/headers/HeaderContact";

@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Footer.css";
+import "./style/Footer.css";
 import Data from "../text";
 import { Route } from "react-router";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/LoadingPage.css";
+import "./style/LoadingPage.css";
 
 class LoadingScreen extends React.Component {
   componentDidMount() {
@@ -12,7 +12,7 @@ class LoadingScreen extends React.Component {
       // inicialization
 
       // loading text animation
-      this.loadingAnimation();
+      this.loadingTextAnimation();
 
       // array for squares
       let squaresArray = [];
@@ -46,27 +46,10 @@ class LoadingScreen extends React.Component {
       // AFTER LOADED
       function whenPageLoaded() {
         sessionStorage.setItem("pageLoaded", true);
-
-        // document
-        //   .querySelector("div.loadingScreen")
-        //   .removeChild(document.querySelector("div.loadingAnimation"));
-        document.querySelector("div.loading").textContent =
-          "CLICK ON THE SCREEN";
-        document.querySelector("div.loading").style.animation =
-          "miganie 1s infinite";
+        document.querySelector("div.loading").textContent = "CLICK ON THE SCREEN";
+        document.querySelector("div.loading").style.animation = "miganie 1s infinite";
 
         squaresArray.forEach(function(square, index) {
-          // ON HOVER EVENT LISTENER FOR SQUARES
-
-          //   square.addEventListener("mouseover", function() {
-          //     square.style.opacity = "1";
-          //     square.style.backgroundColor = "lime";
-          //   });
-          //   square.addEventListener("mouseout", function() {
-          //     square.style.opacity = "0.4";
-          //     square.style.backgroundColor = "none";
-          //   });
-
           // ON CLICK EVENT LISTENER FOR SQUARES
 
           square.addEventListener("click", function() {
@@ -74,7 +57,7 @@ class LoadingScreen extends React.Component {
             document.querySelector("div.loading").style.animation = "";
             document.querySelector("div.loading").style.opacity = "0";
 
-            //background disappearnce
+            //background disappearance
             document.querySelector("div.gradient").style.left = `-100%`;
             setTimeout(function() {
               document.querySelector("div.gradient").style.opacity = "0";
@@ -166,7 +149,7 @@ class LoadingScreen extends React.Component {
     }
   }
 
-  loadingAnimation = () => {
+  loadingTextAnimation = () => {
     const textContener = document.querySelector("div.loading");
     const text = "Loading";
     for (let i = 0; i <= text.length; i++) {
@@ -184,7 +167,6 @@ class LoadingScreen extends React.Component {
           <div className="gradient" />
           <div className="squares" />
           <div className="loading" />
-          {/* <div className="loadingAnimation" /> */}
         </div>
       </div>
     );

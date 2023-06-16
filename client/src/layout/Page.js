@@ -1,12 +1,12 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Introduction from "../components/introduction.js";
+import Introduction from "../pages/introduction.js";
 import Juegos from "../components/juegos.js";
-import Contact from "../components/contact";
+import Contact from "../pages/contact.js";
 import Skills from "../components/skills";
-import Admin from "../components/admin";
-import Login from "../components/login";
-import Error from "../components/error";
+import Admin from "../pages/admin.js";
+import Login from "../pages/login.js";
+import Error from "../pages/error.js";
 
 const Page = props => {
   return (
