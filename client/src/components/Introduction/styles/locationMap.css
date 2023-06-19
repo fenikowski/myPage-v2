@@ -1,0 +1,815 @@
+:root {
+    --cube-size: 28vh;
+  }
+  
+  section.introduction {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color: #fff;
+    z-index: -1;
+  }
+  
+  div.profile-photo {
+    position: absolute;
+    top: 23%;
+    left: 11%;
+    height: 55vh;
+    width: 55vh;
+    box-shadow: 0 0 0 1vh white, 0 0 0 2vh rgba(0, 255, 0, 0.3);
+    border-radius: 30vh;
+    background-image: url(../../../img/20190130_225004.jpg);
+    background-size: cover;
+    z-index: 12;
+    transform: rotateY(90deg);
+    transition: 1s;
+  }
+  
+  div.active-profile-photo {
+    transform: rotateY(0deg);
+    animation: profilePhotoAnimation 1s ease 1.1s 1;
+  }
+  
+  @keyframes profilePhotoAnimation {
+    0% {
+      box-shadow: 0 0 0 1vh white, 0 0 0 2vh rgba(0, 255, 0, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 0 3vh white, 0 0 0 5vh rgba(0, 255, 0, 0.3);
+    }
+    100% {
+      box-shadow: 0 0 0 1vh white, 0 0 0 2vh rgba(0, 255, 0, 0.3);
+    }
+  }
+  
+  div.description {
+    position: absolute;
+    width: 60vh;
+    height: 60%;
+    left: 55%;
+    top: 28%;
+    font-size: 3.5vh;
+    line-height: 1.4;
+  }
+  
+  section.introduction div.description p {
+    display: inline;
+  }
+  
+  span.cursor {
+    display: inline;
+    opacity: 0;
+    animation: cursorAnimation 0.8s infinite linear;
+  }
+  
+  @keyframes cursorAnimation {
+    0% {
+      opacity: 0;
+    }
+    49% {
+      opacity: 0;
+    }
+    51% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* border */
+  
+  div.border {
+    position: absolute;
+    top: 5%;
+    left: 2.5%;
+    height: 290vh;
+    width: 95%;
+    border: lime solid 4px;
+    border-bottom: none;
+    border-radius: 4px;
+    z-index: 0;
+    opacity: 0.3;
+  }
+  
+  div.border div.initial {
+    position: absolute;
+    width: 4px;
+    height: 10%;
+    top: -15%;
+    background-color: lime;
+    left: 50%;
+    opacity: 0;
+    transition: 1s;
+  }
+  
+  div.border div.top1 {
+    position: absolute;
+    width: 50%;
+    height: 10px;
+    top: -5px;
+    left: 0;
+    /* transform: translate(-50%, 0); */
+    background-color: #fff;
+    /* border: black solid 1px; */
+    transition: 2s;
+    transition-delay: 1s;
+  }
+  div.border div.top2 {
+    position: absolute;
+    width: 50%;
+    height: 10px;
+    top: -5px;
+    left: 50%;
+    /* transform: translate(-50%, 0); */
+    background-color: #fff;
+    /* border: black solid 1px; */
+    transition: 2s;
+    transition-delay: 1s;
+  }
+  div.border div.left {
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    top: -5px;
+    left: -5px;
+    /* transform: translate(-50%, 0); */
+    background-color: #fff;
+    /* border: black solid 1px; */
+    transition: top 3s 1.5s, opacity 0s 3.5s;
+  }
+  div.border div.right {
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    top: -5px;
+    right: -5px;
+    /* transform: translate(-50%, 0); */
+    background-color: #fff;
+    /* border: black solid 1px; */
+    transition: top 3s 1.5s, opacity 0s 3.5s;
+  }
+  
+  div.border div.top1.active {
+    left: -100%;
+  }
+  
+  div.border div.top2.active {
+    left: 150%;
+  }
+  
+  div.border div.left.active,
+  div.border div.right.active {
+    top: 105%;
+    opacity: 0;
+  }
+  
+  div.border div.initial.active {
+    top: -10%;
+    opacity: 1;
+  }
+  
+  /* introduction part 2 */
+  
+  div.section-title {
+    height: 20vh;
+    width: 100%;
+    text-align: center;
+    line-height: 20vh;
+    font-size: 6vh;
+    font-weight: 300;
+    color: white;
+    font-family: "Barlow Condensed";
+    background-color: #222;
+    text-transform: lowercase;
+  }
+  
+  div.section-title p {
+    display: inline-block;
+    width: 90%;
+  }
+  
+  section.technologies {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+  }
+  
+  div.cubes-holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    justify-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 95%;
+    margin-left: 2.5%;
+  }
+  
+  div.cube-holder {
+    text-align: center;
+    margin: auto;
+    flex-basis: 25%;
+    flex-grow: 1;
+  }
+  
+  /* cube */
+  .scene {
+    display: inline-block;
+    width: var(--cube-size);
+    height: var(--cube-size);
+    border: 1px solid #ccc;
+    perspective: calc(var(--cube-size) * 2);
+  }
+  
+  .cube {
+    width: var(--cube-size);
+    height: var(--cube-size);
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(calc(var(--cube-size) / (-2)));
+    transition: transform 0.5s;
+  }
+  
+  .cube.show-front {
+    transform: translateZ(calc(var(--cube-size) / (-2))) rotateY(0deg);
+  }
+  .cube.show-right {
+    transform: translateZ(calc(var(--cube-size) / (-2))) rotateY(-90deg);
+  }
+  .cube.show-back {
+    transform: translateZ(calc(var(--cube-size) / (-2))) rotateY(-180deg);
+  }
+  .cube.show-left {
+    transform: translateZ(calc(var(--cube-size) / (-2))) rotateY(90deg);
+  }
+  .cube.show-top {
+    transform: translateZ(calc(var(--cube-size) / (-2))) rotateX(-90deg);
+  }
+  .cube.show-bottom {
+    transform: translateZ(calc(var(--cube-size) / (-2))) rotateX(90deg);
+  }
+  
+  .cube__face {
+    position: absolute;
+    width: var(--cube-size);
+    height: var(--cube-size);
+    border: 2px solid lightgrey;
+    line-height: var(--cube-size);
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+  }
+  
+  .cube__face--front {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .cube__face--front img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80%;
+    transition: 0.2s;
+  }
+  
+  .cube__face--right {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  .cube__face--back {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  .cube__face--left {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  .cube__face--top {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  .cube__face--bottom {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  .cube__face--front {
+    transform: rotateY(0deg) translateZ(calc(var(--cube-size) / (2)));
+  }
+  .cube__face--right {
+    transform: rotateY(90deg) translateZ(calc(var(--cube-size) / (2)));
+  }
+  .cube__face--back {
+    transform: rotateY(180deg) translateZ(calc(var(--cube-size) / (2)));
+  }
+  .cube__face--left {
+    transform: rotateY(-90deg) translateZ(calc(var(--cube-size) / (2)));
+  }
+  .cube__face--top {
+    transform: rotateX(90deg) translateZ(calc(var(--cube-size) / (2)));
+  }
+  .cube__face--bottom {
+    transform: rotateX(-90deg) translateZ(calc(var(--cube-size) / (2)));
+  }
+  
+  div.scene:hover {
+    cursor: pointer;
+  }
+  div.scene:hover div.cube img {
+    height: 100%;
+  }
+  
+  /* section map */
+  
+  section.map {
+    height: 50vh;
+    width: 100%;
+    position: relative;
+    background-color: #000;
+    overflow: hidden;
+    z-index: -15;
+  }
+  
+  section.map img {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: grayscale(0.5) brightness(0.7);
+    transition: 2s 0.7s;
+  }
+  
+  section.map img.active {
+    width: 300%;
+    filter: grayscale(0.5) brightness(0.4) contrast(1.3) blur(4px);
+  }
+  
+  section.map p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-weight: 300;
+    font-size: 4vh;
+    color: white;
+    text-shadow: 2px 2px 4px #000;
+    opacity: 0;
+    transition: 1s;
+  }
+  
+  section.map p.active {
+    opacity: 1;
+  }
+  
+  section.about-me {
+    height: 40vh;
+    background-color: #000;
+  }
+  
+  @media (max-width: 1100px) and (orientation: portrait) {
+    :root {
+      --cube-size: 23vh;
+    }
+  
+    div.profile-photo {
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%, 0) rotateY(90deg);
+      height: 600px;
+      width: 600px;
+      box-shadow: 0 0 0 12px white, 0 0 0 24px rgba(0, 255, 0, 0.3);
+      border-radius: 300px;
+      background-size: cover;
+    }
+  
+    div.active-profile-photo {
+      transform: translate(-50%, 0) rotateY(0deg);
+      animation: profilePhotoAnimation 1s ease 1.1s 1;
+    }
+  
+    div.description {
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 70%;
+      text-align: center;
+      font-size: 36px;
+      line-height: 1.4;
+    }
+  
+    @keyframes profilePhotoAnimation {
+      0% {
+        box-shadow: 0 0 0 12px white, 0 0 0 24px rgba(0, 255, 0, 0.3);
+      }
+      50% {
+        box-shadow: 0 0 0 30px white, 0 0 0 50px rgba(0, 255, 0, 0.3);
+      }
+      100% {
+        box-shadow: 0 0 0 12px white, 0 0 0 24px rgba(0, 255, 0, 0.3);
+      }
+    }
+  
+    div.section-title {
+      height: 10vh;
+      line-height: 10vh;
+    }
+  
+    section.technologies {
+      position: relative;
+      height: 120vh;
+      width: 100%;
+      background-color: #000;
+    }
+  
+    div.cube-holder {
+      text-align: center;
+      margin: auto;
+      flex-basis: 50%;
+      flex-grow: 1;
+    }
+  }
+  
+  @media (max-width: 900px) and (orientation: portrait) {
+    :root {
+      --cube-size: 20vh;
+    }
+  
+    div.profile-photo {
+      top: 13%;
+      left: 50%;
+      transform: translate(-50%, 0) rotateY(90deg);
+      height: 400px;
+      width: 400px;
+      box-shadow: 0 0 0 12px white, 0 0 0 24px rgba(0, 255, 0, 0.3);
+      border-radius: 200px;
+      background-size: cover;
+    }
+  
+    div.active-profile-photo {
+      transform: translate(-50%, 0) rotateY(0deg);
+      animation: profilePhotoAnimation 1s ease 1.1s 1;
+    }
+  
+    div.description {
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 70%;
+      text-align: center;
+      font-size: 30px;
+      line-height: 1.4;
+    }
+  
+    @keyframes profilePhotoAnimation {
+      0% {
+        box-shadow: 0 0 0 12px white, 0 0 0 24px rgba(0, 255, 0, 0.3);
+      }
+      50% {
+        box-shadow: 0 0 0 30px white, 0 0 0 50px rgba(0, 255, 0, 0.3);
+      }
+      100% {
+        box-shadow: 0 0 0 12px white, 0 0 0 24px rgba(0, 255, 0, 0.3);
+      }
+    }
+  
+    div.section-title {
+      height: 10vh;
+      line-height: 10vh;
+    }
+  
+    section.technologies {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      background-color: #000;
+      /* border: 5px green solid; */
+    }
+  }
+  @media (max-width: 600px) and (orientation: portrait) {
+    :root {
+      --cube-size: 17vh;
+    }
+  
+    div.profile-photo {
+      top: 13%;
+      left: 50%;
+      transform: translate(-50%, 0) rotateY(90deg);
+      height: 250px;
+      width: 250px;
+      box-shadow: 0 0 0 7px white, 0 0 0 14px rgba(0, 255, 0, 0.3);
+      border-radius: 125px;
+      background-size: cover;
+    }
+  
+    div.active-profile-photo {
+      transform: translate(-50%, 0) rotateY(0deg);
+      animation: profilePhotoAnimation 1s ease 1.1s 1;
+    }
+  
+    div.description {
+      top: 52%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 70%;
+      text-align: center;
+      font-size: 20px;
+      line-height: 1.4;
+    }
+  
+    @keyframes profilePhotoAnimation {
+      0% {
+        box-shadow: 0 0 0 7px white, 0 0 0 14px rgba(0, 255, 0, 0.3);
+      }
+      50% {
+        box-shadow: 0 0 0 18px white, 0 0 0 32px rgba(0, 255, 0, 0.3);
+      }
+      100% {
+        box-shadow: 0 0 0 7px white, 0 0 0 14px rgba(0, 255, 0, 0.3);
+      }
+    }
+  
+    div.section-title {
+      height: 15vh;
+      line-height: 5vh;
+      font-size: 24px;
+      padding-top: 2.5vh;
+    }
+  
+    section.technologies {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      background-color: #000;
+      /* border: 5px green solid; */
+    }
+  
+    section.map {
+      height: 30vh;
+    }
+  
+    section.map img {
+      width: 200%;
+    }
+  
+    section.map img.active {
+      width: 240%;
+    }
+  
+    section.map p {
+      display: block;
+      width: 80%;
+      font-size: 20px;
+    }
+  
+    section.map p.active {
+      opacity: 1;
+    }
+  
+    section.about-me {
+      height: 40vh;
+      background-color: #000;
+    }
+  }
+  
+  @media (max-width: 400px) and (orientation: portrait) {
+    div.profile-photo {
+      top: 10%;
+    }
+  
+    div.description {
+      top: 52%;
+      width: 70%;
+      font-size: 19px;
+    }
+    div.section-title {
+      height: 15vh;
+      line-height: 5vh;
+      font-size: 24px;
+      padding-top: 2.5vh;
+    }
+  }
+  
+  @media (max-width: 361px) and (orientation: portrait) {
+    div.description {
+      top: 54%;
+      font-size: 18px;
+    }
+  }
+  @media (max-width: 359px) and (orientation: portrait) {
+    div.profile-photo {
+      top: 10%;
+      height: 220px;
+      width: 220px;
+    }
+  
+    div.description {
+      top: 54%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 70%;
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+  
+    div.section-title {
+      height: 15vh;
+      line-height: 5vh;
+      font-size: 20px;
+      padding-top: 2.5vh;
+    }
+  
+    section.map p {
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 1400px) and (orientation: landscape) {
+    :root {
+      --cube-size: 25vh;
+    }
+  
+    section.introduction {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+    }
+  
+    div.profile-photo {
+      top: 150px;
+      left: 10%;
+      height: 450px;
+      width: 450px;
+      border-radius: 225px;
+    }
+  
+    div.description {
+      width: 500px;
+      height: 250px;
+      position: absolute;
+      left: 55%;
+      top: 20%;
+      font-size: 32px;
+      line-height: 1.4;
+    }
+  
+    section.technologies {
+      position: relative;
+      height: 90vh;
+    }
+  
+    section.map p {
+      font-size: 40px;
+      width: 80%;
+    }
+  }
+  
+  @media (max-width: 1400px) and (min-height: 900px) and (orientation: landscape) {
+    section.introduction {
+      position: relative;
+      height: 70vh;
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 1200px) and (orientation: landscape) {
+    section.introduction {
+      position: relative;
+      height: 70vh;
+      width: 100%;
+    }
+  
+    div.profile-photo {
+      top: 20%;
+      left: 8%;
+      height: 350px;
+      width: 350px;
+      border-radius: 225px;
+    }
+  
+    div.description {
+      width: 45%;
+      position: absolute;
+      left: 50%;
+      top: 25%;
+      font-size: 25px;
+      line-height: 1.4;
+    }
+  
+    section.map p {
+      font-size: 35px;
+      width: 80%;
+    }
+  }
+  
+  @media (max-width: 900px) and (orientation: landscape) {
+    :root {
+      --cube-size: 30vh;
+    }
+  
+    section.introduction {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+    }
+  
+    div.profile-photo {
+      top: 17%;
+      left: 10%;
+      height: 70vh;
+      width: 70vh;
+      border-radius: 35vh;
+    }
+  
+    div.description {
+      width: 40%;
+      left: 52%;
+      top: 20%;
+      font-size: 19px;
+      line-height: 1.4;
+    }
+  
+    div.section-title {
+      height: 20vh;
+      line-height: 15vh;
+      font-size: 30px;
+      padding-top: 2.5vh;
+    }
+  
+    section.technologies {
+      position: relative;
+      height: 100vh;
+    }
+  
+    section.map p {
+      font-size: 28px;
+      width: 80%;
+    }
+  }
+  
+  @media (max-width: 800px) and (orientation: landscape) {
+    div.profile-photo {
+      top: 17%;
+      left: 7%;
+      height: 70vh;
+      width: 70vh;
+      border-radius: 35vh;
+    }
+  
+    div.description {
+      width: 40%;
+      left: 53%;
+      top: 20%;
+      font-size: 19px;
+      line-height: 1.4;
+    }
+  
+    section.map p {
+      font-size: 24px;
+    }
+  }
+  @media (max-width: 700px) and (orientation: landscape) {
+    div.profile-photo {
+      top: 17%;
+      left: 7%;
+      height: 70vh;
+      width: 70vh;
+      border-radius: 35vh;
+    }
+  
+    div.description {
+      width: 40%;
+      left: 53%;
+      top: 18%;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+  
+    section.map p {
+      font-size: 22px;
+    }
+  }
+  @media (max-width: 600px) and (orientation: landscape) {
+    div.profile-photo {
+      top: 17%;
+      left: 7%;
+      height: 70vh;
+      width: 70vh;
+      border-radius: 35vh;
+    }
+  
+    div.description {
+      width: 40%;
+      left: 53%;
+      top: 14%;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+  
+    section.map p {
+      font-size: 20px;
+    }
+  }
+  

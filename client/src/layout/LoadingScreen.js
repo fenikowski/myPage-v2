@@ -1,8 +1,14 @@
 import React from "react";
+import { useEffect } from "react";
 import "./style/LoadingPage.css";
 
-class LoadingScreen extends React.Component {
-  componentDidMount() {
+export default function LoadingScreen() {
+  useEffect(() => {
+    createLoadingScreen();
+    // eslint-disable-next-line
+  },[]);
+
+  const createLoadingScreen = function() {
     if (sessionStorage.getItem("pageLoaded") === "true") {
       document.querySelector("div.wrap").remove();
     } else {
@@ -12,7 +18,7 @@ class LoadingScreen extends React.Component {
       // inicialization
 
       // loading text animation
-      this.loadingTextAnimation();
+      loadingTextAnimation();
 
       // array for squares
       let squaresArray = [];
@@ -147,9 +153,9 @@ class LoadingScreen extends React.Component {
         }
       }, 100);
     }
-  }
+  };
 
-  loadingTextAnimation = () => {
+  const loadingTextAnimation = () => {
     const textContener = document.querySelector("div.loading");
     const text = "Loading";
     for (let i = 0; i <= text.length; i++) {
@@ -160,17 +166,13 @@ class LoadingScreen extends React.Component {
     }
   };
 
-  render() {
-    return (
-      <div className="wrap">
-        <div className="loadingScreen">
-          <div className="gradient" />
-          <div className="squares" />
-          <div className="loading" />
-        </div>
+  return (
+    <div className="wrap">
+      <div className="loadingScreen">
+        <div className="gradient"/>
+        <div className="squares"/>
+        <div className="loading"/>
       </div>
-    );
-  }
-}
-
-export default LoadingScreen;
+    </div>
+  );
+};

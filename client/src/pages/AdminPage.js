@@ -4,7 +4,7 @@ import "./style/admin.css";
 import Cookies from "universal-cookie";
 import axios from "axios";
 import SimpleBar from "simplebar-react";
-import "simplebar/dist/simplebar.css";
+import 'simplebar-react/dist/simplebar.min.css';
 
 class Admin extends React.Component {
   state = {

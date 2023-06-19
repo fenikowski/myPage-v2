@@ -1,7 +1,7 @@
 import ChromeLogo from "./img/chromeLogo.png";
 import Browsers from "./img/browsers.png";
 
-export default {
+const text = {
   es: {
     headers: {
       skillsh1: "Proyectos",
@@ -283,3 +283,5 @@ export default {
     }
   }
 };
+
+export default text;

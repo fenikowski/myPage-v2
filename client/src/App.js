@@ -1,53 +1,46 @@
 /* eslint-disable no-useless-escape */
 import React from "react";
+import { useState, useEffect } from "react";
 import LoadingScreen from "./layout/LoadingScreen";
 import Navigation from "./layout/Navigation";
 import Footer from "./layout/Footer";
 import Page from "./layout/Page";
 import Header from "./layout/Header";
-import "./styles/App.css";
-
 import Cookies from "universal-cookie";
 import axios from "axios";
+import "./styles/App.css";
 
-class App extends React.Component {
-  state = {
-    language: "es",
-    mobile: false
-  };
+export default function App() {
+  const [language, setLanguage] = useState("es");
+  const [isMobile, setIsMobile] = useState(false);
 
-  componentDidMount() {
-    this.mobilecheck();
-    this.languageCheck();
-    this.noteVisit();
-  }
+  // componentDidMount replacement
+  useEffect(() => {
+    checkIfMobile();
+    recoverLanguageFromSessionStorage();
+    saveVisitForStatistics();
+  }, []);
 
-  changeLanguage = (language) => {
+  const changeLanguage = function(language) {
     window.sessionStorage.setItem("language", language);
-    this.setState({ language });
+    setLanguage(language);
   };
 
-  languageCheck = () => {
+  const recoverLanguageFromSessionStorage = function() {
     switch (window.sessionStorage.getItem("language")) {
       case "es":
-        this.setState({
-          language: "es"
-        });
+        setLanguage("es");
         break;
       case "en":
-        this.setState({
-          language: "en"
-        });
+        setLanguage("en");
         break;
       default:
-        this.setState({
-          language: "es"
-        });
+        setLanguage("en");
         break;
     }
   };
 
-  noteVisit = () => {
+  const saveVisitForStatistics = function() {
     const cookie = new Cookies();
     if (!cookie.get("visited")) {
       cookie.set("visited", true, { maxAge: 60 * 60 * 1000 });
@@ -55,7 +48,7 @@ class App extends React.Component {
     }
   };
 
-  mobilecheck = () => {
+  const checkIfMobile = function() {
     let check = false;
     (function(a) {
       if (
@@ -69,25 +62,20 @@ class App extends React.Component {
         check = true;
     })(navigator.userAgent || navigator.vendor || window.opera);
     if (check) {
-      this.setState({
-        mobile: check
-      });
+      setIsMobile(check)
     }
   };
 
-  render() {
-    return (
-      <React.Fragment>
-        <LoadingScreen/>
-        <button className="language US" onClick={() => this.changeLanguage("en")}/>
-        <button className="language ES" onClick={() => this.changeLanguage("es")}/>
-        <Navigation language={this.state.language}/>
-        <Header language={this.state.language} mobile={this.state.mobile}/>
-        <Page language={this.state.language}/>
-        <Footer language={this.state.language}/>
-      </React.Fragment>
-    );
-  }
-}
-
-export default App;
+  
+  return (
+    <React.Fragment>
+      <LoadingScreen/>
+      <button className="language US" onClick={() => changeLanguage("en")}/>
+      <button className="language ES" onClick={() => changeLanguage("es")}/>
+      <Navigation language={language}/>
+      <Header language={language} mobile={isMobile}/>
+      <Page language={language}/>
+      <Footer language={language}/>
+    </React.Fragment>
+  );
+};

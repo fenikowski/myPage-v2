@@ -1,8 +1,8 @@
 import React from "react";
 import "./style/skills.css";
 import "./style/projects.css";
-import Projects from "./projects";
-import Code from "./code";
+import Projects from "../components/projects";
+import Code from "../components/code";
 
 class Skills extends React.Component {
   state = {};

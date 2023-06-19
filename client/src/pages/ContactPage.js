@@ -25,13 +25,13 @@ class Contact extends React.Component {
   }
 
   handleScroll = () => {
-    let boxes = document.querySelectorAll("div.address *");
-    for (const box of boxes) {
-      let boxTop = box.offsetTop;
+    const boxes = document.querySelectorAll("div.address *");
+    boxes.foreach((box) => {
+      const boxTop = box.offsetTop;
       if (window.scrollY + window.innerHeight > boxTop) {
         box.classList.add("active");
       }
-    }
+    });
   };
 
   handleInput = e => {
