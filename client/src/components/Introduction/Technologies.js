@@ -1,6 +1,6 @@
 import React from "react";
 import { Redirect } from "react-router";
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import JavaScriptLogo from "../../img/javaScriptLogo.png";
 import ReduxLogo from "../../img/ReduxLogo.png";
 import GimpLogo from "../../img/GimpLogo.png";
@@ -19,7 +19,7 @@ export default function Technologies() {
     const technologiesSection = useRef(null);
 
     // callbacks
-    const handleScroll = useCallback(() => {
+    const handleScroll = () => {
         const heightReached = window.scrollY + window.innerHeight >
             technologiesSection.current.offsetTop +
             technologiesSection.current.offsetHeight / 2;
@@ -75,7 +75,7 @@ export default function Technologies() {
             });
         };
     
-    }, [cubesLaunched]);
+    };
     
     // effects
     useEffect(() => {
