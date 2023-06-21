@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import bgcSkills from "../../img/galaxy.jpg";
 import trees from "../../img/trees.png";
 import JavaScriptLogo from "../../img/javaScriptLogo.png";
-import ReduxLogo from "../../img/ReduxLogo.png";
+import MySqlLogo from "../../img/MySqlLogo.png";
 import GimpLogo from "../../img/GimpLogo.png";
 import ReactLogo from "../../img/ReactLogo.png";
 import NativeLogo from "../../img/NativeLogo.jpg";
@@ -26,7 +26,7 @@ export default function HeaderProjects({ language, mobile }) {
 
   const bgcImages = useMemo(() => ([
     { img: JavaScriptLogo, scroll: scroll("div.skill.javascript")},
-    { img: ReduxLogo, scroll: scroll("div.skill.react")},
+    { img: MySqlLogo, scroll: scroll("div.skill.react")},
     { img: GimpLogo, scroll: scroll("div.skill.gimp")},
     { img: ReactLogo, scroll: scroll("div.skill.react")},
     { img: NativeLogo, scroll: scroll("div.skill.react")},
@@ -102,7 +102,7 @@ export default function HeaderProjects({ language, mobile }) {
       .forEach(a => (a.style.color = "white"));
     document.querySelector("nav.main-navigation div.shadow").style.boxShadow = "none";
 
-    // start the animation if hasn't started yet
+    // start the animation if it hasn't started yet
     !numberOfBalls && createBall();
 
     // cleanup code
@@ -119,8 +119,8 @@ export default function HeaderProjects({ language, mobile }) {
     <div className="background-abilities">
       <img src={bgcSkills} alt="night sky background"/>
       <img src={trees} alt="trees shadow"/>
-      <h1 className="name skills" style={{"z-index": 6}}>{titles.skillsh1}</h1>
-      <h2 className="specialty skills" style={{"z-index": 4}}>{titles.skillsh2}</h2>
+      <h1 className="name skills" style={{zIndex: 6}}>{titles.skillsh1}</h1>
+      <h2 className="specialty skills" style={{zIndex: 4}}>{titles.skillsh2}</h2>
     </div>
   );
 };

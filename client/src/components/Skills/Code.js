@@ -2,16 +2,16 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import JavaScriptLogo from "../../img/javaScriptLogo.png";
 import GimpLogo from "../../img/GimpLogo.png";
 import ReactLogo from "../../img/ReactLogo.png";
-import GitLogo from "../../img/GitLogo.png";
+import VueLogo from "../../img/VueLogo.png";
 import NodeLogo from "../../img/NodeLogo.png";
-import MongoLogo from "../../img/MongoLogo.png";
+import MySqlLogo from "../../img/MySqlLogo.png";
 import CSSLogo from "../../img/CSSLogo.png";
 import Data from "../../text";
 import "./styles/code.css";
 
 export default function Code({ language }) {
   // refs
-  const divCode = useRef(null)
+  const divCode = useRef(null);
 
   // states
   const [imgMove, setImageMove] = useState("");
@@ -51,9 +51,7 @@ export default function Code({ language }) {
     <div className="code-info scene">
       <div
         className="box"
-        style={{
-          transform: `translateZ(-5vh) rotateX(${boxRotation})`
-        }}
+        style={{ transform: `translateZ(-5vh) rotateX(${boxRotation})` }}
       >
         <div className="box__face box__face--front"></div>
         <div className="box__face box__face--bottom">
@@ -64,9 +62,9 @@ export default function Code({ language }) {
                 style={{
                   backgroundColor: color,
                   animation: stripesAnimation,
-                  right: width
+                  right: `${100 - width}%`
                 }}
-              ></div>
+              />
             </div>
             <p>
               {text.experience} {experience}
@@ -82,30 +80,24 @@ export default function Code({ language }) {
   return (
     <section className="code">
       <div className="code" ref={divCode}>
-        <img className={imgMove} src={JavaScriptLogo} alt="" />
-        <img className={imgMove} src={ReactLogo} alt="" />
-        <img className={imgMove} src={NodeLogo} alt="" />
-        <img className={imgMove} src={MongoLogo} alt="" />
-        <img className={imgMove} src={GimpLogo} alt="" />
-        <img className={imgMove} src={CSSLogo} alt="" />
-        <img className={imgMove} src={GitLogo} alt="" />
+        <img className={imgMove} src={JavaScriptLogo} alt="JavaScript Logo"/>
+        <img className={imgMove} src={ReactLogo} alt="React Logo"/>
+        <img className={imgMove} src={VueLogo} alt="Vue Logo"/>
+        <img className={imgMove} src={CSSLogo} alt="CSS Logo"/>
+        <img className={imgMove} src={NodeLogo} alt="Node Logo"/>
+        <img className={imgMove} src={MySqlLogo} alt="MySQL Logo"/>
+        <img className={imgMove} src={GimpLogo} alt="Gimp Logo"/>
         <div className="levels">
-          {createLevelsComponent("#F7DF1E", "0.5yr", "40%", text)}
-          {createLevelsComponent("#00D8FF", "0.5yr", "40%", text)}
-          {createLevelsComponent("#90C53F", "0.5yr", "60%", text)}
-          {createLevelsComponent("#6BB059", "0.5yr", "60%", text)}
-          {createLevelsComponent("#5B5442", "6yr", "70%", text)}
-          {createLevelsComponent("#2277FF", "0.5yr", "40%", text)}
-          {createLevelsComponent("#F05033", "0.5yr", "70%", text)}
+          {createLevelsComponent("#F7DF1E", "5 years", 80, text)}
+          {createLevelsComponent("#00D8FF", "5 years", 70, text)}
+          {createLevelsComponent("#3FB984", "4 years", 90, text)}
+          {createLevelsComponent("#2277FF", "5 years", 70, text)}
+          {createLevelsComponent("#90C53F", "5 years", 65, text)}
+          {createLevelsComponent("#4479A1", "4 years", 80, text)}
+          {createLevelsComponent("#5B5442", "10 years", 30, text)}
         </div>
         <div className="additional-info">
-          <p
-            style={{
-              opacity: textOpacity
-            }}
-          >
-            {text.info}
-          </p>
+          <p style={{ opacity: textOpacity }}>{text.info}</p>
         </div>
       </div>
     </section>
