@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import bgcSkills from "../../img/galaxy.jpg";
 import trees from "../../img/trees.png";
 import JavaScriptLogo from "../../img/javaScriptLogo.png";
@@ -14,104 +14,31 @@ import HTMLLogo from "../../img/HTMLLogo.png";
 import "./style/abilities-header.css";
 import Data from "../../text";
 
-class HeaderProjects extends React.Component {
-  state = {
-    backgroundImage: bgcSkills,
-    trees,
-    numberOfBalls: 0,
-    bgcImages: [
-      {
-        img: JavaScriptLogo,
-        scroll: () => {
-          window.scrollTo({
-            top: document.querySelector("div.skill.javascript").offsetTop,
-            behavior: "smooth"
-          });
-        }
-      },
-      {
-        img: ReduxLogo,
-        scroll: () => {
-          window.scrollTo({
-            top: document.querySelector("div.skill.react").offsetTop,
-            behavior: "smooth"
-          });
-        }
-      },
-      {
-        img: GimpLogo,
-        scroll: () => {
-          window.scrollTo({
-            top: document.querySelector("div.skill.gimp").offsetTop,
-            behavior: "smooth"
-          });
-        }
-      },
-      {
-        img: ReactLogo,
-        scroll: () => {
-          window.scrollTo({
-            top: document.querySelector("div.skill.react").offsetTop,
-            behavior: "smooth"
-          });
-        }
-      },
-      {
-        img: NativeLogo,
-        scroll: () => {
-          window.scrollTo({
-            top: document.querySelector("div.skill.react").offsetTop,
-            behavior: "smooth"
-          });
-        }
-      },
-      {
-        img: GitLogo,
-        scroll: () => {
-          window.scrollTo({
-            top: document.querySelector("div.skill.git").offsetTop,
-            behavior: "smooth"
-          });
-        }
-      },
-      {
-        img: NodeLogo,
-        scroll: () => {
-          window.scrollTo({
-            top: document.querySelector("div.skill.node").offsetTop,
-            behavior: "smooth"
-          });
-        }
-      },
-      {
-        img: MongoLogo,
-        scroll: () => {
-          window.scrollTo({
-            top: document.querySelector("div.skill.node").offsetTop,
-            behavior: "smooth"
-          });
-        }
-      },
-      { img: CSSLogo },
-      { img: HTMLLogo }
-    ]
+export default function HeaderProjects({ language, mobile }) {
+  const [numberOfBalls, setNumberOfBalls] = useState(0);
+
+  const scroll = function(reference) {
+    return () => window.scrollTo({
+      top: document.querySelector(reference).offsetTop,
+      behavior: "smooth"
+    });
   };
 
-  componentDidMount() {
-    document
-      .querySelectorAll("nav.main-navigation a")
-      .forEach(a => (a.style.color = "white"));
-    document.querySelector("nav.main-navigation div.shadow").style.boxShadow =
-      "none";
-    // document.querySelector("h1.name").style.position = "fixed";
-    document.querySelector("h1.name").style.zIndex = 6;
-    // document.querySelector("h2.specialty").style.position = "fixed";
-    document.querySelector("h2.specialty").style.zIndex = 4;
+  const bgcImages = useMemo(() => ([
+    { img: JavaScriptLogo, scroll: scroll("div.skill.javascript")},
+    { img: ReduxLogo, scroll: scroll("div.skill.react")},
+    { img: GimpLogo, scroll: scroll("div.skill.gimp")},
+    { img: ReactLogo, scroll: scroll("div.skill.react")},
+    { img: NativeLogo, scroll: scroll("div.skill.react")},
+    { img: GitLogo, scroll: scroll("div.skill.git")},
+    { img: NodeLogo, scroll: scroll("div.skill.node")},
+    { img: MongoLogo, scroll: scroll("div.skill.node")},
+    { img: CSSLogo },
+    { img: HTMLLogo }
+  ]),[]);
 
-    this.createBall();
-  }
-
-  createBall = () => {
+  // callbacks
+  const createBall = useCallback(() => {
     const ballStage = document.createElement("div");
     ballStage.className = "ball-stage";
 
@@ -135,13 +62,11 @@ class HeaderProjects extends React.Component {
 
     // image randomizing
     const randomImg = Math.floor(Math.random() * 10);
-    ballImage.style.backgroundImage = `url(${this.state.bgcImages[randomImg].img})`;
+    ballImage.style.backgroundImage = `url(${bgcImages[randomImg].img})`;
 
     // action randomazing
     ballStage.addEventListener("click", () => {
-      if (this.state.bgcImages[randomImg].scroll) {
-        this.state.bgcImages[randomImg].scroll();
-      }
+      bgcImages[randomImg].scroll?.();
     });
 
     //z-index randomizing
@@ -158,48 +83,44 @@ class HeaderProjects extends React.Component {
         break;
       default:
         break;
-    }
+    };
 
     ball.appendChild(ballImage);
     ballStage.appendChild(ball);
 
-    this.setState(prevState => ({
-      numberOfBalls: prevState.numberOfBalls + 1
-    }));
+    setNumberOfBalls(prev => prev + 1);
 
-    setTimeout(() => {
-      ballStage.remove();
-    }, size * 1000);
+    setTimeout(() => {ballStage.remove()}, size * 1000);
 
-    if (this.props.mobile) {
-      setTimeout(this.createBall, Math.floor(Math.random() * 10) * 200);
-    } else {
-      setTimeout(this.createBall, Math.floor(Math.random() * 10) * 100);
+    setTimeout(createBall, Math.floor(Math.random() * 10) * (mobile ? 200 : 100));
+  }, [bgcImages, mobile]);
+
+  useEffect(() => {
+    // give styles to the nav
+    document
+      .querySelectorAll("nav.main-navigation a")
+      .forEach(a => (a.style.color = "white"));
+    document.querySelector("nav.main-navigation div.shadow").style.boxShadow = "none";
+
+    // start the animation if hasn't started yet
+    !numberOfBalls && createBall();
+
+    // cleanup code
+    return () => {
+      for (let i = 0; i <= numberOfBalls * 2 + 10; i++) {
+        clearTimeout(i);
+      }
     }
-  };
+  }, [createBall, numberOfBalls]);
 
-  componentWillUnmount() {
-    for (let i = 0; i <= this.state.numberOfBalls * 2 + 10; i++) {
-      clearTimeout(i);
-    }
-  }
+  const titles = Data[language].headers;
 
-  render() {
-    let titles = "";
-    if (this.props.language === "es") {
-      titles = Data.es.headers;
-    } else if (this.props.language === "en") {
-      titles = Data.en.headers;
-    }
-    return (
-      <div className="background-abilities">
-        <img src={this.state.backgroundImage} alt="" />
-        <img src={this.state.trees} alt="" />
-        <h1 className="name skills">{titles.skillsh1}</h1>
-        <h2 className="specialty skills">{titles.skillsh2}</h2>
-      </div>
-    );
-  }
-}
-
-export default HeaderProjects;
+  return (
+    <div className="background-abilities">
+      <img src={bgcSkills} alt="night sky background"/>
+      <img src={trees} alt="trees shadow"/>
+      <h1 className="name skills" style={{"z-index": 6}}>{titles.skillsh1}</h1>
+      <h2 className="specialty skills" style={{"z-index": 4}}>{titles.skillsh2}</h2>
+    </div>
+  );
+};

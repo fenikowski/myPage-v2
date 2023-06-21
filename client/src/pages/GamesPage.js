@@ -4,15 +4,10 @@ import JavaScriptLogo from "../img/javaScriptLogo.png";
 import GitHubLogo from "../img/githubLogo.png";
 import Data from "../text";
 
-const Juegos = props => {
-  let games = "";
-  if (props.language === "es") {
-    games = Data.es.games;
-  } else if (props.language === "en") {
-    games = Data.en.games;
-  }
+export default function Games({ language }) {
+  const { games } = Data[language];
 
-  games = games.map((game, index) => (
+  const gamesComponents = games.map((game, index) => (
     <section className="juegos" key={index}>
       <div className="gradient-juegos" />
       <div className="description">
@@ -37,7 +32,7 @@ const Juegos = props => {
         <div>
           <img src={GitHubLogo} alt="github logo" />
           <p>
-            El código disponible en <br />
+            {game.description.four} <br />
             <a href={game.links.github}>GitHub</a>
           </p>
         </div>
@@ -45,7 +40,5 @@ const Juegos = props => {
     </section>
   ));
 
-  return <div className="gamePage">{games}</div>;
+  return <div className="gamePage">{gamesComponents}</div>;
 };
-
-export default Juegos;

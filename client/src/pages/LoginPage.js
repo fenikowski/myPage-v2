@@ -1,26 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import Cookies from "universal-cookie";
 import "./style/login.css";
 
-class Login extends React.Component {
-  state = {
-    login: "",
-    password: "",
-    info: ""
-  };
+export default function Login() {
+  const [login, setLogin] = useState("");
+  const [password, setPassword] = useState("");
+  const [info, setInfo] = useState("");
 
-  handleClick = e => {
+  const handleClick = e => {
     e.preventDefault();
 
     axios
-      .post("/api/login", {
-        username: this.state.login,
-        password: this.state.password
-      })
+      .post("/api/login", { username: login, password })
       .then(data => {
         const { info } = data.data;
-        this.setState({ info });
+        setInfo(info);
 
         if (info === "Logged correctly") {
           window.location = "/admin";
@@ -30,44 +25,36 @@ class Login extends React.Component {
       });
   };
 
-  handleInput = e => {
+  const handleInput = e => {
     if (e.target.type === "text") {
-      this.setState({
-        login: e.target.value
-      });
+      setLogin(e.target.value);
     } else if (e.target.type === "password") {
-      this.setState({
-        password: e.target.value
-      });
+      setPassword(e.target.value);
     }
   };
 
-  render() {
-    return (
-      <div className="admin">
-        <form action="submit">
-          <label>
-            login:{" "}
-            <input
-              type="text"
-              value={this.state.login}
-              onChange={this.handleInput}
-            />
-          </label>
-          <label>
-            password:{" "}
-            <input
-              type="password"
-              value={this.state.password}
-              onChange={this.handleInput}
-            />
-          </label>
-          <button onClick={this.handleClick}>connect</button>
-          <p>{this.state.info}</p>
-        </form>
-      </div>
-    );
-  }
-}
-
-export default Login;
+  return (
+    <div className="admin">
+      <form action="submit">
+        <label>
+          login:{" "}
+          <input
+            type="text"
+            value={login}
+            onChange={handleInput}
+          />
+        </label>
+        <label>
+          password:{" "}
+          <input
+            type="password"
+            value={password}
+            onChange={handleInput}
+          />
+        </label>
+        <button onClick={handleClick}>connect</button>
+        <p>{info}</p>
+      </form>
+    </div>
+  );
+};

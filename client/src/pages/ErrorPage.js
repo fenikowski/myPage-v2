@@ -1,13 +1,8 @@
 import React from "react";
 import Data from "../text";
 
-const Error = props => {
-  let text = "";
-  if (props.language === "es") {
-    text = Data.es.error;
-  } else if (props.language === "en") {
-    text = Data.en.error;
-  }
+export default function Error({ language }) {
+  const text = Data[language].error;
 
   return (
     <p
@@ -25,5 +20,3 @@ const Error = props => {
     </p>
   );
 };
-
-export default Error;

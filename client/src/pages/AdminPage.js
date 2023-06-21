@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router";
 import "./style/admin.css";
 import Cookies from "universal-cookie";
@@ -6,118 +6,111 @@ import axios from "axios";
 import SimpleBar from "simplebar-react";
 import 'simplebar-react/dist/simplebar.min.css';
 
-class Admin extends React.Component {
-  state = {
-    messages: [],
-    timesVisited: 0,
-    referrers: []
-  };
+export default function Admin() {
+  // states
+  const [messages, setMessages] = useState([]);
+  const [timesVisited, setTimesVisited] = useState(0);
+  const [referrers, setReferrers] = useState([]);
 
-  style = {
+  // effects
+  useEffect(() => {
+    getMessages();
+    getStats();
+  });
+
+  const style = {
     display: "flex",
     flexDirection: "column",
     flexGrow: "1",
     height: "30vh"
   };
 
-  componentDidMount() {
-    this.getMessages();
-    this.getStats();
-  }
-
-  getMessages = () => {
+  const getMessages = () => {
     const cookies = new Cookies();
     const logged = cookies.get("logged");
 
     axios
-      .get("/api/getMessages", {
-        logged
-      })
+      .get("/api/getMessages", { logged })
       .then(data => {
-        if (data.data.received !== false) {
-          this.setState({ messages: data.data.received });
+        if (data.data.received) {
+          setMessages(data.data.received);
         }
       })
       .catch(error => console.log(error));
   };
 
-  getStats = () => {
-    axios.get("/api/getStats").then(data =>
-      this.setState({
-        timesVisited: data.data.visits,
-        referrers: data.data.referrerList
-      })
-    );
+  const getStats = () => {
+    axios
+      .get("/api/getStats")
+      .then(data => {
+        const [visits, referrerList] = data.data;
+        setReferrers(referrerList);
+        setTimesVisited(visits);
+      });
   };
 
-  checkIfUserIsLogged = () => {
+  const checkIfUserIsLogged = () => {
     const cookies = new Cookies();
     return cookies.get("logged");
   };
 
-  handleDelete = id => {
-    console.log(id);
+  const handleDelete = id => {
     axios.post("/api/deleteMessage", { id }).then(() => this.getMessages());
   };
 
-  handleLogout = () => {
+  const handleLogout = () => {
     const cookies = new Cookies();
     cookies.remove("logged");
-    this.setState({ messages: [] });
+    setMessages([]);
   };
 
-  render() {
-    if (!this.checkIfUserIsLogged()) return <Redirect push to="/login" />;
+  if (!checkIfUserIsLogged()) return <Redirect push to="/login" />;
 
-    let messages = this.state.messages;
-    messages = messages.map(message => (
-      <div className="message" key={message._id}>
-        <div>{message.userName}</div>
-        <div>{message.email}</div>
-        <div>{message.message}</div>
-        <div>
-          <i
-            className="fas fa-times"
-            onClick={this.handleDelete.bind(this, message._id)}
-          />
-        </div>
+  const messagesComponents = messages.map(message => (
+    <div className="message" key={message._id}>
+      <div>{message.userName}</div>
+      <div>{message.email}</div>
+      <div>{message.message}</div>
+      <div>
+        <i
+          className="fas fa-times"
+          onClick={() => handleDelete(message._id)}
+        />
       </div>
-    ));
+    </div>
+  ));
 
-    return (
-      <div className="admin">
-        <button className="logout" onClick={this.handleLogout}>
-          logout
-        </button>
-        <div className="messages-box">
-          <div className="headers">
-            <div>Author</div>
-            <div>Email</div>
-            <div>Message</div>
-            <div>Manage</div>
-          </div>
-          <SimpleBar style={this.style}>{messages}</SimpleBar>
+  return (
+    <div className="admin">
+      <button className="logout" onClick={handleLogout}>
+        logout
+      </button>
+      <div className="messages-box">
+        <div className="headers">
+          <div>Author</div>
+          <div>Email</div>
+          <div>Message</div>
+          <div>Manage</div>
         </div>
-        <div className="stats-box">
-          <div className="headers">Statistics</div>
-          <p>
-            Messages in the box:{" "}
-            <span style={{ color: "red" }}>{this.state.messages.length}</span>
-          </p>
-          <p>
-            Times visited:{" "}
-            <span style={{ color: "red" }}>{this.state.timesVisited}</span>
-          </p>
-          <p>
-            Referrers:{" "}
-            {this.state.referrers.map(item => (
-              <span style={{ fontSize: "12px", display: "block" }}>{item}</span>
-            ))}
-          </p>
-        </div>
+        <SimpleBar style={style}>{messagesComponents}</SimpleBar>
       </div>
-    );
-  }
-}
-
-export default Admin;
+      <div className="stats-box">
+        <div className="headers">Statistics</div>
+        <p>
+          Messages in the box:{" "}
+          <span style={{ color: "red" }}>{messages.length}</span>
+        </p>
+        <p>
+          Times visited:{" "}
+          <span style={{ color: "red" }}>{timesVisited}</span>
+        </p>
+        <p>
+          Referrers:{" "}
+          {referrers.map(item => (
+            <span style={{ fontSize: "12px", display: "block" }}>{item}</span>
+          ))}
+        </p>
+      </div>
+    </div>
+  );
+};

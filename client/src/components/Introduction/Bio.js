@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { useState, useEffect, useRef } from "react";
 
 export default function Bio({ text }) {
@@ -7,45 +7,34 @@ export default function Bio({ text }) {
   
     // states
     const [passedText, setPassedText] = useState("");
-    const [activeLetter, setActiveLetter] = useState(-15);
     const [photoClass, setPhotoClass] = useState("");
-
-    // effects
-    useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
+    const [textAnimationActivated, setTextAnimationActivated] = useState(false);
     
-        // cleanup code
-        return () => window.removeEventListener("scroll", handleScroll);
-        // eslint-disable-next-line
-    },[activeLetter]);
-
-    const addLetter = () => {
-        if (activeLetter < text.length) {
-            if (activeLetter >= 0) {
-                setPassedText(passedText + text[activeLetter]);
+    // callbacks
+    const addLetter = useCallback((activeLetterParameter = -15) => {
+        if ((activeLetterParameter < text.length) && window.scrollY >= 100) {
+            
+            // starts adding letters if counter equal or bigger than 0
+            if (activeLetterParameter >= 0) {
+                setPassedText((prevPassedText) => prevPassedText + text[activeLetterParameter]);
             }
 
-            setActiveLetter(activeLetter + 1);
-
             // ends the recursion when all the letters passed
-            if (text.length === activeLetter) return;
-
-            // prevents doble launching
-            if (window.scrollY < 100) return;
+            if (text.length === activeLetterParameter) return;
 
             // sets interval (recursive function)
-            setTimeout(addLetter, 15);
+            setTimeout(() => addLetter(activeLetterParameter + 1), 15);
         };
-    };
+    }, [text]);
     
-    const handleScroll = () => {
+    const handleScroll = useCallback(() => {
         if (
             (window.scrollY + window.innerHeight) > 
             (introductionSection.current.offsetTop + introductionSection.current.offsetHeight / 2) &&
-            (photoClass === "" && passedText === "")
+            !textAnimationActivated
         ) {
-
-            addLetter();
+            !textAnimationActivated && addLetter();
+            setTextAnimationActivated(true);
             setPhotoClass("active-profile-photo");
 
             // border div
@@ -55,11 +44,20 @@ export default function Bio({ text }) {
 
         } else if (window.scrollY < 100) {
             setPassedText("");
-            setActiveLetter(-15);
             setPhotoClass("");
             setPassedText("");
+            setTextAnimationActivated(false);
         }
-    };
+    }, [textAnimationActivated, addLetter]);
+
+    // effects
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+    
+        // cleanup code
+        return () => window.removeEventListener("scroll", handleScroll);
+        // eslint-disable-next-line
+    },[handleScroll]);
 
     const border = (
         <div className="border">

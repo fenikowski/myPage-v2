@@ -1,13 +1,11 @@
 import "./style/achievment.css"
 import React from "react";
 
-const Achievment = props => {
+export default function Achievment({ text }) {
     
     return (
         <div className="achievment">
-            <p>{props.text}</p>
+            <p>{text}</p>
         </div>
-    )
+    );
 };
-
-export default Achievment;

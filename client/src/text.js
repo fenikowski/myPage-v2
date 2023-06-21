@@ -30,7 +30,7 @@ const text = {
         "Actualmente vivo en Valéncia adonde llegué hace dos años para acabar mis estudios y me decidí por quedar. Sigo buscando ofertas de trabajo, si estás interesado, escríbeme en sección "
     },
     skills: {
-      expirience: "Expiriencia: ",
+      experience: "Expiriencia: ",
       info: `En mi trabajo uso las tecnologías más ardientes y modernas, cuales actualmente se están tomando la control del mundo de programación. El front-end basado en React complemento con NodeJS en back-end y mongoDB database. Lo que no puedo crear en CSS, me lo consigo en GIMP - editor de gráfica. Continuamente amplifico mi conjunto de habilidades para volverme en programista cada vez más complejo. Por ahora, estoy buscando
       una oportunidad para desarrollarme aun más en mi primer empleo en el sector IT.`,
       skillsComponent: [
@@ -82,6 +82,7 @@ const text = {
                     contiene imagenes y sonidos de licencia 'open source'. El uso no
                     es comercial, pero se admite gratuito para cualquier uso
                     personal.`,
+          four: `El código disponible en`,
           image: ChromeLogo
         },
         links: {
@@ -104,6 +105,7 @@ const text = {
                     contiene imagenes y sonidos de licencia 'open source'. El uso no
                     es comercial, pero se admite gratuito para cualquier uso
                     personal.`,
+          four: `El código disponible en`,
           image: Browsers
         },
         links: {
@@ -126,6 +128,7 @@ const text = {
                     contiene imagenes y sonidos de licencia 'open source'. El uso no
                     es comercial, pero se admite gratuito para cualquier uso
                     personal.`,
+          four: `El código disponible en`,
           image: Browsers
         },
         links: {
@@ -181,7 +184,7 @@ const text = {
         "Currently I live in Valencia where I came two years ago to complete my studies and I decided to stay. I'm searching for job offers, if you're interested in cooperation, write me in section "
     },
     skills: {
-      expirience: "Expirience: ",
+      experience: "experience: ",
       info: `In my work I use the hottest, modern technologies, which are currently taking over the programming world. React based front-end I complement with NodeJS on back-end side and mongoDB database. What I cannot create in CSS, I get done in GIMP graphic editor. I'm a self-learning, passionate code lover. I continusly amplify my skillset and become more and more complete programist. Currently I'm looking for a opportunity to develop in my first employment in IT.`,
       skillsComponent: [
         {
@@ -222,6 +225,7 @@ const text = {
                     (ES6)`,
           two: `Current version works only in Chrome for desktops`,
           three: `This game is written by me (Igor Fenikowski), although it contains images and sounds of open source licence. The use may not be commercial, but free for any personal purposes.`,
+          four: `Code available on`,
           image: ChromeLogo
         },
         links: {
@@ -236,6 +240,7 @@ const text = {
           one: `The game was written in pure JavaScript (ES6)`,
           two: ` Current version works in all the popular browsers and mobiles.`,
           three: `This game is written by me (Igor Fenikowski), although it contains images and sounds of open source licence. The use may not be commercial, but free for any personal purposes.`,
+          four: `Code available on`,
           image: Browsers
         },
         links: {
@@ -250,6 +255,7 @@ const text = {
           one: `The game was written in pure JavaScript (ES6)`,
           two: `Current version works in all the popular browsers (without mobiles).`,
           three: `This game is written by me (Igor Fenikowski), although it contains images and sounds of open source licence. The use may not be commercial, but free for any personal purposes.`,
+          four: `Code available on`,
           image: Browsers
         },
         links: {
