@@ -14,7 +14,7 @@ export default function App() {
   const [language, setLanguage] = useState("en");
   const [isMobile, setIsMobile] = useState(false);
 
-  // componentDidMount replacement
+  // effects
   useEffect(() => {
     checkIfMobile();
     recoverLanguageFromSessionStorage();

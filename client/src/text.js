@@ -18,7 +18,7 @@ const text = {
       contact: "Contact"
     },
     introduction: {
-      text: `¡Hola, bienvenidos a mi página! Soy Igor Fenikowski, un estudiante
+      text: `¡Hola, bienvenido a mi página! Soy Igor Fenikowski, un estudiante
   recién graduado de la Universidad de Varsovia. Me dedico a creación de
   aplicaciones de web usando las tecnologías nuevas y frameworks
   populares. En esta página encontrarás informaciones sobre mi, mis
@@ -31,8 +31,7 @@ const text = {
     },
     skills: {
       experience: "Expiriencia: ",
-      info: `En mi trabajo uso las tecnologías más ardientes y modernas, cuales actualmente se están tomando la control del mundo de programación. El front-end basado en React complemento con NodeJS en back-end y mongoDB database. Lo que no puedo crear en CSS, me lo consigo en GIMP - editor de gráfica. Continuamente amplifico mi conjunto de habilidades para volverme en programista cada vez más complejo. Por ahora, estoy buscando
-      una oportunidad para desarrollarme aun más en mi primer empleo en el sector IT.`,
+      info: `¡Hola! ¡Bienvenid@ a mi página! Soy Igor, un programador con 5 años de experiencia en desarrollo de software. Poseo un título de Máster en Inteligencia Artificial de la Universidad Internacional de Valencia y una licenciatura en Gestión de la Universidad de Varsovia. Mi especialidad es crear aplicaciones utilizando frameworks modernos y populares. Disfruto explorando las últimas tecnologías y encontrando soluciones innovadoras para desafíos complejos. Me comprometo a aprender de forma continua y expandir mis habilidades como programador. En esta página puedes consultar mi currículum, revisar mi código y contactarme. Me alegra que hayas decidido echar un vistazo aquí.`,
       skillsComponent: [
         {
           description: `JavaScript es un lenguaje bastante fresco, pero va creciendo, despertando mucha esperanza para el futuro. Yo lo uso creando tanto front-end de aplicaciónes como el back-end. Utilizandolo y su objetividad escribí unos juegos que encontrarás en otra sección de esta página.`
@@ -177,7 +176,7 @@ const text = {
       contact: "Contact"
     },
     introduction: {
-      text: `Hey, welcome to my page! I'm Igor Fenikowski, a student, recently graduated from the Univeristy of Warsaw. I create web aplications using modern technologies and popular frameworks. On this site, you will find informations about me, my skills and games I made. Likewise you can contact me here and revise my code. I'm glad you decided to take a look here.`,
+      text: `Hi! Welcome to my page. I'm Igor, a programmer with 5 years of experience in software development. I hold a Master's degree in Artificial Intelligence from the International University of Valencia and a Bachelor's degree in Management from the University of Warsaw. I specialize in creating applications using modern and popular frameworks and enjoy exploring the latest technologies. On this page you can check out my resume, review my code and contact me.`,
       technologies:
         "I use most recent technologies to create modern web aplicacions",
       actualInfo:
@@ -185,7 +184,7 @@ const text = {
     },
     skills: {
       experience: "experience: ",
-      info: `In my work I use the hottest, modern technologies, which are currently taking over the programming world. React based front-end I complement with NodeJS on back-end side and mongoDB database. What I cannot create in CSS, I get done in GIMP graphic editor. I'm a self-learning, passionate code lover. I continusly amplify my skillset and become more and more complete programist. Currently I'm looking for a opportunity to develop in my first employment in IT.`,
+      info: `In my apps I use the hottest, modern technologies, which are currently taking over the programming world. React based front-end I complement with NodeJS on back-end side and MySQL database. What I cannot create in CSS, I get done in GIMP graphic editor. I'm a self-learning, passionate code lover. I continusly amplify my skillset and become more and more complete programist.`,
       skillsComponent: [
         {
           description: `JavaScript is a fresh and exciting language, which is growing providing more and more tools and posibilities for development of modern aplications. I use it creating front-end as well as back-end of my aplications. Taking advantage of it and it's object oriented programming I wrote few games which you'll find in other section.`

@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import JavaScriptLogo from "../../img/javaScriptLogo.png";
-import GimpLogo from "../../img/GimpLogo.png";
+import PythonLogo from "../../img/PythonLogo.png";
 import ReactLogo from "../../img/ReactLogo.png";
 import VueLogo from "../../img/VueLogo.png";
 import NodeLogo from "../../img/NodeLogo.png";
@@ -86,7 +86,7 @@ export default function Code({ language }) {
         <img className={imgMove} src={CSSLogo} alt="CSS Logo"/>
         <img className={imgMove} src={NodeLogo} alt="Node Logo"/>
         <img className={imgMove} src={MySqlLogo} alt="MySQL Logo"/>
-        <img className={imgMove} src={GimpLogo} alt="Gimp Logo"/>
+        <img className={imgMove} src={PythonLogo} alt="Python Logo"/>
         <div className="levels">
           {createLevelsComponent("#F7DF1E", "5 years", 80, text)}
           {createLevelsComponent("#00D8FF", "5 years", 70, text)}
@@ -94,7 +94,7 @@ export default function Code({ language }) {
           {createLevelsComponent("#2277FF", "5 years", 70, text)}
           {createLevelsComponent("#90C53F", "5 years", 65, text)}
           {createLevelsComponent("#4479A1", "4 years", 80, text)}
-          {createLevelsComponent("#5B5442", "10 years", 30, text)}
+          {createLevelsComponent("#4587B9", "1 year", 50, text)}
         </div>
         <div className="additional-info">
           <p style={{ opacity: textOpacity }}>{text.info}</p>

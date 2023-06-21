@@ -2,13 +2,13 @@ import React, { useCallback } from "react";
 import { Redirect } from "react-router";
 import { useState, useEffect, useRef } from "react";
 import JavaScriptLogo from "../../img/javaScriptLogo.png";
-import ReduxLogo from "../../img/ReduxLogo.png";
-import GimpLogo from "../../img/GimpLogo.png";
+import PythonLogo from "../../img/PythonLogo.png";
+import VueLogo from "../../img/VueLogo.png";
 import ReactLogo from "../../img/ReactLogo.png";
 import NativeLogo from "../../img/NativeLogo.jpg";
 import GitLogo from "../../img/GitLogo.png";
 import NodeLogo from "../../img/NodeLogo.png";
-import MongoLogo from "../../img/MongoLogo.png";
+import MySqlLogo from "../../img/MySqlLogo.png";
 
 export default function Technologies() {
     // states
@@ -40,7 +40,7 @@ export default function Technologies() {
 
                     prevNumber = number;
 
-                    if (counter === 5) return (cube.className = "cube show-front");
+                    if (counter === 3 || cube.className === "cube show-front") return (cube.className = "cube show-front");
 
                     switch (number) {
                     case 0:
@@ -125,10 +125,10 @@ export default function Technologies() {
                 {cube(JavaScriptLogo, "javascript")}
                 {cube(ReactLogo, "react")}
                 {cube(NativeLogo, "react")}
-                {cube(ReduxLogo, "react")}
-                {cube(GimpLogo, "gimp")}
+                {cube(PythonLogo, "react")}
+                {cube(VueLogo, "gimp")}
                 {cube(NodeLogo, "node")}
-                {cube(MongoLogo, "node")}
+                {cube(MySqlLogo, "node")}
                 {cube(GitLogo, "git")}
             </div>
         </section>
