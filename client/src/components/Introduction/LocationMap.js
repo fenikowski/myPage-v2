@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import Map from "../../img/map.png";
 import "./styles/locationMap.css"
 
@@ -8,16 +8,13 @@ export default function LocationMap({ text }) {
     const mapTextRef = useRef(null);
     const mapSection = useRef(null);
 
-    // effects
-    useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
-
-        // cleanup code
-        return () => window.removeEventListener("scroll", handleScroll);
-        // eslint-disable-next-line
+    // callbacks
+    const mapAnimation = useCallback(() => {
+        mapImageRef.current.classList.add("active");
+        mapTextRef.current.classList.add("active");
     },[]);
-
-    const handleScroll = () => {
+    
+    const handleScroll = useCallback(() => {
         if (
             window.scrollY + window.innerHeight >
             mapSection.current.offsetTop +
@@ -25,12 +22,15 @@ export default function LocationMap({ text }) {
         ) {
             mapAnimation();
         }
-    };
-    
-    const mapAnimation = () => {
-        mapImageRef.current.classList.add("active");
-        mapTextRef.current.classList.add("active");
-    };
+    },[mapAnimation]);
+
+    // effects
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+
+        // cleanup code
+        return () => window.removeEventListener("scroll", handleScroll);
+    },[handleScroll]);
 
     return (
         <section className="map" ref={mapSection}>

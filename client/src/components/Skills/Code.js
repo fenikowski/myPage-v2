@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
-
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import JavaScriptLogo from "../../img/javaScriptLogo.png";
 import GimpLogo from "../../img/GimpLogo.png";
 import ReactLogo from "../../img/ReactLogo.png";
@@ -7,9 +6,7 @@ import GitLogo from "../../img/GitLogo.png";
 import NodeLogo from "../../img/NodeLogo.png";
 import MongoLogo from "../../img/MongoLogo.png";
 import CSSLogo from "../../img/CSSLogo.png";
-
 import Data from "../../text";
-
 import "./styles/code.css";
 
 export default function Code({ language }) {
@@ -22,16 +19,8 @@ export default function Code({ language }) {
   const [stripesAnimation, setStripesAnimation] = useState("");
   const [textOpacity, setTextOpacity] = useState("0");
 
-  // effects
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    // cleanup code
-    return () => window.removeEventListener("scroll", handleScroll);
-    // eslint-disable-next-line
-  },[]);
-
-  const handleScroll = () => {
+  // callbacks
+  const handleScroll = useCallback(() => {
     if (
       window.scrollY >
       window.innerHeight + divCode.current.offsetHeight / 2 + divCode.current.offsetTop
@@ -47,7 +36,16 @@ export default function Code({ language }) {
         setTextOpacity("1");
       }, 2500);
     }
-  };
+  },[]);
+
+  // effects
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    // cleanup code
+    return () => window.removeEventListener("scroll", handleScroll);
+  },[handleScroll]);
+
 
   const createLevelsComponent = (color, experience, width, text) => (
     <div className="code-info scene">

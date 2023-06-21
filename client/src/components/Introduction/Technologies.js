@@ -83,7 +83,6 @@ export default function Technologies() {
     
         // cleanup code
         return () => window.removeEventListener("scroll", handleScroll);
-        // eslint-disable-next-line
     },[handleScroll]);
 
     const handleOnClick = () => {

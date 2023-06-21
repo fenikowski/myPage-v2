@@ -1,14 +1,23 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import "./style/LoadingPage.css";
 
 export default function LoadingScreen() {
-  useEffect(() => {
-    createLoadingScreen();
-    // eslint-disable-next-line
+  // states
+  const [loadingAnimationStarted, setLoadingAnimationStarted] = useState(false);
+
+  // callbacks
+  const loadingTextAnimation = useCallback(() => {
+    const textContener = document.querySelector("div.loading");
+    const text = "Loading";
+    for (let i = 0; i <= text.length; i++) {
+      const letter = document.createElement("div");
+      letter.textContent = text[i];
+      textContener.appendChild(letter);
+      letter.style.animation = `letters 2s ${i * 0.3}s ease infinite`;
+    }
   },[]);
 
-  const createLoadingScreen = function() {
+  const createLoadingScreen = useCallback(() => {
     if (sessionStorage.getItem("pageLoaded") === "true") {
       document.querySelector("div.wrap").remove();
     } else {
@@ -65,15 +74,9 @@ export default function LoadingScreen() {
 
             //background disappearance
             document.querySelector("div.gradient").style.left = `-100%`;
-            setTimeout(function() {
-              document.querySelector("div.gradient").style.opacity = "0";
-            }, 2000);
-            setTimeout(function() {
-              document.body.classList.remove("stop-scrolling");
-            }, 3500);
-            setTimeout(function() {
-              document.querySelector("div.wrap").remove();
-            }, 5000);
+            setTimeout(() => document.querySelector("div.gradient").style.opacity = "0", 2000);
+            setTimeout(() => document.body.classList.remove("stop-scrolling"), 3500);
+            setTimeout(() => document.querySelector("div.wrap").remove(), 5000);
 
             wave(index);
 
@@ -141,10 +144,7 @@ export default function LoadingScreen() {
 
       // flag is set to delay loading screen dissapearance by 2s
       let flagForLoading = false;
-
-      setTimeout(() => {
-        flagForLoading = true;
-      }, 2000);
+      setTimeout(() => flagForLoading = true, 2000);
 
       const readyStateCheckInterval = setInterval(function() {
         if (document.readyState === "complete" && flagForLoading === true) {
@@ -153,18 +153,13 @@ export default function LoadingScreen() {
         }
       }, 100);
     }
-  };
-
-  const loadingTextAnimation = () => {
-    const textContener = document.querySelector("div.loading");
-    const text = "Loading";
-    for (let i = 0; i <= text.length; i++) {
-      const letter = document.createElement("div");
-      letter.textContent = text[i];
-      textContener.appendChild(letter);
-      letter.style.animation = `letters 2s ${i * 0.3}s ease infinite`;
-    }
-  };
+  }, [loadingTextAnimation]);
+  
+  // effects
+  useEffect(() => {
+    !loadingAnimationStarted && createLoadingScreen();
+    setLoadingAnimationStarted(true);
+  },[loadingAnimationStarted, createLoadingScreen]);
 
   return (
     <div className="wrap">

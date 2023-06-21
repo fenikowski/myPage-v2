@@ -56,7 +56,6 @@ export default function Bio({ text }) {
     
         // cleanup code
         return () => window.removeEventListener("scroll", handleScroll);
-        // eslint-disable-next-line
     },[handleScroll]);
 
     const border = (
