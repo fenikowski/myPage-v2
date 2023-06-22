@@ -1,0 +1,50 @@
+div.achievment {
+    min-height: 15vh;
+    background-color: #eee;
+    color: #000;
+    margin-bottom: 20vh;
+    padding: 5px;
+    border: black solid 1px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+div.achievment:last-child {
+    margin-bottom: 5vh;
+}
+
+.achievment .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-basis: auto;
+}
+
+.achievment .right {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.achievment img {
+    height: 5vh;
+    margin-right: 5px;
+}
+
+.achievment div.right {
+    padding: 0 5px;
+}
+
+.achievment .title {
+    font-weight: 500;
+    font-size: 1.4rem;
+    height: 5vh;
+    line-height: 5vh;
+}
+
+.achievment .description {
+    font-weight: 300;
+    text-align: justify;
+}

@@ -23,7 +23,7 @@ export default function Bio({ text }) {
             if (text.length === activeLetterParameter) return;
 
             // sets interval (recursive function)
-            setTimeout(() => addLetter(activeLetterParameter + 1), 15);
+            setTimeout(() => addLetter(activeLetterParameter + 1), 10);
         };
     }, [text]);
     

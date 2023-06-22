@@ -5,19 +5,16 @@
 }
 
 .career .left {
-    background-color: #ddd;
     flex-basis: 50%;
 }
 
 .career .right {
-    background-color: #ccc;
     flex-basis: 50%;
 }
 
 .separator {
-    background-color: #000;
+    background-color: lime;
     width: 3px;
-    margin: 5vh 0;
 }
 
 .career .left {
@@ -26,12 +23,28 @@
     justify-content: flex-end;
 }
 
+.career .right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
 .career .left .column {
     height: 100%;
-    flex-basis: 50%;
-    background-color: #555;
+    flex-basis: 60%;
 
     display: flex;
     flex-direction: column;
     padding: 10px;
+    padding-top: 5vh;
+}
+
+.career .right .column {
+    height: 100%;
+    flex-basis: 60%;
+
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    padding-top: 20vh;
 }
