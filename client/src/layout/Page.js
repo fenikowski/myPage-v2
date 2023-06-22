@@ -8,39 +8,37 @@ import Admin from "../pages/AdminPage.js";
 import Login from "../pages/LoginPage.js";
 import Error from "../pages/ErrorPage.js";
 
-const Page = props => {
+export default function Page({language}) {
   return (
     <div className="page">
       <Switch>
         <Route
           path="/"
           exact
-          render={() => <Introduction language={props.language} />}
+          render={() => <Introduction language={language} />}
         />
         <Route
           path="/projects"
-          render={() => <Skills language={props.language} />}
+          render={() => <Skills language={language} />}
         />
         <Route
           path="/games"
-          render={() => <Juegos language={props.language} />}
+          render={() => <Juegos language={language} />}
         />
         <Route
           path="/contact"
-          render={() => <Contact language={props.language} />}
+          render={() => <Contact language={language} />}
         />
         <Route
           path="/admin"
-          render={() => <Admin language={props.language} />}
+          render={() => <Admin language={language} />}
         />
         <Route
           path="/login"
-          render={() => <Login language={props.language} />}
+          render={() => <Login language={language} />}
         />
-        <Route render={() => <Error language={props.language} />} />
+        <Route render={() => <Error language={language} />} />
       </Switch>
     </div>
   );
 };
-
-export default Page;

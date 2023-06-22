@@ -1,6 +1,6 @@
 import React from "react";
 import "./style/introduction.css";
-// import Career from "../components/career";
+import Career from "../components/Introduction/Career";
 import LocationMap from "../components/Introduction/LocationMap";
 import Data from "../text";
 import Technologies from "../components/Introduction/Technologies";
@@ -11,7 +11,7 @@ export default function Introduction({ language }) {
   return (
     <React.Fragment>
       <Bio text={text}/>
-      {/* <Career/> */}
+      <Career/>
       <div className="section-title">
         <p>{technologies}</p>
       </div>

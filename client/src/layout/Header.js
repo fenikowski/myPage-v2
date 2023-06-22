@@ -6,26 +6,24 @@ import HeaderContact from "../components/headers/HeaderContact";
 import HeaderSkills from "../components/headers/HeaderSkills";
 import { Switch, Route } from "react-router";
 
-const Header = props => {
+export default function Header({ language, mobile }) {
   return (
     <Switch>
       <Route path="/" exact component={InitialHeader} />
       <Route
         path="/games"
-        render={() => <HeaderGames language={props.language} />}
+        render={() => <HeaderGames language={language} />}
       />
       <Route
         path="/projects"
         render={() => (
-          <HeaderSkills language={props.language} mobile={props.mobile} />
+          <HeaderSkills language={language} mobile={mobile} />
         )}
       />
       <Route
         path="/contact"
-        render={() => <HeaderContact language={props.language} />}
+        render={() => <HeaderContact language={language} />}
       />
     </Switch>
   );
 };
-
-export default Header;

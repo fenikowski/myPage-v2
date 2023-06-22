@@ -3,13 +3,8 @@ import { NavLink } from "react-router-dom";
 import "./style/Nav.css";
 import Data from "../text";
 
-const Navigation = props => {
-  let titles = "";
-  if (props.language === "es") {
-    titles = Data.es.navigation;
-  } else if (props.language === "en") {
-    titles = Data.en.navigation;
-  }
+export default function Navigation({ language }) {
+  const titles = Data[language].navigation;
 
   const navList = [
     {
@@ -50,5 +45,3 @@ const Navigation = props => {
     </nav>
   );
 };
-
-export default Navigation;
