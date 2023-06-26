@@ -31,7 +31,7 @@
 
 .career .left .column {
     height: 100%;
-    flex-basis: 60%;
+    flex-basis: 75%;
 
     display: flex;
     flex-direction: column;
@@ -41,10 +41,10 @@
 
 .career .right .column {
     height: 100%;
-    flex-basis: 60%;
+    flex-basis: 75%;
 
     display: flex;
     flex-direction: column;
     padding: 10px;
-    padding-top: 20vh;
+    padding-top: 30vh;
 }

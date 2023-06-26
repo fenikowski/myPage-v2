@@ -1,13 +1,20 @@
 div.achievment {
     min-height: 15vh;
-    background-color: #eee;
+    background-color: #f3f1f1;
     color: #000;
-    margin-bottom: 20vh;
-    padding: 5px;
-    border: black solid 1px;
+    margin-bottom: 25vh;
+    padding: 10px;
+    border: black solid 2px;
+    border-radius: 5px;
+    transform: rotateX(90deg);
+    transition: 0.4s;
 
     display: flex;
     flex-direction: row;
+}
+
+div.achievment.active {
+    transform: rotateX(0deg);
 }
 
 div.achievment:last-child {
