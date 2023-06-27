@@ -109,6 +109,18 @@ div.stripe-container div.stripe {
   position: relative;
   flex-grow: 0;
   overflow: hidden;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+div.stripe-container div.stripe p {
+  font-size: 0.7em;
+  text-transform: uppercase;
+  font-weight: 200;
+  flex-basis: 33%;
+  opacity: 0.45;
 }
 
 div.stripe-container div.stripe div.stripe-filling {
@@ -118,6 +130,7 @@ div.stripe-container div.stripe div.stripe-filling {
   left: 0%;
   background-color: blue;
   transform: translate(-100%, 0);
+  opacity: 0.7;
 }
 
 @keyframes stripe-loading {
@@ -129,13 +142,13 @@ div.stripe-container div.stripe div.stripe-filling {
   }
 }
 
-div.stripe-container p {
+div.stripe-container p.experience {
   display: block;
   font-size: 1vw;
   color: white;
   line-height: normal;
   padding: 1vh 0;
-  font-weight: 300;
+  font-weight: 500;
 }
 
 div.additional-info {
@@ -272,7 +285,7 @@ div.additional-info p {
     align-items: flex-end;
   }
 
-  div.stripe-container p {
+  div.stripe-container p.experience {
     display: block;
     font-size: 3vw;
     color: white;

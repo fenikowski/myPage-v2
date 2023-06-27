@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import ReactScreen from "../../img/ReactScreen.png";
+// import ReactScreen from "../../img/ReactScreen.png";
 import ToDoScreen from "../../img/todolistscreen.png";
 import BiuroScreen from "../../img/biuroScreen.png";
 import BiuroScreen2 from "../../img/biuroScreen2.png";
@@ -194,20 +194,20 @@ export default function Projects({ language }) {
       description:
         "A game written as a part of my growth as a javascript programmer. An idea of my beloved girlfriend materialised."
     },
-    {
-      title: "projectName",
-      pictures: [ReactScreen],
-      technologies: [ReactLogo, NodeLogo],
-      link: "test",
-      date: "test",
-      state: "test",
-      github: "test",
-      design: "test",
-      code: "test",
-      language: "test",
-      frameworks: "test",
-      description: "test"
-    }
+    // {
+    //   title: "projectName",
+    //   pictures: [ReactScreen],
+    //   technologies: [ReactLogo, NodeLogo],
+    //   link: "test",
+    //   date: "test",
+    //   state: "test",
+    //   github: "test",
+    //   design: "test",
+    //   code: "test",
+    //   language: "test",
+    //   frameworks: "test",
+    //   description: "test"
+    // }
   ];
 
   const addClass = index => {

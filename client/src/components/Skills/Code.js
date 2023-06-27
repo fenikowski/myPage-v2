@@ -65,8 +65,11 @@ export default function Code({ language }) {
                   right: `${100 - width}%`
                 }}
               />
+              <p>novice</p>
+              <p>intermediate</p>
+              <p>advanced</p>
             </div>
-            <p>
+            <p className="experience">
               {text.experience} {experience}
             </p>
           </div>
