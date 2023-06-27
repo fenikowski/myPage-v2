@@ -7,11 +7,11 @@ import Technologies from "../components/Introduction/Technologies";
 import Bio from "../components/Introduction/Bio";
 
 export default function Introduction({ language }) {
-  const { text, technologies, actualInfo } = Data[language].introduction;
+  const { text, technologies, actualInfo, career } = Data[language].introduction;
   return (
     <React.Fragment>
       <Bio text={text}/>
-      <Career/>
+      <Career text={career}/>
       <div className="section-title">
         <p>{technologies}</p>
       </div>
