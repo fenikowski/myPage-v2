@@ -73,8 +73,8 @@ export default function Bio({ text }) {
             {border}
             <div className={`profile-photo ${photoClass}`}/>
             <div className="description">
-            <p>{passedText}</p>
-            <span className={`cursor`}>|</span>
+                <p style={{opacity: 0}}>{text}</p>
+                <p style={{position: "absolute", top: 0, left: 0}}>{passedText}<span className="cursor">|</span></p>
             </div>
         </section>
     );
