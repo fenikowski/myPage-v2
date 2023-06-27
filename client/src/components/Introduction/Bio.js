@@ -1,5 +1,6 @@
 import React, { useCallback } from "react";
 import { useState, useEffect, useRef } from "react";
+import "./styles/bio.css"
 
 export default function Bio({ text }) {
     // refs

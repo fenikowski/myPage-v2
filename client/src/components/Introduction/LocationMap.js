@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useRef } from "react";
 import Map from "../../img/map.png";
+import "./styles/locationMap.css"
 
 export default function LocationMap({ text }) {
     // refs

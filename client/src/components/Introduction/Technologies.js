@@ -9,6 +9,7 @@ import NativeLogo from "../../img/NativeLogo.jpg";
 import GitLogo from "../../img/GitLogo.png";
 import NodeLogo from "../../img/NodeLogo.png";
 import MySqlLogo from "../../img/MySqlLogo.png";
+import "./styles/technologies.css"
 
 export default function Technologies() {
     // states

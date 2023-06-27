@@ -1,0 +1,201 @@
+:root {
+    --cube-size: 28vh;
+}
+
+section.technologies {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+}
+
+div.cubes-holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    justify-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 95%;
+    margin-left: 2.5%;
+}
+
+div.cube-holder {
+    text-align: center;
+    margin: auto;
+    flex-basis: 25%;
+    flex-grow: 1;
+}
+
+/* cube */
+.scene {
+    display: inline-block;
+    width: var(--cube-size);
+    height: var(--cube-size);
+    border: 1px solid #ccc;
+    perspective: calc(var(--cube-size) * 2);
+}
+
+.cube {
+    width: var(--cube-size);
+    height: var(--cube-size);
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(calc(var(--cube-size) / (-2)));
+    transition: transform 0.5s;
+}
+
+.cube.show-front {
+    transform: translateZ(calc(var(--cube-size) / (-2))) rotateY(0deg);
+}
+.cube.show-right {
+    transform: translateZ(calc(var(--cube-size) / (-2))) rotateY(-90deg);
+}
+.cube.show-back {
+    transform: translateZ(calc(var(--cube-size) / (-2))) rotateY(-180deg);
+}
+.cube.show-left {
+    transform: translateZ(calc(var(--cube-size) / (-2))) rotateY(90deg);
+}
+.cube.show-top {
+    transform: translateZ(calc(var(--cube-size) / (-2))) rotateX(-90deg);
+}
+.cube.show-bottom {
+    transform: translateZ(calc(var(--cube-size) / (-2))) rotateX(90deg);
+}
+
+.cube__face {
+    position: absolute;
+    width: var(--cube-size);
+    height: var(--cube-size);
+    border: 2px solid lightgrey;
+    line-height: var(--cube-size);
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.cube__face--front {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.cube__face--front img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80%;
+    transition: 0.2s;
+}
+
+.cube__face--right {
+    background: rgba(0, 0, 0, 0.8);
+}
+.cube__face--back {
+    background: rgba(0, 0, 0, 0.8);
+}
+.cube__face--left {
+    background: rgba(0, 0, 0, 0.8);
+}
+.cube__face--top {
+    background: rgba(0, 0, 0, 0.8);
+}
+.cube__face--bottom {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.cube__face--front {
+    transform: rotateY(0deg) translateZ(calc(var(--cube-size) / (2)));
+}
+.cube__face--right {
+    transform: rotateY(90deg) translateZ(calc(var(--cube-size) / (2)));
+}
+.cube__face--back {
+    transform: rotateY(180deg) translateZ(calc(var(--cube-size) / (2)));
+}
+.cube__face--left {
+    transform: rotateY(-90deg) translateZ(calc(var(--cube-size) / (2)));
+}
+.cube__face--top {
+    transform: rotateX(90deg) translateZ(calc(var(--cube-size) / (2)));
+}
+.cube__face--bottom {
+    transform: rotateX(-90deg) translateZ(calc(var(--cube-size) / (2)));
+}
+
+div.scene:hover {
+    cursor: pointer;
+}
+
+div.scene:hover div.cube img {
+    height: 100%;
+}
+
+@media (max-width: 1100px) and (orientation: portrait) {
+    :root {
+      --cube-size: 23vh;
+    }
+
+    section.technologies {
+      position: relative;
+      height: 120vh;
+      width: 100%;
+      background-color: #000;
+    }
+  
+    div.cube-holder {
+      text-align: center;
+      margin: auto;
+      flex-basis: 50%;
+      flex-grow: 1;
+    }
+  }
+  
+  @media (max-width: 900px) and (orientation: portrait) {
+    :root {
+      --cube-size: 20vh;
+    }
+
+    section.technologies {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      background-color: #000;
+    }
+  }
+  @media (max-width: 600px) and (orientation: portrait) {
+    :root {
+      --cube-size: 17vh;
+    }
+  
+    section.technologies {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      background-color: #000;
+    }
+  }
+  
+  @media (max-width: 1400px) and (orientation: landscape) {
+    :root {
+      --cube-size: 25vh;
+    }
+  
+    section.technologies {
+      position: relative;
+      height: 90vh;
+    }
+  }
+  
+  @media (max-width: 900px) and (orientation: landscape) {
+    :root {
+      --cube-size: 30vh;
+    }
+  
+    section.technologies {
+      position: relative;
+      height: 100vh;
+    }
+  }
