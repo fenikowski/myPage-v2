@@ -27,7 +27,7 @@ const text = {
       technologies:
         "Uso tecnologías más recientes para crear aplicaciones web modernas",
       actualInfo:
-        "Actualmente vivo en Valéncia adonde llegué hace dos años para acabar mis estudios y me decidí por quedar. Sigo buscando ofertas de trabajo, si estás interesado, escríbeme en sección ",
+        "He estado viviendo en Valencia, España, durante los últimos 6 años. Estoy abierto a ofertas de trabajo de desarrollo de software completamente remoto. Si deseas ponerte en contacto conmigo, por favor visita la sección de contacto y escríbeme a través de cualquiera de los canales de comunicación proporcionados.",
       career: [
         `Durante mis dos años en la Universidad de Varsovia y un año en la Universidad de Valencia, adquirí un amplio conocimiento en gestión, economía, estadística, marketing, psicología y finanzas. Para culminar mis estudios, me enfoqué en el marketing móvil en la industria farmacéutica para mi tesis. Esta experiencia me ha ayudado a convertirme en un mejor líder, mejorar mis habilidades lingüísticas y comprender mejor cómo funciona el mundo de los negocios.`,
         `Impulsado por mi pasión temprana por la programación, me dediqué a la industria tecnológica. A través de una serie de cursos de programación, perfeccioné mis habilidades creando juegos y sitios web para proyectos personales y clientes. Esta experiencia práctica me permitió mejorar mi experiencia en HTML, CSS, JavaScript, Node.js y React.js, sentando una sólida base para mi carrera.`,
@@ -188,7 +188,7 @@ const text = {
       technologies:
         "I use most recent technologies to create modern web aplications",
       actualInfo:
-        "Currently I live in Valencia where I came two years ago to complete my studies and I decided to stay. I'm searching for job offers, if you're interested in cooperation, write me in section ",
+        "I have been living in Valencia, Spain, for the past 6 years. I am open to fully remote software development job offers. If you would like to get in touch with me, please visit the contact section and reach out to me through any of the communication channels provided.",
       career: [
         "During my two years at the University of Warsaw and one year at the University of Valencia, I gained a comprehensive understanding of management, economics, statistics, marketing, psychology, and finances. To culminate my studies, I focused on mobile marketing in the pharmaceutical industry for my thesis. This experience has helped me become a better leader, improve my language skills and understand better how the world of business works.",
         "Driven by my early passion for programming, I dedicated myself to the tech industry. Through a series of programming courses, I honed my skills by creating games and websites for personal and client projects. This hands-on experience allowed me to sharpen my expertise in HTML, CSS, JavaScript, Node.js, and React.js, laying a strong foundation for my career.",

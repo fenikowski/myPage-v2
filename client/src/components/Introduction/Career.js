@@ -10,7 +10,7 @@ import UdemyLogo from "../../img/UdemyLogo.png";
 export default function Career({ text }) {
     const achievements = [
         { title: "Bachelor in Management", logo: UwLogo, logo2: UvLogo, text: text[0], year: "2016-2018" },
-        { title: "Programming Courses", logo: UdemyLogo, text: text[1], year: "2018" },
+        { title: "Full-stack Developer", logo: UdemyLogo, text: text[1], year: "2018" },
         { title: "Software Developer at Martico", logo: MarticoLogo, text: text[2], year: "2019-2020" },
         { title: "Team Lead at Martico", logo: MarticoLogo, text: text[3], year: "2020-2021" },
         { title: "Master in Artificial Intelligence", logo: ViuLogo, text: text[4], year: "2020-2021" },

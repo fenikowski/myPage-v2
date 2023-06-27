@@ -36,7 +36,6 @@ export default function LocationMap({ text }) {
             <img src={Map} alt="valencia map" className="map" ref={mapImageRef}/>
             <p ref={mapTextRef}>
                 {text}
-                <span>contact.</span>
             </p>
         </section>
     )
