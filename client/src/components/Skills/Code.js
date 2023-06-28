@@ -18,6 +18,7 @@ export default function Code({ language }) {
   const [boxRotation, setBoxRotation] = useState("0");
   const [stripesAnimation, setStripesAnimation] = useState("");
   const [textOpacity, setTextOpacity] = useState("0");
+  const [activeText, setActiveText] = useState(0);
 
   // callbacks
   const handleScroll = useCallback(() => {
@@ -38,6 +39,10 @@ export default function Code({ language }) {
     }
   },[]);
 
+  const handleMouseEnter = useCallback((index) => {
+    setActiveText(index)
+  }, []);
+
   // effects
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -47,8 +52,8 @@ export default function Code({ language }) {
   },[handleScroll]);
 
 
-  const createLevelsComponent = (color, experience, width, text) => (
-    <div className="code-info scene">
+  const createLevelsComponent = (color, experience, percentage, index) => (
+    <div className="code-info scene" onMouseEnter={() => handleMouseEnter(index)}>
       <div
         className="box"
         style={{ transform: `translateZ(-5vh) rotateX(${boxRotation})` }}
@@ -62,7 +67,7 @@ export default function Code({ language }) {
                 style={{
                   backgroundColor: color,
                   animation: stripesAnimation,
-                  right: `${100 - width}%`
+                  right: `${100 - percentage}%`
                 }}
               />
               <p>novice</p>
@@ -70,7 +75,7 @@ export default function Code({ language }) {
               <p>advanced</p>
             </div>
             <p className="experience">
-              {text.experience} {experience}
+              experience: {experience}
             </p>
           </div>
         </div>
@@ -78,29 +83,45 @@ export default function Code({ language }) {
     </div>
   );
 
-  const text = Data[language].skills;
+  const { textTechInfo, generalInfo } = Data[language].skills;
+
+  const skills = [
+    { src: JavaScriptLogo, alt: "JavaScript Logo"},
+    { src: ReactLogo, alt: "React Logo"},
+    { src: VueLogo, alt: "Vue Logo"},
+    { src: CSSLogo, alt: "CSS Logo"},
+    { src: NodeLogo, alt: "Node Logo"},
+    { src: MySqlLogo, alt: "MySQL Logo"},
+    { src: PythonLogo, alt: "Python Logo"},
+  ].map(({src, alt}, index) => (
+    <img 
+      key={index} 
+      className={imgMove} 
+      src={src} alt={alt} 
+      onMouseEnter={() => handleMouseEnter(index)}
+    />));
+
+  const levels = [
+    { color: "#F7DF1E", experience: "5 years", percentage: 80 },
+    { color: "#00D8FF", experience: "5 years", percentage: 70 },
+    { color: "#3FB984", experience: "4 years", percentage: 90 },
+    { color: "#2277FF", experience: "5 years", percentage: 70 },
+    { color: "#90C53F", experience: "5 years", percentage: 65 },
+    { color: "#4479A1", experience: "4 years", percentage: 80 },
+    { color: "#4587B9", experience: "1 year", percentage: 50 }
+  ].map(({color, experience, percentage}, index) => createLevelsComponent(color, experience, percentage, index));
 
   return (
     <section className="code">
       <div className="code" ref={divCode}>
-        <img className={imgMove} src={JavaScriptLogo} alt="JavaScript Logo"/>
-        <img className={imgMove} src={ReactLogo} alt="React Logo"/>
-        <img className={imgMove} src={VueLogo} alt="Vue Logo"/>
-        <img className={imgMove} src={CSSLogo} alt="CSS Logo"/>
-        <img className={imgMove} src={NodeLogo} alt="Node Logo"/>
-        <img className={imgMove} src={MySqlLogo} alt="MySQL Logo"/>
-        <img className={imgMove} src={PythonLogo} alt="Python Logo"/>
+        {skills}
         <div className="levels">
-          {createLevelsComponent("#F7DF1E", "5 years", 80, text)}
-          {createLevelsComponent("#00D8FF", "5 years", 70, text)}
-          {createLevelsComponent("#3FB984", "4 years", 90, text)}
-          {createLevelsComponent("#2277FF", "5 years", 70, text)}
-          {createLevelsComponent("#90C53F", "5 years", 65, text)}
-          {createLevelsComponent("#4479A1", "4 years", 80, text)}
-          {createLevelsComponent("#4587B9", "1 year", 50, text)}
+          {levels}
         </div>
         <div className="additional-info">
-          <p style={{ opacity: textOpacity }}>{text.info}</p>
+          <p style={{ opacity: textOpacity }}>
+            {textTechInfo[activeText] || generalInfo}
+          </p>
         </div>
       </div>
     </section>

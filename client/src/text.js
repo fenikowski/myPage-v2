@@ -39,25 +39,15 @@ const text = {
     },
     skills: {
       experience: "Expiriencia: ",
-      info: `¡Hola! ¡Bienvenid@ a mi página! Soy Igor, un programador con 5 años de experiencia en desarrollo de software. Poseo un título de Máster en Inteligencia Artificial de la Universidad Internacional de Valencia y una licenciatura en Gestión de la Universidad de Varsovia. Mi especialidad es crear aplicaciones utilizando frameworks modernos y populares. Disfruto explorando las últimas tecnologías y encontrando soluciones innovadoras para desafíos complejos. Me comprometo a aprender de forma continua y expandir mis habilidades como programador. En esta página puedes consultar mi currículum, revisar mi código y contactarme. Me alegra que hayas decidido echar un vistazo aquí.`,
-      skillsComponent: [
-        {
-          description: `JavaScript es un lenguaje bastante fresco, pero va creciendo, despertando mucha esperanza para el futuro. Yo lo uso creando tanto front-end de aplicaciónes como el back-end. Utilizandolo y su objetividad escribí unos juegos que encontrarás en otra sección de esta página.`
-        },
-        {
-          description: `Gimp es mi herramienta de edición gráfica preferida. La uso para enfrentar los obstaculos sencillos en trabajo de cada front-end developer, dicho, editar imagenes y crear animaciones de sitios web y juegos.`
-        },
-        {
-          description: `Mi trabajo en JavaScript complemento con el framework muy al tanto de producción de Facebook - React. Compaginandolo con React Native y Redux creo proyectos para varios dispositivos. Gracias a él (y React Router), surgió esta página, su codigo puedes revisar en mi cuenta de GitHub o pulsando `,
-          linkName: "aquí"
-        },
-        {
-          description: `En mi trabajo utilizo Git, el sístema de control de versión más popular del mundo. Todo el codigo que cometos, de esta página así mismo como los juegos y proyectos encontrarás en mi cuenta de GitHub, pulsando `,
-          linkName: "aquí"
-        },
-        {
-          description: `En el lado de server de mis aplicaciones, aprovecho de las tecnologias más ardientes en el mercado, o sea, versión back-end del JavaScript - Node JS. Juntos con Express y mongoDB database, resultan ser una combinación muy poderosa.`
-        }
+      generalInfo: `¡Hola! ¡Bienvenid@ a mi página! Soy Igor, un programador con 5 años de experiencia en desarrollo de software. Poseo un título de Máster en Inteligencia Artificial de la Universidad Internacional de Valencia y una licenciatura en Gestión de la Universidad de Varsovia. Mi especialidad es crear aplicaciones utilizando frameworks modernos y populares. Disfruto explorando las últimas tecnologías y encontrando soluciones innovadoras para desafíos complejos. Me comprometo a aprender de forma continua y expandir mis habilidades como programador. En esta página puedes consultar mi currículum, revisar mi código y contactarme. Me alegra que hayas decidido echar un vistazo aquí.`,
+      textTechInfo: [
+        `JavaScript is a fresh and exciting language, which is growing providing more and more tools and posibilities for development of modern aplications. I use it creating front-end as well as back-end of my aplications. Taking advantage of it and it's object oriented programming I wrote few games which you'll find in other section.`,
+        `Gimp is my prefered graphic editor, which helps my embrace simple tasks confronting every Front-end developer. I use to create images and animations for my websites and games alike.`,
+        `My JavaScript written projects I complement with modern, up-to-date framework from Facebook's production - React. Hand to hand with React Native and Redux they let me code multiplatform projects. Basing on React (and React Router), surged this page, its code is avaiable to check out on my GitHub account `,
+        `In my work I use Git, the most popular verison control system. All the code I commit, of this page as well as the games and projects, you'll find on my GitHub account, clicking `,
+        `On the server side of my aplication I take advantage of the hottest technologies currently on the market, back-end version of JavaScript - Node JS. Together with Express and mongoDB database they result to be a powerfull combo.`,
+        `On the server side of my aplication I take advantage of the hottest technologies currently on the market, back-end version of JavaScript - Node JS. Together with Express and mongoDB database they result to be a powerfull combo.`,
+        `On the server side of my aplication I take advantage of the hottest technologies currently on the market, back-end version of JavaScript - Node JS. Together with Express and mongoDB database they result to be a powerfull combo.`
       ]
     },
     projects: {
@@ -200,25 +190,15 @@ const text = {
     },
     skills: {
       experience: "experience: ",
-      info: `In my apps I use the hottest, modern technologies, which are currently taking over the programming world. React based front-end I complement with NodeJS on back-end side and MySQL database. What I cannot create in CSS, I get done in GIMP graphic editor. I'm a self-learning, passionate code lover. I continusly amplify my skillset and become more and more complete programist.`,
-      skillsComponent: [
-        {
-          description: `JavaScript is a fresh and exciting language, which is growing providing more and more tools and posibilities for development of modern aplications. I use it creating front-end as well as back-end of my aplications. Taking advantage of it and it's object oriented programming I wrote few games which you'll find in other section.`
-        },
-        {
-          description: `Gimp is my prefered graphic editor, which helps my embrace simple tasks confronting every Front-end developer. I use to create images and animations for my websites and games alike.`
-        },
-        {
-          description: `My JavaScript written projects I complement with modern, up-to-date framework from Facebook's production - React. Hand to hand with React Native and Redux they let me code multiplatform projects. Basing on React (and React Router), surged this page, its code is avaiable to check out on my GitHub account `,
-          linkName: "here"
-        },
-        {
-          description: `In my work I use Git, the most popular verison control system. All the code I commit, of this page as well as the games and projects, you'll find on my GitHub account, clicking `,
-          linkName: "here"
-        },
-        {
-          description: `On the server side of my aplication I take advantage of the hottest technologies currently on the market, back-end version of JavaScript - Node JS. Together with Express and mongoDB database they result to be a powerfull combo.`
-        }
+      generalInfo: `In my apps I use the hottest, modern technologies, which are currently taking over the programming world. React based front-end I complement with NodeJS on back-end side and MySQL database. What I cannot create in CSS, I get done in GIMP graphic editor. I'm a self-learning, passionate code lover. I continusly amplify my skillset and become more and more complete programist.`,
+      textTechInfo: [
+        `JavaScript has been with me in my programming career almost from the very beginning (I started programming at age of 17 in a variation of language C). I fully commit to functional programming paradigms and  follow clean coding principles. I'm up to date with the newest ES7 features.`,
+        `My biggest project ever, an ERP, I created in Vue.js. Since its development lasted 4 years, it let me go through all the phases of a project - first prototype, views' designs, planning, development and the hardest of all of them - optimization.`,
+        `My JavaScript written projects I complement with modern, up-to-date framework from Facebook's production - React. Hand to hand with React Native and Redux they let me code multiplatform projects. Basing on React (and React Router), surged this page, its code is avaiable to check out on my GitHub account `,
+        `I find joy in using pure CSS without any component libraries (I know it might sound strange, since most of coders hate CSS). I believe it gives a lot of flexibility once learned deeply and can be used in many creative ways. Clearly, to be time-wise efficient at some point one should learn how to take advantage of pre-prepared solution - I use Element UI and Tailwind CSS.`,
+        `In the backend, my only one and only is Node.js. I've developed many REST APIs based on (Controller => Model => Repository) structure with an addition of Services, using all type of promises and high order functions for data transformation. I've got experience with many Node.js libraries including: aync-lock, axios, azure-storage, decimal.js. express, jsonwebtoken, moment.js, and native Node.js modules.`,
+        `During my years of experience I managed to reach and advanced level of usage and comprehension of MySQL. Apart from creating complex queries, I'm experienced in optimizing them and fine-tuning InnoDB databases configuration. I've created many databases' architectures, which included MySQL views, composite indexes, foreign keys and have a knowledge about advantages and disadvantages of all available datatypes.`,
+        `I've learned Python during my year at university, using it to manipulate data and create artificial intelligence models. I used to combine it with TensorFlow, Scikit-Learn, Numpy, Keras, Pandas, Matplotlib.`
       ]
     },
     projects: {
