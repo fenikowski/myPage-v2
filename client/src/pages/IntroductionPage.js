@@ -3,7 +3,7 @@ import "./style/introduction.css";
 import Career from "../components/Introduction/Career";
 import LocationMap from "../components/Introduction/LocationMap";
 import Data from "../text";
-import Technologies from "../components/Introduction/Technologies";
+// import Technologies from "../components/Introduction/Technologies";
 import Bio from "../components/Introduction/Bio";
 import Code from "../components/Skills/Code";
 

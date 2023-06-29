@@ -8,9 +8,10 @@ div.achievement {
     border: #30363d solid 2px;
     border-radius: 5px;
     transform: rotateX(90deg);
-    transition: 0.2s;
+    transition: 0.4s;
     cursor: default;
     overflow: hidden;
+    z-index: 2;
 
     display: flex;
     flex-direction: row;
@@ -67,10 +68,10 @@ div.achievement:last-child {
 }
 
 .shine {
-    width: 550px;
-    height: 550px;
+    width: 30vmax;
+    height: 30vmax;
     background-color: #ffa28b;
-    filter: blur(80px);
+    filter: blur(10vmax);
     border-radius: 300px;
     opacity: 0.85;
     transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);

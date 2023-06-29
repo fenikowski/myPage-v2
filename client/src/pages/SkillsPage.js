@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./style/skills.css";
 import "./style/projects.css";
 import Projects from "../components/Skills/Projects";
-import Code from "../components/Skills/Code";
+// import Code from "../components/Skills/Code";
 
 export default function Skills({ language }) {
   useEffect(() => {

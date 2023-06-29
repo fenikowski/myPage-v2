@@ -21,6 +21,15 @@ export default function Achievement({ data }) {
             achievementDiv.current.classList.remove("active");
         }
     },[]);
+    
+    const getElementDistanceFromTop = useCallback((element) => {
+        let distance = 0;
+        while (element) {
+          distance += element.offsetTop;
+          element = element.offsetParent;
+        }
+        return distance;
+    },[]);
 
     const handleMouseMove = useCallback((e) => {
         const { offsetLeft, clientWidth, clientHeight } = achievementDiv.current;
@@ -29,11 +38,9 @@ export default function Achievement({ data }) {
         setOpacity(0.85);
 
         // transition
-        // if(transition !== 0){
-        //     setTimeout(() => {
-        //         setTransition(0);
-        //     }, 400);
-        // };
+        if(transition !== 0){
+            setTransition(oldVal => oldVal - 0.01);
+        };
 
         // rotation
         const offsetTop = getElementDistanceFromTop(achievementDiv.current);
@@ -43,16 +50,7 @@ export default function Achievement({ data }) {
 
         // set shine position
         setShinePosition({ x: rotationY * 500, y: rotationX * 500 })
-    },[transition]);
-
-    const getElementDistanceFromTop = useCallback((element) => {
-        let distance = 0;
-        while (element) {
-          distance += element.offsetTop;
-          element = element.offsetParent;
-        }
-        return distance;
-    },[]);
+    },[transition, getElementDistanceFromTop]);
 
     const handleMouseLeave = useCallback(() => {
         setTransition(0.4);
