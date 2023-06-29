@@ -35,7 +35,7 @@ div.code-info.scene {
   width: 100%;
   perspective: 20vh;
   border: none;
-  background-color: #222;
+  /* background-color: #222; */
 }
 
 div.code-info.scene:hover {

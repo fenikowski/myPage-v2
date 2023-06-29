@@ -10,8 +10,10 @@ export default function Introduction({ language }) {
   const { text, technologies, actualInfo, career } = Data[language].introduction;
   return (
     <React.Fragment>
-      <Bio text={text}/>
-      <Career text={career}/>
+      <div className="white-bcg">
+        <Bio text={text}/>
+        <Career text={career}/>
+      </div>
       <div className="section-title">
         <p>{technologies}</p>
       </div>

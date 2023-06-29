@@ -53,7 +53,11 @@ export default function Code({ language }) {
 
 
   const createLevelsComponent = (color, experience, percentage, index) => (
-    <div className="code-info scene" onMouseEnter={() => handleMouseEnter(index)}>
+    <div 
+      className="code-info scene" 
+      onMouseEnter={() => handleMouseEnter(index)}
+      key={index}
+    >
       <div
         className="box"
         style={{ transform: `translateZ(-5vh) rotateX(${boxRotation})` }}

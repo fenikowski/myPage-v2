@@ -1,3 +1,11 @@
+div.white-bcg {
+  position: relative;
+  z-index: 5;
+  background-image: url("./../../img/white_background.jfif");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 div.section-title {
   height: 20vh;
   width: 100%;
