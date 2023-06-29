@@ -1,9 +1,8 @@
   section.introduction {
     position: relative;
     height: 90vh;
-    width: 100%;
-    /* background-color: #fff; */
-    z-index: -1;
+    background-color: #0c1015;
+    z-index: 0;
   
     display: flex;
     flex-direction: row;
@@ -11,15 +10,18 @@
     align-items: center;
   }
   
-  div.profile-photo { height: 55vh;
-    width: 55vh;
-    box-shadow: 0 0 0 1vh white, 0 0 0 2vh rgba(0, 255, 0, 0.3);
+  div.profile-photo { 
+    height: 25vmax;
+    width: 25vmax;
+    box-shadow: 0 0 0 1vh #0c1015, 0 0 0 2vh #07700d;
     border-radius: 30vh;
     background-image: url(../../../img/20190130_225004.jpg);
     background-size: cover;
     z-index: 12;
     transform: rotateY(90deg);
     transition: 1s;
+    filter: brightness(90%);
+    margin-left: 5vmax;
   }
   
   div.active-profile-photo {
@@ -29,21 +31,22 @@
   
   @keyframes profilePhotoAnimation {
     0% {
-      box-shadow: 0 0 0 1vh white, 0 0 0 2vh rgba(0, 255, 0, 0.3);
+      box-shadow: 0 0 0 1vh #0c1015, 0 0 0 2vh #07700d;
     }
     50% {
-      box-shadow: 0 0 0 3vh white, 0 0 0 5vh rgba(0, 255, 0, 0.3);
+      box-shadow: 0 0 0 3vh #0c1015, 0 0 0 5vh #07700d;
     }
     100% {
-      box-shadow: 0 0 0 1vh white, 0 0 0 2vh rgba(0, 255, 0, 0.3);
+      box-shadow: 0 0 0 1vh #0c1015, 0 0 0 2vh #07700d;
     }
   }
   
   div.description {
     position: relative;
     flex-basis: 40%;
-    font-size: 1.9vmax;
+    font-size: 1.5vmax;
     line-height: 1.4;
+    color: white;
   }
   
   section.introduction div.description p {
@@ -83,7 +86,8 @@
     border-bottom: none;
     border-radius: 4px;
     z-index: 0;
-    opacity: 0.3;
+    /* opacity: 0.4; */
+    opacity: 0.2;
   }
   
   div.border div.initial {
@@ -103,7 +107,7 @@
     height: 10px;
     top: -5px;
     left: 0;
-    background-color: #fff;
+    background-color: #0c1015;
     transition: 2s;
     transition-delay: 1s;
   }
@@ -113,7 +117,7 @@
     height: 10px;
     top: -5px;
     left: 50%;
-    background-color: #fff;
+    background-color: #0c1015;
     transition: 2s;
     transition-delay: 1s;
   }
@@ -123,7 +127,7 @@
     height: 100%;
     top: -5px;
     left: -5px;
-    background-color: #fff;
+    background-color: #0c1015;
     transition: top 3s 1.5s, opacity 0s 3.5s;
   }
   div.border div.right {
@@ -132,7 +136,7 @@
     height: 100%;
     top: -5px;
     right: -5px;
-    background-color: #fff;
+    background-color: #0c1015;
     transition: top 3s 1.5s, opacity 0s 3.5s;
   }
   
@@ -180,7 +184,7 @@
       transform: translate(-50%, 0) rotateY(90deg);
       height: 600px;
       width: 600px;
-      box-shadow: 0 0 0 12px white, 0 0 0 24px rgba(0, 255, 0, 0.3);
+      box-shadow: 0 0 0 12px white, 0 0 0 24px #07700d;
       border-radius: 300px;
       background-size: cover;
     }
@@ -202,13 +206,13 @@
   
     @keyframes profilePhotoAnimation {
       0% {
-        box-shadow: 0 0 0 12px white, 0 0 0 24px rgba(0, 255, 0, 0.3);
+        box-shadow: 0 0 0 12px white, 0 0 0 24px #07700d;
       }
       50% {
-        box-shadow: 0 0 0 30px white, 0 0 0 50px rgba(0, 255, 0, 0.3);
+        box-shadow: 0 0 0 30px white, 0 0 0 50px #07700d;
       }
       100% {
-        box-shadow: 0 0 0 12px white, 0 0 0 24px rgba(0, 255, 0, 0.3);
+        box-shadow: 0 0 0 12px white, 0 0 0 24px #07700d;
       }
     }
   
@@ -224,7 +228,7 @@
       transform: translate(-50%, 0) rotateY(90deg);
       height: 400px;
       width: 400px;
-      box-shadow: 0 0 0 12px white, 0 0 0 24px rgba(0, 255, 0, 0.3);
+      box-shadow: 0 0 0 12px white, 0 0 0 24px #07700d;
       border-radius: 200px;
       background-size: cover;
     }
@@ -244,13 +248,13 @@
   
     @keyframes profilePhotoAnimation {
       0% {
-        box-shadow: 0 0 0 12px white, 0 0 0 24px rgba(0, 255, 0, 0.3);
+        box-shadow: 0 0 0 12px white, 0 0 0 24px #07700d;
       }
       50% {
-        box-shadow: 0 0 0 30px white, 0 0 0 50px rgba(0, 255, 0, 0.3);
+        box-shadow: 0 0 0 30px white, 0 0 0 50px #07700d;
       }
       100% {
-        box-shadow: 0 0 0 12px white, 0 0 0 24px rgba(0, 255, 0, 0.3);
+        box-shadow: 0 0 0 12px white, 0 0 0 24px #07700d;
       }
     }
   
@@ -268,7 +272,7 @@
       transform: translate(-50%, 0) rotateY(90deg);
       height: 250px;
       width: 250px;
-      box-shadow: 0 0 0 7px white, 0 0 0 14px rgba(0, 255, 0, 0.3);
+      box-shadow: 0 0 0 7px white, 0 0 0 14px #07700d;
       border-radius: 125px;
       background-size: cover;
     }
@@ -288,13 +292,13 @@
   
     @keyframes profilePhotoAnimation {
       0% {
-        box-shadow: 0 0 0 7px white, 0 0 0 14px rgba(0, 255, 0, 0.3);
+        box-shadow: 0 0 0 7px white, 0 0 0 14px #07700d;
       }
       50% {
-        box-shadow: 0 0 0 18px white, 0 0 0 32px rgba(0, 255, 0, 0.3);
+        box-shadow: 0 0 0 18px white, 0 0 0 32px #07700d;
       }
       100% {
-        box-shadow: 0 0 0 7px white, 0 0 0 14px rgba(0, 255, 0, 0.3);
+        box-shadow: 0 0 0 7px white, 0 0 0 14px #07700d;
       }
     }
   

@@ -15,6 +15,7 @@ div.background-wrapper {
   width: 100%;
   height: 100%;
   z-index: 1;
+  will-change: top;
 }
 
 .bgc2 {
@@ -22,6 +23,7 @@ div.background-wrapper {
   height: 100%;
   position: absolute;
   z-index: 3;
+  will-change: top;
 }
 
 .bgc3 {
@@ -29,6 +31,7 @@ div.background-wrapper {
   height: 100%;
   position: absolute;
   z-index: 5;
+  will-change: top;
 }
 
 .bgc4 {
@@ -36,6 +39,7 @@ div.background-wrapper {
   height: 100%;
   position: absolute;
   z-index: 7;
+  will-change: top;
 }
 
 .bgc5 {
@@ -43,6 +47,7 @@ div.background-wrapper {
   height: 100%;
   position: absolute;
   z-index: 9;
+  will-change: top;
 }
 
 @media (max-width: 1200px) and (orientation: portrait) {

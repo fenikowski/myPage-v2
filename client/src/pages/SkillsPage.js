@@ -26,7 +26,7 @@ export default function Skills({ language }) {
   return (
     <React.Fragment>
       <Projects language={language}/>
-      <Code language={language}/>
+      {/* <Code language={language}/> */}
     </React.Fragment>
   );
 };

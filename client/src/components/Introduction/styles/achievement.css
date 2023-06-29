@@ -1,13 +1,16 @@
 div.achievement {
+    position: relative;
     min-height: 15vh;
-    background-color: #f3f1f1;
+    background-color: #161b22;
     color: #000;
     margin-bottom: 25vh;
     padding: 10px;
-    border: black solid 2px;
+    border: #30363d solid 2px;
     border-radius: 5px;
     transform: rotateX(90deg);
-    transition: 0.4s;
+    transition: 0.2s;
+    cursor: default;
+    overflow: hidden;
 
     display: flex;
     flex-direction: row;
@@ -29,6 +32,10 @@ div.achievement:last-child {
     flex-basis: auto;
 }
 
+.achievement .left {
+    color: #818891;
+}
+
 .achievement .right {
     display: flex;
     flex-direction: column;
@@ -36,11 +43,12 @@ div.achievement:last-child {
 }
 
 .achievement img {
-    height: 5vh;
+    width: 7.5vmax;
     margin-right: 5px;
 }
 
 .achievement div.right {
+    color: white;
     padding: 0 5px;
 }
 
@@ -49,9 +57,28 @@ div.achievement:last-child {
     font-size: 1.5rem;
     height: 5vh;
     line-height: 5vh;
+    color: #fefefe;
 }
 
 .achievement .description {
     font-weight: 300;
     text-align: justify;
+    color: #818891;
+}
+
+.shine {
+    width: 550px;
+    height: 550px;
+    background-color: #ffa28b;
+    filter: blur(80px);
+    border-radius: 300px;
+    opacity: 0.85;
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    mix-blend-mode: soft-light;
+    will-change: transform;
+    pointer-events: none;
+    /* z-index: -1; */
+    top: 50%;
+    left: 50%;
+    position: absolute;
 }
