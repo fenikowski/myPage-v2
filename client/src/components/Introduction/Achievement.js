@@ -16,9 +16,10 @@ export default function Achievement({ data }) {
 
     // callbacks
     const handleScroll = useCallback(() => {
-        if ((window.scrollY + window.innerHeight) > (achievementDiv.current.offsetTop + achievementDiv.current.clientHeight)) {
+        const offsetTop = getElementDistanceFromTop(achievementDiv.current);
+        if ((window.scrollY + window.innerHeight) > (offsetTop + achievementDiv.current.clientHeight / 2)) {
             achievementDiv.current.classList.add("active");
-        } else {
+        } else if((window.scrollY + window.innerHeight) < offsetTop) {
             achievementDiv.current.classList.remove("active");
         }
     },[]);

@@ -7,8 +7,8 @@ import NodeLogo from "../../img/NodeLogo.png";
 import MySqlLogo from "../../img/MySqlLogo.png";
 import CSSLogo from "../../img/CSSLogo.png";
 import Data from "../../text";
-import "./styles/code.css";
 import { getElementDistanceFromTop } from "../../utils/usefullFunctions";
+import "./styles/code.css";
 
 export default function Code({ language }) {
   // refs
@@ -16,17 +16,20 @@ export default function Code({ language }) {
 
   // states
   const [imgMove, setImageMove] = useState("");
-  const [boxRotation, setBoxRotation] = useState("0");
+  const [boxRotation, setBoxRotation] = useState("0deg");
   const [stripesAnimation, setStripesAnimation] = useState("");
   const [textOpacity, setTextOpacity] = useState("0");
   const [activeText, setActiveText] = useState(0);
+  const [animationFlag, setAnimationFlag] = useState(false);
 
   // callbacks
   const handleScroll = useCallback(() => {
     const offsetTop = getElementDistanceFromTop(divCode.current);
     if (
-      (window.scrollY + window.innerHeight) > (divCode.current.offsetHeight / 2 + offsetTop)
+      !animationFlag &&
+      ((window.scrollY + window.innerHeight) > (divCode.current.offsetHeight / 2 + offsetTop))
     ) {
+      setAnimationFlag(true);
       setImageMove("code");
       setTimeout(() => {
         setBoxRotation("90deg");
@@ -35,8 +38,23 @@ export default function Code({ language }) {
         setStripesAnimation("stripe-loading 1s forwards");
         setTextOpacity("1");
       }, 1500);
+      setTimeout(() => {
+        setAnimationFlag(false);
+      }, 2000);
+    } else if (
+      !animationFlag &&
+      ((window.scrollY + window.innerHeight) < (offsetTop))
+    ) {
+      setAnimationFlag(true);
+      setImageMove("");
+      setBoxRotation("0deg");
+      setStripesAnimation("");
+      setTextOpacity("0");
+      setTimeout(() => {
+        setAnimationFlag(false);
+      }, 2000);
     }
-  },[]);
+  },[animationFlag]);
 
   const handleMouseEnter = useCallback((index) => {
     setActiveText(index)
@@ -115,8 +133,8 @@ export default function Code({ language }) {
   ].map(({color, experience, percentage}, index) => createLevelsComponent(color, experience, percentage, index));
 
   return (
-    <section className="code">
-      <div className="code" ref={divCode}>
+    <section className="code" ref={divCode}>
+      <div className="code">
         {skills}
         <div className="levels">
           {levels}
