@@ -3,6 +3,7 @@ section.code {
   color: white;
   height: 80vh;
   position: relative;
+  z-index: 3;
 }
 
 section.code div.code {
@@ -19,6 +20,7 @@ section.code div.code {
 
 div.levels {
   flex-basis: 60%;
+  cursor: pointer;
 
   display: flex;
   flex-direction: column;
@@ -31,15 +33,11 @@ section.code div.code-info div.box__face.box__face--bottom {
 }
 
 div.code-info.scene {
+  position: relative;
   height: 100%;
   width: 100%;
   perspective: 20vh;
   border: none;
-  /* background-color: #222; */
-}
-
-div.code-info.scene:hover {
-  cursor: default;
 }
 
 div.code-info .box {
@@ -155,7 +153,7 @@ div.additional-info {
   flex-basis: 40%;
 }
 
-section.code div.code img {
+section.code div.code img.lng-img {
   height: 12vh;
   width: 12vh;
   position: absolute;
@@ -163,67 +161,68 @@ section.code div.code img {
   transform: translate(-50%, 0);
   transition: 1s;
   z-index: 2;
+  cursor: pointer;
 }
 
-section.code div.code img.code {
+section.code div.code img.code.lng-img {
   height: 10vh;
   width: 8vh;
   padding: 1vh 0;
   transform: translate(-120%, 0);
 }
 
-section.code div.code img:nth-of-type(1) {
+section.code div.code img.lng-img:nth-of-type(1) {
   top: 30%;
   left: 30%;
 }
-section.code div.code img:nth-of-type(2) {
+section.code div.code img.lng-img:nth-of-type(2) {
   top: 30%;
   left: 42.5%;
 }
-section.code div.code img:nth-of-type(3) {
+section.code div.code img.lng-img:nth-of-type(3) {
   top: 30%;
   left: 57.5%;
 }
-section.code div.code img:nth-of-type(4) {
+section.code div.code img.lng-img:nth-of-type(4) {
   top: 30%;
   left: 70%;
 }
-section.code div.code img:nth-of-type(5) {
+section.code div.code img.lng-img:nth-of-type(5) {
   top: 52.5%;
   left: 50%;
 }
-section.code div.code img:nth-of-type(6) {
+section.code div.code img.lng-img:nth-of-type(6) {
   top: 52.5%;
   left: 37.5%;
 }
-section.code div.code img:nth-of-type(7) {
+section.code div.code img.lng-img:nth-of-type(7) {
   top: 52.5%;
   left: 62.5%;
 }
 
-section.code div.code img.code {
+section.code div.code img.code.lng-img {
   left: 0;
 }
 
-section.code div.code img.code:nth-of-type(1) {
+section.code div.code img.code.lng-img:nth-of-type(1) {
   top: 0;
 }
-section.code div.code img.code:nth-of-type(2) {
+section.code div.code img.code.lng-img:nth-of-type(2) {
   top: 10vh;
 }
-section.code div.code img.code:nth-of-type(3) {
+section.code div.code img.code.lng-img:nth-of-type(3) {
   top: 20vh;
 }
-section.code div.code img.code:nth-of-type(4) {
+section.code div.code img.code.lng-img:nth-of-type(4) {
   top: 30vh;
 }
-section.code div.code img.code:nth-of-type(5) {
+section.code div.code img.code.lng-img:nth-of-type(5) {
   top: 40vh;
 }
-section.code div.code img.code:nth-of-type(6) {
+section.code div.code img.code.lng-img:nth-of-type(6) {
   top: 50vh;
 }
-section.code div.code img.code:nth-of-type(7) {
+section.code div.code img.code.lng-img:nth-of-type(7) {
   top: 60vh;
 }
 
@@ -233,6 +232,21 @@ div.additional-info p {
   line-height: 1.2;
   letter-spacing: 2px;
   font-size: 3vh;
+}
+
+div.code-info.scene img.vintage-arrow {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-300%, 0) rotate(90deg);
+  height: 10vh;
+  width: 8vh;
+  filter: brightness(75%) contrast(200%);
+}
+
+div.code-info.scene img.vintage-arrow.active {
+  display: block;
 }
 
 @media (orientation: landscape) and (max-width: 1400px) {
@@ -298,36 +312,36 @@ div.additional-info p {
     padding-top: 6vh;
   }
 
-  section.code div.code img {
+  section.code div.code img.lng-img {
     height: 8vh;
     width: 8vh;
   }
 
-  section.code div.code img:nth-of-type(1) {
+  section.code div.code img.lng-img:nth-of-type(1) {
     top: 30%;
     left: 20%;
   }
-  section.code div.code img:nth-of-type(2) {
+  section.code div.code img.lng-img:nth-of-type(2) {
     top: 30%;
     left: 40%;
   }
-  section.code div.code img:nth-of-type(3) {
+  section.code div.code img.lng-img:nth-of-type(3) {
     top: 30%;
     left: 60%;
   }
-  section.code div.code img:nth-of-type(4) {
+  section.code div.code img.lng-img:nth-of-type(4) {
     top: 30%;
     left: 80%;
   }
-  section.code div.code img:nth-of-type(5) {
+  section.code div.code img.lng-img:nth-of-type(5) {
     top: 40%;
     left: 50%;
   }
-  section.code div.code img:nth-of-type(6) {
+  section.code div.code img.lng-img:nth-of-type(6) {
     top: 40%;
     left: 30%;
   }
-  section.code div.code img:nth-of-type(7) {
+  section.code div.code img.lng-img:nth-of-type(7) {
     top: 40%;
     left: 70%;
   }

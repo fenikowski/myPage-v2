@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import "./style/skills.css";
-// import "./style/projects.css";
 import Projects from "../components/Skills/Projects";
-// import Code from "../components/Skills/Code";
 
 export default function Skills({ language }) {
   useEffect(() => {
@@ -26,7 +24,6 @@ export default function Skills({ language }) {
   return (
     <React.Fragment>
       <Projects language={language}/>
-      {/* <Code language={language}/> */}
     </React.Fragment>
   );
 };

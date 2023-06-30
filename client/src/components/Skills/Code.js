@@ -6,6 +6,7 @@ import VueLogo from "../../img/VueLogo.png";
 import NodeLogo from "../../img/NodeLogo.png";
 import MySqlLogo from "../../img/MySqlLogo.png";
 import CSSLogo from "../../img/CSSLogo.png";
+import vintage_arrow from "../../img/vintage_arrow.png";
 import Data from "../../text";
 import { getElementDistanceFromTop } from "../../utils/usefullFunctions";
 import "./styles/code.css";
@@ -73,6 +74,7 @@ export default function Code({ language }) {
     <div 
       className="code-info scene" 
       onMouseEnter={() => handleMouseEnter(index)}
+      onClick={() => handleMouseEnter(index)}
       key={index}
     >
       <div
@@ -101,6 +103,11 @@ export default function Code({ language }) {
           </div>
         </div>
       </div>
+      <img 
+        src={vintage_arrow} 
+        alt="walking potato"
+        className={`vintage-arrow ${activeText === index && imgMove && 'active'}`}
+      />
     </div>
   );
 
@@ -117,7 +124,7 @@ export default function Code({ language }) {
   ].map(({src, alt}, index) => (
     <img 
       key={index} 
-      className={imgMove} 
+      className={`lng-img ${imgMove}`} 
       src={src} alt={alt} 
       onMouseEnter={() => handleMouseEnter(index)}
     />));

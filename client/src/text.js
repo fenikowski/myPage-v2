@@ -174,7 +174,7 @@ const text = {
       contact: "Contact"
     },
     introduction: {
-      text: `Hi! Welcome to my page. I'm Igor, a programmer with 5 years of experience in software development. I hold a Master's degree in Artificial Intelligence from the International University of Valencia and a Bachelor's degree in Management from the University of Warsaw. I specialize in creating applications using modern and popular frameworks and enjoy exploring the latest technologies. On this page you can check out my resume, review my code and contact me.`,
+      text: `Hi! Welcome to my page. I'm Igor, a programmer with 5 years of experience in software development. I hold a Master's degree in Artificial Intelligence from the International University of Valencia and a Bachelor's degree in Management from the University of Warsaw. I specialize in creating applications using modern and popular frameworks and enjoy exploring the latest technologies. On this page you can check out my resume, review my code and contact me. Here below you check out my career path and education.`,
       technologies:
         "I use most recent technologies to create modern web aplications",
       actualInfo:
