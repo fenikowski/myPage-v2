@@ -1,10 +1,9 @@
 .career {
     position: relative;
-    z-index: -1;
+    z-index: 3;
     min-height: 100vh;
     display: flex;
     flex-direction: row;
-    background-color: #0c1015;
 }
 
 .career .left {
@@ -17,8 +16,8 @@
 
 .separator {
     background-color: lime;
-    width: 3px;
-    opacity: 0.4;
+    width: 2px;
+    opacity: 0.2;
 }
 
 .career .left {

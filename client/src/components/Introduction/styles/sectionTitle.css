@@ -1,0 +1,75 @@
+div.section-title {
+    height: 20vh;
+    width: 100%;
+    text-align: center;
+    line-height: 20vh;
+    font-size: 6vh;
+    font-weight: 300;
+    color: white;
+    font-family: "Barlow Condensed";
+    background-color: #222;
+    text-transform: lowercase;
+    position: relative;
+    z-index: 3;
+  }
+  
+  div.section-title p {
+    display: inline-block;
+    width: 90%;
+  }
+  
+  @media (max-width: 1100px) and (orientation: portrait) {
+    div.section-title {
+      height: 10vh;
+      line-height: 10vh;
+    }
+  }
+  
+  @media (max-width: 900px) and (orientation: portrait) {
+    div.section-title {
+      height: 10vh;
+      line-height: 10vh;
+    }
+  }
+  @media (max-width: 600px) and (orientation: portrait) {
+    div.section-title {
+      height: 15vh;
+      line-height: 5vh;
+      font-size: 24px;
+      padding-top: 2.5vh;
+    }
+  }
+  
+  @media (max-width: 400px) and (orientation: portrait) {
+    div.section-title {
+      height: 15vh;
+      line-height: 5vh;
+      font-size: 24px;
+      padding-top: 2.5vh;
+    }
+  }
+  
+  @media (max-width: 359px) and (orientation: portrait) {
+    div.section-title {
+      height: 15vh;
+      line-height: 5vh;
+      font-size: 20px;
+      padding-top: 2.5vh;
+    }
+  }
+  
+  @media (max-width: 1400px) and (orientation: landscape) {
+    section.technologies {
+      position: relative;
+      height: 90vh;
+    }
+  }
+  
+  @media (max-width: 900px) and (orientation: landscape) {
+    div.section-title {
+      height: 20vh;
+      line-height: 15vh;
+      font-size: 30px;
+      padding-top: 2.5vh;
+    }
+  }

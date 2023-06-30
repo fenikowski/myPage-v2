@@ -8,6 +8,7 @@ import MySqlLogo from "../../img/MySqlLogo.png";
 import CSSLogo from "../../img/CSSLogo.png";
 import Data from "../../text";
 import "./styles/code.css";
+import { getElementDistanceFromTop } from "../../utils/usefullFunctions";
 
 export default function Code({ language }) {
   // refs
@@ -22,20 +23,18 @@ export default function Code({ language }) {
 
   // callbacks
   const handleScroll = useCallback(() => {
+    const offsetTop = getElementDistanceFromTop(divCode.current);
     if (
-      window.scrollY >
-      window.innerHeight + divCode.current.offsetHeight / 2 + divCode.current.offsetTop
+      (window.scrollY + window.innerHeight) > (divCode.current.offsetHeight / 2 + offsetTop)
     ) {
-      setTimeout(() => {
-        setImageMove("code");
-      }, 1000);
+      setImageMove("code");
       setTimeout(() => {
         setBoxRotation("90deg");
-      }, 2000);
+      }, 1000);
       setTimeout(() => {
         setStripesAnimation("stripe-loading 1s forwards");
         setTextOpacity("1");
-      }, 2500);
+      }, 1500);
     }
   },[]);
 

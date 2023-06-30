@@ -1,5 +1,5 @@
 section.code {
-  background-color: #000;
+  background-color: #0c1015;
   color: white;
   height: 80vh;
   position: relative;
@@ -62,7 +62,7 @@ div.code-info .box__face {
   width: 100%;
   position: absolute;
   text-align: center;
-  background-color: #000;
+  background-color: #0c1015;
   overflow: hidden;
 }
 

@@ -1,5 +1,6 @@
-import "./styles/achievement.css"
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import { getElementDistanceFromTop } from "../../utils/usefullFunctions";
+import "./styles/achievement.css"
 
 export default function Achievement({ data }) {
     const { title, logo, logo2, text, year } = data;
@@ -21,15 +22,6 @@ export default function Achievement({ data }) {
             achievementDiv.current.classList.remove("active");
         }
     },[]);
-    
-    const getElementDistanceFromTop = useCallback((element) => {
-        let distance = 0;
-        while (element) {
-          distance += element.offsetTop;
-          element = element.offsetParent;
-        }
-        return distance;
-    },[]);
 
     const handleMouseMove = useCallback((e) => {
         const { offsetLeft, clientWidth, clientHeight } = achievementDiv.current;
@@ -50,7 +42,7 @@ export default function Achievement({ data }) {
 
         // set shine position
         setShinePosition({ x: rotationY * 500, y: rotationX * 500 })
-    },[transition, getElementDistanceFromTop]);
+    },[transition]);
 
     const handleMouseLeave = useCallback(() => {
         setTransition(0.4);

@@ -30,6 +30,8 @@ import MySQLLogo from "../../img/mysql.svg";
 
 import Data from "../../text";
 
+import "./styles/projects.css"
+
 export default function Projects({ language }) {
   // refs
   const projectsSection = useRef(null);
@@ -239,11 +241,13 @@ export default function Projects({ language }) {
   };
 
   const slide = (index, side, lenght) => {
+    let newPictureValue;
     if (side === "right") {
-      setPictures(pictures[index] === lenght ? 0 : pictures[index] + 1);
+      newPictureValue = pictures[index] === lenght - 1 ? 0 : pictures[index] + 1;
     } else if (side === "left") {
-      setPictures(pictures[index] < 0 ? lenght - 1 : pictures[index] - 1);
-    }
+      newPictureValue= pictures[index] === 0 ? lenght - 1 : pictures[index] - 1;
+    };
+    setPictures([...pictures.slice(0,index), newPictureValue,...pictures.slice(index + 1)]);
   };
   
   const text = Data[language].projects;

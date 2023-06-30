@@ -11,7 +11,7 @@ div.achievement {
     transition: 0.4s;
     cursor: default;
     overflow: hidden;
-    z-index: 2;
+    z-index: 3;
 
     display: flex;
     flex-direction: row;

@@ -1,6 +1,7 @@
 import React, { useCallback } from "react";
 import { useState, useEffect, useRef } from "react";
 import "./styles/bio.css"
+import { getElementDistanceFromTop } from "../../utils/usefullFunctions";
 
 export default function Bio({ text }) {
     // refs
@@ -10,7 +11,7 @@ export default function Bio({ text }) {
     const [passedText, setPassedText] = useState("");
     const [photoClass, setPhotoClass] = useState("");
     const [textAnimationActivated, setTextAnimationActivated] = useState(false);
-    
+
     // callbacks
     const addLetter = useCallback((activeLetterParameter = -15) => {
         if ((activeLetterParameter < text.length) && window.scrollY >= 100) {
@@ -29,19 +30,15 @@ export default function Bio({ text }) {
     }, [text]);
     
     const handleScroll = useCallback(() => {
+        const offsetTop = getElementDistanceFromTop(introductionSection.current);
         if (
             (window.scrollY + window.innerHeight) > 
-            (introductionSection.current.offsetTop + introductionSection.current.offsetHeight / 2) &&
+            (offsetTop + introductionSection.current.offsetHeight / 2) &&
             !textAnimationActivated
         ) {
             !textAnimationActivated && addLetter();
             setTextAnimationActivated(true);
             setPhotoClass("active-profile-photo");
-
-            // border div
-            document
-            .querySelectorAll("div.border div")
-            .forEach(div => div.classList.add("active"));
 
         } else if (window.scrollY < 100) {
             setPassedText("");
@@ -59,19 +56,8 @@ export default function Bio({ text }) {
         return () => window.removeEventListener("scroll", handleScroll);
     },[handleScroll]);
 
-    const border = (
-        <div className="border">
-            <div className="initial"/>
-            <div className="top1"/>
-            <div className="top2"/>
-            <div className="left"/>
-            <div className="right"/>
-        </div>
-    );
-
     return (
-        <section className="introduction" ref={introductionSection}>
-            {border}
+        <section className="bio" ref={introductionSection}>
             <div className={`profile-photo ${photoClass}`}/>
             <div className="description">
                 <p style={{opacity: 0}}>{text}</p>
