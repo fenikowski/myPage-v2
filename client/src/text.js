@@ -84,7 +84,7 @@ const text = {
         },
         links: {
           github: "https://github.com/fenikowski/SuperPotatoBros",
-          game: "http://fenikowski.site/SuperPotatoBros/stage1.html"
+          game: "https://proud-mud-042653303.3.azurestaticapps.net"
         }
       },
       {
@@ -107,7 +107,7 @@ const text = {
         },
         links: {
           github: "https://github.com/fenikowski/snake",
-          game: "http://fenikowski.site/Snake/Snake.html"
+          game: "https://gentle-dune-0411d3903.3.azurestaticapps.net/"
         }
       },
       {
@@ -130,7 +130,7 @@ const text = {
         },
         links: {
           github: "https://github.com/fenikowski/TicTacToe",
-          game: "http://fenikowski.site/TicTacToe/TicTacToe.html"
+          game: "https://gray-smoke-08ac91303.3.azurestaticapps.net/"
         }
       }
     ],
@@ -225,7 +225,7 @@ const text = {
         },
         links: {
           github: "https://github.com/fenikowski/SuperPotatoBros",
-          game: "http://fenikowski.site/SuperPotatoBros/stage1.html"
+          game: "https://proud-mud-042653303.3.azurestaticapps.net"
         }
       },
       {
@@ -240,7 +240,7 @@ const text = {
         },
         links: {
           github: "https://github.com/fenikowski/snake",
-          game: "http://fenikowski.site/Snake/Snake.html"
+          game: "https://gentle-dune-0411d3903.3.azurestaticapps.net/"
         }
       },
       {
@@ -255,7 +255,7 @@ const text = {
         },
         links: {
           github: "https://github.com/fenikowski/TicTacToe",
-          game: "http://fenikowski.site/TicTacToe/TicTacToe.html"
+          game: "https://gray-smoke-08ac91303.3.azurestaticapps.net/"
         }
       }
     ],
