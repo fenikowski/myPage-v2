@@ -28,7 +28,7 @@ export default function Code({ language }) {
     const offsetTop = getElementDistanceFromTop(divCode.current);
     if (
       !animationFlag &&
-      ((window.scrollY + window.innerHeight) > (divCode.current.offsetHeight / 2 + offsetTop))
+      ((window.scrollY + window.innerHeight) > (offsetTop))
     ) {
       setAnimationFlag(true);
       setImageMove("code");

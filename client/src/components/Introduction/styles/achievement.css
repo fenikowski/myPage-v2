@@ -18,11 +18,15 @@ div.achievement {
 }
 
 div.achievement:nth-child(2n) {
+    margin-left: 2vmax;
     margin-top: 10vmax;
+    align-self: flex-end;
 }
 
 div.achievement:nth-child(2n-1) {
+    margin-right: 2vmax;
     margin-bottom: 10vmax;
+    align-self: flex-start;
 }
 
 div.achievement.active {
@@ -64,13 +68,14 @@ div.achievement:last-child {
 
 .achievement .title {
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1.2em;
     height: 5vh;
     line-height: 5vh;
     color: #fefefe;
 }
 
 .achievement .description {
+    font-size: 1em;
     font-weight: 300;
     text-align: justify;
     color: #818891;
@@ -103,7 +108,6 @@ div.achievement:last-child {
         top: 0vmin;
     }
 }
-
 
 
 /* MOBILES */
