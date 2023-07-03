@@ -47,7 +47,7 @@ export default function Footer({ language }) {
           <div className="box__face box__face--front">
             {text.code}{" "}
             <span>
-              <a href="https://github.com/fenikowski/myPage-v2" target="_blank">
+              <a href="https://github.com/fenikowski/myPage-v2" target="_blank" rel="noreferrer">
                 {text.link}
               </a>
             </span>
@@ -58,7 +58,7 @@ export default function Footer({ language }) {
           <div className="box__face box__face--back">
             {text.code}{" "}
             <span>
-              <a href="https://github.com/fenikowski/myPage-v2" target="_blank">
+              <a href="https://github.com/fenikowski/myPage-v2" target="_blank" rel="noreferrer">
                 {text.link}
               </a>
             </span>

@@ -14,7 +14,7 @@ export default function Games({ language }) {
         <h3>{game.h3}</h3>
         <p>{game.p}</p>
       </div>
-      <a href={game.links.game} target="_blank" className="gameImage">
+      <a href={game.links.game} target="_blank" rel="noreferrer" className="gameImage">
         .
       </a>
       <div className="gameInfo">
@@ -33,7 +33,7 @@ export default function Games({ language }) {
           <img src={GitHubLogo} alt="github logo" />
           <p>
             {game.description.four} <br />
-            <a href={game.links.github} target="_blank">GitHub</a>
+            <a href={game.links.github} target="_blank" rel="noreferrer">GitHub</a>
           </p>
         </div>
       </div>
