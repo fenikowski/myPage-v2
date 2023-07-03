@@ -17,27 +17,14 @@ export default function Career({ text }) {
         { title: "Tech Lead at Martico", logo: MarticoLogo, text: text[5], year: "2021-2023" },
     ];
 
-    const leftColumn = achievements
-        .filter((_,index) => index % 2 === 0)    
-        .map((item, index) => <Achievement key={index} data={item}/>)
-    const rightColumn = achievements
-        .filter((_,index) => index % 2 !== 0)    
+    const achievementsComponents = achievements
         .map((item, index) => <Achievement key={index} data={item}/>)
 
     return (
         <section className="career">
-            <div className="left">
-                <div className="column">
-                    {leftColumn}
-                </div>
-            </div>
-            <div className="separator">
-
-            </div>
-            <div className="right">
-                <div className="column">
-                    {rightColumn}
-                </div>
+            <div className="separator"/>
+            <div className="column">
+                {achievementsComponents}
             </div>
         </section>
     );

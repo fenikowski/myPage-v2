@@ -1,9 +1,7 @@
 div.achievement {
     position: relative;
-    min-height: 15vh;
     background-color: #161b22;
     color: #000;
-    margin-bottom: 25vh;
     padding: 10px;
     border: #30363d solid 2px;
     border-radius: 5px;
@@ -13,10 +11,18 @@ div.achievement {
     overflow: hidden;
     z-index: 3;
     opacity: 0;
-    top: 20vmin;
+    flex-basis: 45%;
 
     display: flex;
     flex-direction: row;
+}
+
+div.achievement:nth-child(2n) {
+    margin-top: 10vmax;
+}
+
+div.achievement:nth-child(2n-1) {
+    margin-bottom: 10vmax;
 }
 
 div.achievement.active {
@@ -25,7 +31,7 @@ div.achievement.active {
 }
 
 div.achievement:last-child {
-    margin-bottom: 5vh;
+    margin-bottom: 15vh;
 }
 
 .achievement .left {
@@ -96,4 +102,75 @@ div.achievement:last-child {
         opacity: 1;
         top: 0vmin;
     }
+}
+
+
+
+/* MOBILES */
+
+
+@media (max-width: 1100px) and (orientation: portrait) {
+    div.achievement:nth-child(2n) {
+        margin: 1vmax 0;
+    }
+    
+    div.achievement:nth-child(2n-1) {
+        margin: 1vmax 0;
+    }
+   
+    div.achievement:first-child {
+        margin-top: 5vmax;
+    }
+   
+    div.achievement:last-child {
+        margin-bottom: 3vmax;
+    }
+}
+
+@media (max-width: 900px) and (orientation: portrait) {
+
+}
+
+@media (max-width: 600px) and (orientation: portrait) {
+
+}
+
+@media (max-width: 400px) and (orientation: portrait) {
+
+}
+
+@media (max-width: 361px) and (orientation: portrait) {
+
+}
+
+@media (max-width: 359px) and (orientation: portrait) {
+
+}
+
+@media (max-width: 1400px) and (orientation: landscape) {
+
+}
+
+@media (max-width: 1400px) and (min-height: 900px) and (orientation: landscape) {
+
+}
+
+@media (max-width: 1200px) and (orientation: landscape) {
+
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+
+}
+
+@media (max-width: 800px) and (orientation: landscape) {
+
+}
+
+@media (max-width: 700px) and (orientation: landscape) {
+
+}
+
+@media (max-width: 600px) and (orientation: landscape) {
+
 }

@@ -4,50 +4,97 @@
     min-height: 100vh;
     display: flex;
     flex-direction: row;
-}
-
-.career .left {
-    flex-basis: 50%;
-}
-
-.career .right {
-    flex-basis: 50%;
+    align-items: center;
+    justify-content: center;
 }
 
 .separator {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
     background-color: lime;
     width: 2px;
     opacity: 0.2;
 }
 
-.career .left {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-}
-
-.career .right {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-}
-
-.career .left .column {
+.career .column {
     height: 100%;
     flex-basis: 75%;
+    padding: 10px;
+    padding-top: 5vmax;
 
     display: flex;
-    flex-direction: column;
-    padding: 10px;
-    padding-top: 5vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.career .right .column {
-    height: 100%;
-    flex-basis: 75%;
 
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    padding-top: 30vh;
-}
+  /* MOBILES */
+  
+
+  @media (max-width: 1100px) and (orientation: portrait) {
+    .separator {
+        display: none;
+    }
+    
+    .career .column {
+        flex-basis: 90%;
+        padding: 0;
+    
+        flex-direction: column;
+        justify-content: center;
+    }
+  }
+  
+  @media (max-width: 900px) and (orientation: portrait) {
+
+  }
+
+  @media (max-width: 600px) and (orientation: portrait) {
+    
+  }
+  
+  @media (max-width: 400px) and (orientation: portrait) {
+
+  }
+  
+  @media (max-width: 361px) and (orientation: portrait) {
+   
+  }
+  
+  @media (max-width: 359px) and (orientation: portrait) {
+
+  }
+  
+  @media (max-width: 1400px) and (orientation: landscape) {
+
+  }
+  
+  @media (max-width: 1400px) and (min-height: 900px) and (orientation: landscape) {
+
+  }
+  
+  @media (max-width: 1200px) and (orientation: landscape) {
+    .career .column {
+        flex-basis: 90%;
+    }
+  }
+  
+  @media (max-width: 900px) and (orientation: landscape) {
+
+  }
+  
+  @media (max-width: 800px) and (orientation: landscape) {
+
+  }
+
+  @media (max-width: 700px) and (orientation: landscape) {
+
+  }
+
+  @media (max-width: 600px) and (orientation: landscape) {
+
+  }
