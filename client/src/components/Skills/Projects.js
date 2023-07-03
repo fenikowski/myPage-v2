@@ -290,11 +290,11 @@ export default function Projects({ language }) {
         </p>
         <p>
           {text.link}
-          <a href={project.link}>{project.link}</a>
+          <a href={project.link} target="_blank">{project.link}</a>
         </p>
         <p>
           Github:
-          <a href={project.github}>{project.github}</a>
+          <a href={project.github} target="_blank">{project.github}</a>
         </p>
         <p>
           {text.language}

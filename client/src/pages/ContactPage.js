@@ -158,13 +158,14 @@ export default function Contact({ language }) {
             <p>+48 510 046 987</p>
             <input type="text" defaultValue="+48 510 046 987" />
           </div>
-          <a href="https://github.com/fenikowski" className="address-box">
+          <a href="https://github.com/fenikowski" className="address-box" target="_blank">
             <img src={GitHub} className="github-contact" alt="" />
             <p>/fenikowski</p>
           </a>
           <a
             href="https://www.facebook.com/igor.fenikowski"
             className="address-box"
+            target="_blank"
           >
             <img src={Facebook} alt="" />
             <p>/igor.fenikowski</p>
@@ -172,6 +173,7 @@ export default function Contact({ language }) {
           <a
             href="https://www.linkedin.com/in/fenikowski/"
             className="address-box"
+            target="_blank"
           >
             <img src={LinkedIn} alt="" />
             <p>/in/fenikowski</p>
