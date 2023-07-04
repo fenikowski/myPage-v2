@@ -2,7 +2,6 @@ const express = require("express");
 const path = require("path");
 const mongo = require("mongodb");
 var ObjectId = require("mongodb").ObjectID;
-const favicon = require("express-favicon");
 var cors = require("cors");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
@@ -39,7 +38,7 @@ app.use(logger("dev"));
 // append /api for our http requests
 app.use("/api", router);
 
-router.get("/getMessages", (req, res) => {
+router.get("/message", (req, res) => {
   const db = client.db("myPage");
   const messages = db.collection("messages");
 
@@ -80,7 +79,7 @@ router.post("/login", (req, res) => {
   });
 });
 
-router.post("/noteVisit", (req, res) => {
+router.post("/visit", (req, res) => {
   const db = client.db("myPage");
   const stats = db.collection("page_stats");
 
@@ -103,7 +102,7 @@ router.post("/noteVisit", (req, res) => {
   res.end();
 });
 
-router.get("/getStats", (req, res) => {
+router.get("/stats", (req, res) => {
   const db = client.db("myPage");
   const stats = db.collection("page_stats");
 
@@ -131,7 +130,7 @@ router.post("/message", (req, res) => {
   });
 });
 
-router.post("/deleteMessage", (req, res) => {
+router.delete("/message", (req, res) => {
   const db = client.db("myPage");
   const messages = db.collection("messages");
 

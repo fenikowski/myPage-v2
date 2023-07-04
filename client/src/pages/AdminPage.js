@@ -30,7 +30,7 @@ export default function Admin() {
     const logged = cookies.get("logged");
 
     axios
-      .get("/api/getMessages", { logged })
+      .get("/api/message", { logged })
       .then(data => {
         if (data.data.received) {
           setMessages(data.data.received);
@@ -41,7 +41,7 @@ export default function Admin() {
 
   const getStats = () => {
     axios
-      .get("/api/getStats")
+      .get("/api/stats")
       .then(data => {
         const [visits, referrerList] = data.data;
         setReferrers(referrerList);
@@ -55,7 +55,7 @@ export default function Admin() {
   };
 
   const handleDelete = id => {
-    axios.post("/api/deleteMessage", { id }).then(() => this.getMessages());
+    axios.delete("/api/message", { id }).then(() => getMessages());
   };
 
   const handleLogout = () => {
