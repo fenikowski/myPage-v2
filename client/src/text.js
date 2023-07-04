@@ -5,7 +5,7 @@ const text = {
   es: {
     headers: {
       skillsh1: "Proyectos",
-      skillsh2: "Lo que uso en mi código",
+      skillsh2: "y lo que uso en mi código",
       gamesh1: `Juegos`,
       gamesh2: `¡Haz clic para despertar el fuego!`,
       contacth1: "Contact",
@@ -161,7 +161,7 @@ const text = {
   en: {
     headers: {
       skillsh1: "Projects",
-      skillsh2: "what i use in my code",
+      skillsh2: "and what i use in my code",
       gamesh1: `Games`,
       gamesh2: `Click to awake the fire!`,
       contacth1: "Contact",

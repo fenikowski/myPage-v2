@@ -46,7 +46,9 @@ export default function App() {
     const cookie = new Cookies();
     if (!cookie.get("visited")) {
       cookie.set("visited", true, { maxAge: 60 * 60 * 1000 });
-      axios.post("/api/noteVisit", { referrer: document.referrer });
+      axios
+        .post("/api/noteVisit", { referrer: document.referrer })
+        .catch(() => console.log("Query failed"));
     }
   };
 
