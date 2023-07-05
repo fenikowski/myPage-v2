@@ -3,18 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+    "start": "set NODE_ENV=production && node ./dist/",
+    "dev": "set NODE_ENV=development&& nodemon ./src/index.js"
   },
-  "author": "",
+  "author": "Igor Fenikowski",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "express-favicon": "^2.0.1",
-    "mongodb": "^3.3.0",
-    "morgan": "^1.9.1"
+    "mysql2": "^3.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }
