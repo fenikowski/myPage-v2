@@ -4,6 +4,8 @@ import { sendCreatedResponse, sendOkResponse, sendResponseNoContent } from '../u
 import { deleteMessageController, getMessageController, postMessageController } from '../controllers/messageController.js';
 import { postVisitController } from '../controllers/visitController.js';
 import { getStatsController } from '../controllers/statsController.js';
+import { postUserController } from '../controllers/userController.js';
+import { postLoginController } from '../controllers/loginController.js';
 
 export default (config) => {
   const routes = Router();
@@ -13,29 +15,15 @@ export default (config) => {
     (result, req, res, next) => sendOkResponse(result, req, res)
   )
 
-  routes.post("/login", (req, res) => {
-    const db = client.db("myPage");
-    const users = db.collection("users");
-  
-    users.findOne({ userName: req.body.username }, (err, data) => {
-      if (err) {
-        console.log("Failed to connect:" + err);
-        res.json({ info: "Failed to connect database" });
-        res.end();
-      } else if (data) {
-        if (data.password === req.body.password) {
-          res.json({ info: "Logged correctly" });
-          res.end();
-        } else {
-          res.json({ info: "Incorrect password" });
-          res.end();
-        }
-      } else {
-        res.json({ info: "User do not exist" });
-        res.end();
-      }
-    });
-  });
+  routes.post("/login", 
+    (req, res, next) => postLoginController(req, res, next, config),
+    (result, req, res, next) => sendCreatedResponse(result, req, res)
+  );
+
+  routes.post("/user",
+    (req, res, next) => postUserController(req, res, next, config),
+    (result, req, res, next) => sendCreatedResponse(result, req, res)
+  );
 
   routes.get("/message", 
     (req, res, next) => getMessageController(req, res, next, config),

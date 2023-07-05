@@ -4,6 +4,10 @@ const errorHandler = (err, environment) => {
     const responseJson = {};
 
     switch(err.code){
+        case "UNAUTHORIZED":
+            responseJson.message = "Unauthorized"
+            responseJson.code = 401
+            break;
         case "ER_DUP_ENTRY":
             responseJson.message = "Conflict"
             responseJson.code = 409
@@ -47,4 +51,10 @@ const error422 = (message = 'Unprocessable Entity') => {
     return err;
 }
 
-export {errorHandler, error404, error422};
+const error401 = (message = 'Unauthorized') => {
+    const err = Error(message);
+    err.status = 422;
+    return err;
+}
+
+export { errorHandler, error404, error422, error401 };

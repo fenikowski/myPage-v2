@@ -2,6 +2,7 @@ import express from 'express'
 import configuration from './config/index.js'
 import routes from './routes/index.js'
 import { error404, errorHandler } from "./utils/errors.js"
+import bodyParser from 'body-parser';
 
 const app = express();
 
@@ -9,6 +10,8 @@ const app = express();
 const config = configuration(app);
 
 // MIDDLEWARE ----------------------------------------------------------------------------
+app.use(bodyParser.json({ limit: '10mb' }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', "*");
     res.header('Access-Control-Allow-Methods', 'GET,PATCH,POST,DELETE');

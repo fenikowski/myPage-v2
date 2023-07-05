@@ -3,6 +3,7 @@ export default {
     environment   : 'production',
     port          : 5000,
     bodyLimit     : '300kb',
+    saltRounds    : 10,
     db            : {
         host    : "***",
         user    : "***",

@@ -26,4 +26,17 @@ const sendResponseUnprocessableEntity = (res, err) => {
     res.status(422).json(err);
 };
 
-export {sendOkResponse, sendCreatedResponse, sendResponseNoContent, sendResponseBadRequest, sendResponseServerError, sendResponseNotFound, sendResponseUnprocessableEntity}
+const sendResponseUnauthorized = (res, error) => {
+    res.status(401).json(error);
+};
+
+export {
+    sendOkResponse,
+    sendCreatedResponse,
+    sendResponseNoContent,
+    sendResponseBadRequest,
+    sendResponseServerError,
+    sendResponseNotFound,
+    sendResponseUnprocessableEntity,
+    sendResponseUnauthorized 
+};
