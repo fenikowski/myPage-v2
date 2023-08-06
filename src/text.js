@@ -150,7 +150,7 @@ const text = {
       button: "envía mensaje",
       clipboard: "copiar a portapapeles",
       copied: "¡copiado!",
-      cvEnglish: "descarga mi CV en inglés",
+      cvEnglish: "descarga mi CV",
       cvSpanish: "descarga mi CV en español"
     },
     error: {
@@ -181,11 +181,11 @@ const text = {
         "I have been living in Valencia, Spain, for the past 6 years. I am open to fully remote software development job offers. If you would like to get in touch with me, please visit the contact section and reach out to me through any of the communication channels provided.",
       career: [
         "During my two years at the University of Warsaw and one year at the University of Valencia, I gained a comprehensive understanding of management, economics, statistics, marketing, psychology, and finances. To culminate my studies, I focused on mobile marketing in the pharmaceutical industry for my thesis. This experience has helped me become a better leader, improve my language skills and understand better how the world of business works.",
-        "Driven by my early passion for programming, I dedicated myself to the tech industry. Through a series of programming courses, I honed my skills by creating games and websites for personal and client projects. This hands-on experience allowed me to sharpen my expertise in HTML, CSS, JavaScript, Node.js, and React.js, laying a strong foundation for my career.",
-        "My initial employment opportunity arose with Martico, a mid-sized logistics company in urgent need of IT solutions. Despite a brief training period, I embraced the challenge of independently developing the company's ERP system, starting from an incomplete database architecture. Throughout this process, I enthusiastically honed my skills in Vue.js, Node.js, and MySQL. Working in Valencia (Spain) allowed me to continue developing my language skills.",
-        "The initial successes of my project garnered attention, leading to the formation of a dedicated team of 4-5 individuals. Many new team members were junior developers, presenting a fresh challenge for me - teaching them clean code principles, project conventions, abstract thinking, and emphasizing the importance of clear and consistent code for better understanding. My project entered production phase and got implanted in many foreign delegations outside of Spain.",
-        "Seeking new self-development opportunities and aiming to enhance my formal education in the IT field, I undertook and successfully completed a Master's degree in Artificial Intelligence at the International University of Valencia. Throughout the course, I got challenged with an abundance of subjects, including complex mathematics, algorithms, machine learning, and neural networks, among others. As a culmination of my studies, I developed an artificial neural network that analyzed 3D models of pulmonary fibrosis patients' lungs and medical data to forecast the progression of the illness.",
-        `After over 2 years at the company apart from leading a team of 9 individuals in a peak period, I've become the project's Tech Lead, focusing mostly on planning developments, creating system's architecture, mentoring and assisting my team members, optimizing the application, "hotfixing" critical errors in production, overseeing and fine-tuning project's infrastructure on Microsoft Azure. In the late 2023 I decided to quit and pursue new challenges.`,
+        "Driven by my early passion for programming, I dedicated myself to the tech industry. Through a series of programming courses, I developed my skills by creating games and websites for personal and client projects. This hands-on experience allowed me to sharpen my expertise in HTML, CSS, JavaScript, Node.js, and React.js, laying a strong foundation for my career.",
+        "I embraced the challenge of independently coding the company's ERP system, leaded by a project's architect. Throughout this process, I developed my skills in Vue.js, Node.js, and MySQL. Working in Valencia (Spain) allowed me to continue developing my language skills.",
+        "The initial successes of my project garnered attention, leading to the formation of a dedicated team of 4-5 individuals. Many new team members were junior developers, presenting a fresh challenge for me - teaching clean code principles, project conventions, abstract thinking, and emphasizing the importance of clear and consistent code for better understanding. My project entered production phase and got implanted in Spain and many foreign delegations outside of Spain.",
+        "Seeking new self-development opportunities and aiming to enhance my formal education in the IT field, I undertook and successfully completed a Master's degree in Artificial Intelligence at the International University of Valencia. Throughout the course, I got challenged with an abundance of subjects, including complex mathematics, algorithms, machine learning and neural networks, among others. As a culmination of my studies, I developed an artificial neural network that analyzed 3D models of pulmonary fibrosis patients' lungs and medical data to forecast the progression of the illness.",
+        `After over 2 years at the company apart from leading a team of 9 individuals in a peak period, I've become the project's Tech Lead, focusing mostly on planning developments, creating system's architecture, mentoring and assisting my team members, optimizing the application, "hotfixing" critical errors in production, overseeing and fine-tuning project's infrastructure on Microsoft Azure, managing the project in Jira and recruiting new team members.`,
       ]
     },
     skills: {
@@ -275,7 +275,7 @@ const text = {
       button: "send message",
       clipboard: "copy to clipboard",
       copied: "copied!",
-      cvEnglish: "download my CV in english",
+      cvEnglish: "download my CV",
       cvSpanish: "download my CV in spanish"
     },
     error: {

@@ -19,6 +19,26 @@ section.documents a.cv {
   transition: 0.3s;
 }
 
+section.documents div.spoken-languages {
+  height: 60%;
+  flex-basis: 35%;
+  font-size: 1.5rem;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+section.documents div.spoken-languages p.title {
+  font-weight: 600;
+  font-size: 1.7rem;
+}
+
+section.documents div.spoken-languages p {
+  display: block;
+}
+
 section.documents a.cv:hover,
 section.documents a.cv:active {
   cursor: pointer;

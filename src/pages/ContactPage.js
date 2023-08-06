@@ -6,10 +6,10 @@ import Mail from "../img/contact1.png";
 import Facebook from "../img/contact3.png";
 import LinkedIn from "../img/contact5.png";
 import NodeJS from "../img/NodeLogo.png";
-import Mongo from "../img/MongoLogo.png";
+import MySQL from "../img/MySqlLogo.png";
 import "./style/contact.css";
 import Data from "../text";
-import CVspanish from "../Downloads/Igor Fenikowski CV es.pdf";
+// import CVspanish from "../Downloads/Igor Fenikowski CV es.pdf";
 import CVenglish from "../Downloads/Igor Fenikowski CV en.pdf";
 
 export default function Contact({ language }) {
@@ -93,13 +93,15 @@ export default function Contact({ language }) {
   return (
     <>
       <section className="documents">
+        <div className="spoken-languages">
+          <p className="title">Spoken Languages</p>
+          <p>Polish: Native</p>
+          <p>English: Fluent (C1)</p>
+          <p>Spanish: Fluent (C1)</p>
+        </div>
         <a href={CVenglish} className="cv" download>
-          <i className="fas fa-file-download" />
+          <i className="fas fa-file-download"/>
           <p>{text.cvEnglish}</p>
-        </a>
-        <a href={CVspanish} className="cv" download>
-          <i className="fas fa-file-download" />
-          <p>{text.cvSpanish}</p>
         </a>
       </section>
       <section className="contact">
@@ -130,7 +132,7 @@ export default function Contact({ language }) {
           <p className="message-info">
             <span>{info}</span> powered by{" "}
             <img src={NodeJS} alt="" />
-            <img src={Mongo} alt="" />
+            <img src={MySQL} alt="" />
           </p>
         </div>
         <div className="address">
