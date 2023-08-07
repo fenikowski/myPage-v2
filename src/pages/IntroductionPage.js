@@ -15,7 +15,7 @@ export default function Introduction({ language }) {
       <CurriculumVitae language={language}/>
       <SectionTitle text={technologies}/>
       <Code language={language}/>
-      <SectionTitle text="yeah, I know. skill bars are quite subjective..."/>
+      <SectionTitle text="I know. skill bars are quite subjective..."/>
       {/* <Technologies/> */}
       <LocationMap text={actualInfo}/>
     </React.Fragment>
