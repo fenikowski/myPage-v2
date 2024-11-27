@@ -136,7 +136,7 @@ export default function Code({ language }) {
     { color: "#2277FF", experience: "6 years", percentage: 80 },
     { color: "#90C53F", experience: "6 years", percentage: 90 },
     { color: "#4479A1", experience: "5 years", percentage: 80 },
-    { color: "#4587B9", experience: "1 year", percentage: 50 }
+    { color: "#4587B9", experience: "1 year", percentage: 40 }
   ].map(({color, experience, percentage}, index) => createLevelsComponent(color, experience, percentage, index));
 
   return (
