@@ -37,6 +37,10 @@ nav.main-navigation {
   transition: 0.3s;
 }
 
+.main-navigation ul li a:hover {
+  cursor: pointer;
+}
+
 .main-navigation ul li a.active {
   border-bottom: white solid 0.3vh;
 }

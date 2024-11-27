@@ -1,8 +1,8 @@
 /* eslint-disable no-useless-escape */
 import React from "react";
 import { useState, useEffect } from "react";
-import PreloadImages from "./components/GeneralComponents/PreloadImages";
-import LoadingScreen from "./layout/LoadingScreen";
+// import PreloadImages from "./components/GeneralComponents/PreloadImages";
+// import LoadingScreen from "./layout/LoadingScreen";
 import Navigation from "./layout/Navigation";
 import Footer from "./layout/Footer";
 import Page from "./layout/Page";
@@ -14,7 +14,7 @@ import "./styles/App.css";
 export default function App() {
   const [language, setLanguage] = useState("en");
   const [isMobile, setIsMobile] = useState(false);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
+  // const [imagesLoaded, setImagesLoaded] = useState(false);
 
   // effects
   useEffect(() => {
@@ -58,8 +58,8 @@ export default function App() {
 
   return (
     <React.Fragment>
-      <PreloadImages setImagesLoaded={setImagesLoaded}/>
-      <LoadingScreen imagesLoaded={imagesLoaded}/>
+      {/* <PreloadImages setImagesLoaded={setImagesLoaded}/> */}
+      {/* <LoadingScreen imagesLoaded={imagesLoaded}/> */}
       <button className="language US" onClick={() => changeLanguage("en")}/>
       <button className="language ES" onClick={() => changeLanguage("es")}/>
       <Navigation language={language}/>

@@ -75,7 +75,7 @@ export default function InitialHeader() {
         Igor Fenikowski
       </h1>
       <h2 className="specialty" style={{ top: specialtyDistance }}>
-        Full-stack web developer
+        Software Developer
       </h2>
     </div>
   );

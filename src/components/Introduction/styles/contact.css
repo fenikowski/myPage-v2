@@ -1,17 +1,10 @@
-div.contact-component {
-  display: flex;
-  flex-direction: row;
-  background-color: #111;
-  justify-content: space-around;
-}
-
 section.documents {
+  background-color: #111;
   display: flex;
-  flex-direction: column-reverse;
-  align-items: flex-start;
   justify-content: space-around;
+  align-items: center;
   height: 40vh;
-  flex-basis: 40%;
+  width: 100%;
 }
 
 section.documents a.cv {
@@ -76,7 +69,6 @@ section.contact {
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  flex-basis: 50%;
 }
 
 .contact div.form {

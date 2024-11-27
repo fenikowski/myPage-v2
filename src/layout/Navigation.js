@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import "./style/Nav.css";
 import Data from "../text";
 
@@ -15,31 +14,45 @@ export default function Navigation({ language }) {
     },
     {
       id: 1,
-      name: titles.skills,
-      path: "/projects"
+      name: "Career",
+      path: "/#career"
     },
     {
       id: 2,
-      name: titles.games,
-      path: "/games"
+      name: "Skills",
+      path: "/#skills"
     },
     {
       id: 3,
+      name: titles.skills,
+      path: "/#projects"
+    },
+    {
+      id: 4,
       name: titles.contact,
-      path: "/contact"
+      path: "/#contact"
     }
   ];
 
+  const handleClick = (item) => {
+    const hash = item.path.split('#')[1];
+    const section = document.getElementById(hash);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" }); // Smooth scroll
+    }
+  }
+
   const list = navList.map(nav => (
     <li key={nav.id}>
-      <NavLink exact={nav.exact} to={nav.path}>
+      {/* eslint-disable-next-line */}
+      <a onClick={() => handleClick(nav)}>
         {nav.name}
-      </NavLink>
+      </a>
     </li>
   ));
 
   return (
-    <nav className="main-navigation">
+    <nav style={{ display: "none" }} className="main-navigation">
       <div className="shadow" />
       <ul className="navigation">{list}</ul>
     </nav>

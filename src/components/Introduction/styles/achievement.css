@@ -35,7 +35,8 @@ div.achievement.active {
 }
 
 div.achievement:last-child {
-    margin-bottom: 15vh;
+    margin-bottom: 0vh;
+    filter: opacity(0);
 }
 
 .achievement .left {
@@ -69,8 +70,8 @@ div.achievement:last-child {
 .achievement .title {
     font-weight: 500;
     font-size: 1.2em;
-    height: 5vh;
-    line-height: 5vh;
+    /* height: 5vh; */
+    /* line-height: 5vh; */
     color: #fefefe;
 }
 

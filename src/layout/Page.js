@@ -1,11 +1,11 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Introduction from "../pages/IntroductionPage.js";
-import Juegos from "../pages/GamesPage.js";
-import Contact from "../pages/ContactPage.js";
-import Skills from "../pages/SkillsPage.js";
-import Admin from "../pages/AdminPage.js";
-import Login from "../pages/LoginPage.js";
+// import Juegos from "../pages/GamesPage.js";
+// import Contact from "../pages/ContactPage.js";
+// import Skills from "../pages/SkillsPage.js";
+// import Admin from "../pages/AdminPage.js";
+// import Login from "../pages/LoginPage.js";
 import Error from "../pages/ErrorPage.js";
 
 export default function Page({language}) {
@@ -17,7 +17,7 @@ export default function Page({language}) {
           exact
           render={() => <Introduction language={language} />}
         />
-        <Route
+        {/* <Route
           path="/projects"
           render={() => <Skills language={language} />}
         />
@@ -36,7 +36,7 @@ export default function Page({language}) {
         <Route
           path="/login"
           render={() => <Login language={language} />}
-        />
+        /> */}
         <Route render={() => <Error language={language} />} />
       </Switch>
     </div>

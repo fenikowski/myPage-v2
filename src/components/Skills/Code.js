@@ -34,14 +34,14 @@ export default function Code({ language }) {
       setImageMove("code");
       setTimeout(() => {
         setBoxRotation("90deg");
-      }, 1000);
+      }, 500);
       setTimeout(() => {
         setStripesAnimation("stripe-loading 1s forwards");
         setTextOpacity("1");
-      }, 1500);
+      }, 1000);
       setTimeout(() => {
         setAnimationFlag(false);
-      }, 2000);
+      }, 1500);
     } else if (
       !animationFlag &&
       ((window.scrollY + window.innerHeight) < (offsetTop))
@@ -130,17 +130,17 @@ export default function Code({ language }) {
     />));
 
   const levels = [
-    { color: "#F7DF1E", experience: "5 years", percentage: 80 },
-    { color: "#00D8FF", experience: "5 years", percentage: 70 },
-    { color: "#3FB984", experience: "4 years", percentage: 90 },
-    { color: "#2277FF", experience: "5 years", percentage: 70 },
-    { color: "#90C53F", experience: "5 years", percentage: 65 },
-    { color: "#4479A1", experience: "4 years", percentage: 80 },
+    { color: "#F7DF1E", experience: "6 years", percentage: 80 },
+    { color: "#00D8FF", experience: "6 years", percentage: 80 },
+    { color: "#3FB984", experience: "4 years", percentage: 70 },
+    { color: "#2277FF", experience: "6 years", percentage: 80 },
+    { color: "#90C53F", experience: "6 years", percentage: 90 },
+    { color: "#4479A1", experience: "5 years", percentage: 80 },
     { color: "#4587B9", experience: "1 year", percentage: 50 }
   ].map(({color, experience, percentage}, index) => createLevelsComponent(color, experience, percentage, index));
 
   return (
-    <section className="code" ref={divCode}>
+    <section id="skills" className="code" ref={divCode}>
       <div className="code">
         {skills}
         <div className="levels">
