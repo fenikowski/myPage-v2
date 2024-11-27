@@ -12,77 +12,31 @@ import photo7 from "../../img/sneakers_spa_app.PNG";
 import photo8 from "../../img/sneakers_spa_app_2.PNG";
 import photo9 from "../../img/sneakers_spa_app_3.PNG";
 import photo10 from "../../img/sneakers_spa_app_4.PNG";
-import photo11 from "../../img/tfil_booking.png";
-import photo12 from "../../img/sneakers_spa_app_5.PNG";
-import photo13 from "../../img/mars_photo_4.png";
-
-
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation } from 'swiper/modules';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
 
 export default function Projects(){
 
     const photos = [
         photo1,
         photo2,
-        photo11,
-        photo3,
+        photo3
     ];
 
     const photos2 = [
         photo4,
         photo5,
-        photo6,
-        photo13
+        photo6
     ];
 
     const photos3 = [
         photo7,
         photo8,
-        photo12,
         photo9,
-        photo10,
+        photo10
     ];
 
-    const photosComponents = (photosArray, photoHeight) => photosArray.map((item, index) => (
-        <SwiperSlide key={index}>
-            <div className="photo" style={{ backgroundImage: `url(${item})`, height: photoHeight }}/>
-        </SwiperSlide>
+    const photosComponents = (photosArray) => photosArray.map((item, index) => (
+        <div key={index} className="photo" style={{ backgroundImage: `url(${item})` }}/>
     ))
-
-    const swiperComponent = (photosArray, slides = [1, 2, 2, 3], photoHeight = '30vh') => (
-    <Swiper
-        modules={[Autoplay]}
-        spaceBetween={"20px"}
-        style={{ width: '100%' }}
-        loop
-        autoplay={{
-            delay: 1500,
-            disableOnInteraction: true
-        }}
-        breakpoints={{
-            0: {
-                slidesPerView: slides[0],
-            },
-            400: {
-                slidesPerView: slides[1],
-            },
-            768: {
-                slidesPerView: slides[2],
-            },
-            1024: {
-                slidesPerView: slides[3],
-            },
-        }}
-    >
-        {photosComponents(photosArray, photoHeight)}
-    </Swiper>
-    );
 
     return (
         <section id="projects" className="project-section">
@@ -96,7 +50,7 @@ export default function Projects(){
                 </div>
                 <div className="right">
                     <div className="photos">
-                        {swiperComponent(photos)}
+                        {photosComponents(photos)}
                     </div>
                     <h3>The Floor Is Lava Ecosystem</h3>
                     <ul>
@@ -120,7 +74,7 @@ export default function Projects(){
                 </div>
                 <div className="right">
                     <div className="photos">
-                        {swiperComponent(photos3, [3,3,3,4], '60vmin')}
+                        {photosComponents(photos3)}
                     </div>
                     <h3>Sneakers Spa - Android and iOS app</h3>
                     <ul>
@@ -141,7 +95,7 @@ export default function Projects(){
                 </div>
                 <div className="right">
                     <div className="photos">
-                        {swiperComponent(photos2)}
+                        {photosComponents(photos2)}
                     </div>
                     <h3>Mars - ERP for logistics company</h3>
                     <ul>
