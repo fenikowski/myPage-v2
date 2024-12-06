@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import "./style/Footer.css";
 import Data from "../text";
-import { Route } from "react-router";
+// import { Route } from "react-router";
 
 export default function Footer({ language }) {
   // states
@@ -23,10 +23,10 @@ export default function Footer({ language }) {
     footerSwitch()
   },[footerSwitch]);
 
-  const location = textArg => {
-    if (window.location.pathname === "/") return <span>{textArg.main}</span>;
-    else return <span>{window.location.pathname}</span>;
-  };
+  // const location = textArg => {
+  //   if (window.location.pathname === "/") return <span>{textArg.main}</span>;
+  //   else return <span>{window.location.pathname}</span>;
+  // };
 
   const text = Data[language].footer;
 
