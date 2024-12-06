@@ -1,9 +1,11 @@
 div.achievement {
     position: relative;
-    background-color: #161b22;
+    background-color: #141714;
+    /* background-color: #161b22; */
     color: #000;
     padding: 10px;
-    border: #30363d solid 2px;
+    border: #31422a solid 2px;
+    /* border: #30363d solid 2px; */
     border-radius: 5px;
     transform: rotateX(90deg);
     transition: 0.4s;

@@ -24,6 +24,8 @@ import { Autoplay } from 'swiper/modules';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
+import { useCallback, useEffect, useMemo, useRef } from "react";
+import { getElementDistanceFromTop } from "../../utils/usefullFunctions";
 
 export default function Projects(){
 
@@ -48,6 +50,39 @@ export default function Projects(){
         photo9,
         photo10,
     ];
+
+    // refs
+    const project1 = useRef(null);
+    const project2 = useRef(null);
+    const project3 = useRef(null);
+    const company1 = useRef(null);
+    const company2 = useRef(null);
+    const company3 = useRef(null);
+
+    const refs = useMemo(() => [project1, project2, project3], []);
+    const refsLogo = useMemo(() => [company1, company2, company3], []);
+
+    // callbacks
+    const handleScroll = useCallback(() => {
+        refs.forEach((ref, index) => {
+            const offsetTop = getElementDistanceFromTop(ref.current);
+            if ((window.scrollY + window.innerHeight) > (offsetTop + ref.current.clientHeight / 2)) {
+                ref.current.classList.add("active");
+                refsLogo[index].current.classList.add("active");
+            } else if((window.scrollY + window.innerHeight) < offsetTop) {
+                ref.current.classList.remove("active");
+                refsLogo[index].current.classList.remove("active");
+            }
+        })
+    }, [refs, refsLogo]);
+
+    // effects
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+
+        // code cleanup
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [handleScroll]);
 
     const photosComponents = (photosArray, photoHeight) => photosArray.map((item, index) => (
         <SwiperSlide key={index}>
@@ -87,15 +122,17 @@ export default function Projects(){
     return (
         <section id="projects" className="project-section">
             <div className="project">
-                <div className="left">
+                <div ref={company1} className="left">
                     <img src={logo} alt="logo" className="logo"/>
                     <div>
                         <p>Project duration: 1.5 years</p>
                         <p>Team size: 1</p>
+                        <p>Link to the web:</p>
+                        <a href="https://polite-cliff-01cc56703.5.azurestaticapps.net" target="_blank" rel="noreferrer">www.thefloorislava.es</a>
                     </div>
                 </div>
                 <div className="right">
-                    <div className="photos">
+                    <div ref={project1} className="photos">
                         {swiperComponent(photos)}
                     </div>
                     <h3>The Floor Is Lava Ecosystem</h3>
@@ -111,15 +148,17 @@ export default function Projects(){
                 </div>
             </div>
             <div className="project" style={{ borderTop: "solid 1px #333" }}>
-                <div className="left">
+                <div ref={company2} className="left">
                     <img src={logo3} alt="logo" className="logo"/>
                     <div>
                         <p>Project duration: 6 months</p>
                         <p>Team size: 1</p>
+                        <p>Link to the web:</p>
+                        <a href="https://agreeable-mushroom-014b22e03.4.azurestaticapps.net" target="_blank" rel="noreferrer">www.sneakers-spa.es</a>
                     </div>
                 </div>
                 <div className="right">
-                    <div className="photos">
+                    <div ref={project2} className="photos">
                         {swiperComponent(photos3, [3,3,3,4], '60vmin')}
                     </div>
                     <h3>Sneakers Spa - Android and iOS app</h3>
@@ -132,15 +171,17 @@ export default function Projects(){
                 </div>
             </div>
             <div className="project" style={{ borderTop: "solid 1px #333" }}>
-                <div className="left">
+                <div ref={company3} className="left">
                     <img src={logo2} alt="logo" className="logo"/>
                     <div>
                         <p>Project duration: 4 years</p>
                         <p>Team size: 9</p>
+                        <p>Link to the web:</p>
+                        <a href="https://martico.com/" target="_blank" rel="noreferrer">www.martico.com</a>
                     </div>
                 </div>
                 <div className="right">
-                    <div className="photos">
+                    <div ref={project3} className="photos">
                         {swiperComponent(photos2)}
                     </div>
                     <h3>Mars - ERP for logistics company</h3>

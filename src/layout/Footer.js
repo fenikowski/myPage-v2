@@ -33,11 +33,12 @@ export default function Footer({ language }) {
   return (
     <div className="footer">
       <div className="localization">
-        {text.localization}
+        {/* {text.localization}
         <Route path="/" exact render={() => location(text)} />
         <Route path="/projects" exact render={() => location(text)} />
         <Route path="/games" exact render={() => location(text)} />
-        <Route path="/contact" exact render={() => location(text)} />
+        <Route path="/contact" exact render={() => location(text)} /> */}
+        thanks for your visit
       </div>
       <div className="author scene">
         <div

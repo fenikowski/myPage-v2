@@ -7,7 +7,8 @@ import LinkedIn from "../../img/contact5.png";
 import "./styles/contact.css";
 import Data from "../../text";
 // import CVspanish from "../Downloads/Igor Fenikowski CV es.pdf";
-import CVenglish from "../../Downloads/Igor Fenikowski CV en.pdf";
+import CVenglish from "../../Downloads/igor_fenikowski_cv.pdf";
+import presentationPDF from "../../Downloads/lava.pdf";
 
 export default function Contact({ language }) {
 
@@ -53,15 +54,22 @@ export default function Contact({ language }) {
     <div id="contact" className="contact-component">
       <section className="documents">
         <div className="spoken-languages">
-          <p className="title">Spoken Languages</p>
+          <p className="title">Spoken Languages:</p>
           <p>Polish: Native</p>
           <p>English: Fluent (C1)</p>
           <p>Spanish: Fluent (C1)</p>
         </div>
-        <a href={CVenglish} className="cv" download>
-          <i className="fas fa-file-download"/>
-          <p>{text.cvEnglish}</p>
-        </a>
+        <div className="spoken-languages">
+          <p className="title">Documents:</p>
+          <a href={CVenglish} className="cv" download>
+            <i className="fas fa-file-download"/>
+            <p>{text.cvEnglish}</p>
+          </a>
+          <a href={presentationPDF} className="cv" download>
+            <i className="fas fa-file-download"/>
+            <p>click here to download my last project's presentation</p>
+          </a>
+        </div>
       </section>
       <section className="contact">
         <div className="address">

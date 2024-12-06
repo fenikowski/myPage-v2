@@ -277,8 +277,8 @@ const text = {
       button: "send message",
       clipboard: "copy to clipboard",
       copied: "copied!",
-      cvEnglish: "download my CV",
-      cvSpanish: "download my CV in spanish"
+      cvEnglish: "click here to download my CV",
+      cvSpanish: "click here to download my CV in spanish"
     },
     error: {
       first: `Page doesn't exist`,
