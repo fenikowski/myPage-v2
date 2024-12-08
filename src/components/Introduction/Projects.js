@@ -91,32 +91,32 @@ export default function Projects(){
     ))
 
     const swiperComponent = (photosArray, slides = [1, 2, 2, 3], photoHeight = '30vh') => (
-    <Swiper
-        modules={[Autoplay]}
-        spaceBetween={"20px"}
-        style={{ width: '100%' }}
-        loop
-        autoplay={{
-            delay: 1500,
-            disableOnInteraction: true
-        }}
-        breakpoints={{
-            0: {
-                slidesPerView: slides[0],
-            },
-            400: {
-                slidesPerView: slides[1],
-            },
-            768: {
-                slidesPerView: slides[2],
-            },
-            1024: {
-                slidesPerView: slides[3],
-            },
-        }}
-    >
-        {photosComponents(photosArray, photoHeight)}
-    </Swiper>
+        <Swiper
+            modules={[Autoplay]}
+            spaceBetween={"20px"}
+            style={{ width: '100%' }}
+            loop
+            autoplay={{
+                delay: 1500,
+                disableOnInteraction: true
+            }}
+            breakpoints={{
+                0: {
+                    slidesPerView: slides[0],
+                },
+                400: {
+                    slidesPerView: slides[1],
+                },
+                768: {
+                    slidesPerView: slides[2],
+                },
+                1024: {
+                    slidesPerView: slides[3],
+                },
+            }}
+        >
+            {photosComponents(photosArray, photoHeight)}
+        </Swiper>
     );
 
     return (
