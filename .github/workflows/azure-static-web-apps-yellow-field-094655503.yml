@@ -18,6 +18,12 @@ jobs:
       - uses: actions/checkout@v3
         with:
           submodules: true
+          persist-credentials: true # Prevent cleanup error
+
+      - name: Clean up git credentials (if needed)
+        run: |
+          git config --unset-all http.https://github.com/.extraheader || true
+
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
