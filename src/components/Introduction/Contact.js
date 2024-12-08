@@ -6,9 +6,8 @@ import Facebook from "../../img/contact3.png";
 import LinkedIn from "../../img/contact5.png";
 import "./styles/contact.css";
 import Data from "../../text";
-// import CVspanish from "../Downloads/Igor Fenikowski CV es.pdf";
-import CVenglish from "../../Downloads/igor_fenikowski_cv.pdf";
-import presentationPDF from "../../Downloads/lava.pdf";
+import CVenglish from "../../../public/igor_fenikowski_cv.pdf";
+import presentationPDF from "../../../public/lava.pdf";
 
 export default function Contact({ language }) {
 
