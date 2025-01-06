@@ -120,7 +120,7 @@ export default function Projects(){
     );
 
     return (
-        <section id="projects" className="project-section">
+        <section data-testid="projects-section" id="projects" className="project-section">
             <div className="project">
                 <div ref={company1} className="left">
                     <img src={logo} alt="logo" className="logo"/>

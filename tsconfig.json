@@ -9,7 +9,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["react", "react-dom", "react-router-dom"]
+    "types": ["react", "react-dom", "react-router-dom", "jest"]
   },
   "include": [
     "src/**/*",  // Including all files inside src
