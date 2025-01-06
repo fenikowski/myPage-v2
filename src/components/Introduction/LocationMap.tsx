@@ -2,19 +2,26 @@ import { useCallback, useEffect, useRef } from "react";
 import Map from "../../img/map.png";
 import "./styles/locationMap.css"
 
-export default function LocationMap({ text }) {
+type LocationMapProps = {
+    text: string;
+};
+
+export default function LocationMap({ text }: LocationMapProps) {
     // refs
-    const mapImageRef = useRef(null);
-    const mapTextRef = useRef(null);
-    const mapSection = useRef(null);
+    const mapImageRef = useRef<HTMLImageElement | null>(null);
+    const mapTextRef = useRef<HTMLParagraphElement | null>(null);
+    const mapSection = useRef<HTMLElement | null>(null);
 
     // callbacks
     const mapAnimation = useCallback(() => {
-        mapImageRef.current.classList.add("active");
-        mapTextRef.current.classList.add("active");
+        if(mapImageRef.current && mapTextRef.current){
+            mapImageRef.current.classList.add("active");
+            mapTextRef.current.classList.add("active");
+        }
     },[]);
     
     const handleScroll = useCallback(() => {
+        if (!mapSection.current) return;
         if (
             window.scrollY + window.innerHeight >
             mapSection.current.offsetTop +

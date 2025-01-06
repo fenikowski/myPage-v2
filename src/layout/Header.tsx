@@ -4,26 +4,24 @@ import InitialHeader from "../components/headers/InitialHeader";
 import HeaderGames from "../components/headers/HeaderGames";
 import HeaderContact from "../components/headers/HeaderContact";
 import HeaderSkills from "../components/headers/HeaderSkills";
-import { Switch, Route } from "react-router";
+import { Routes, Route } from "react-router-dom";
 
-export default function Header({ language, mobile }) {
+export default function Header({ language, mobile } : { language: string; mobile: boolean; }) {
   return (
-    <Switch>
-      <Route path="/" exact component={InitialHeader} />
+    <Routes>
+      <Route path="/" element={<InitialHeader/>} />
       <Route
         path="/games"
-        render={() => <HeaderGames language={language} />}
+        element={<HeaderGames language={language} />}
       />
       <Route
         path="/projects"
-        render={() => (
-          <HeaderSkills language={language} mobile={mobile} />
-        )}
+        element={<HeaderSkills language={language} mobile={mobile} />}
       />
       <Route
         path="/contact"
-        render={() => <HeaderContact language={language} />}
+        element={<HeaderContact language={language} />}
       />
-    </Switch>
+    </Routes>
   );
 };

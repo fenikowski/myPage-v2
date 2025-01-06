@@ -21,8 +21,8 @@ export default function InitialHeader() {
     // give styles to the nav
     document
       .querySelectorAll("nav.main-navigation a")
-      .forEach(a => (a.style.color = "black"));
-    document.querySelector("nav.main-navigation div.shadow").style.boxShadow = "0 0 10vh 2vh white";
+      .forEach(a => ((a as HTMLElement).style.color = "black"));
+    (document.querySelector("nav.main-navigation div.shadow") as HTMLElement).style.boxShadow = "0 0 10vh 2vh white";
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);

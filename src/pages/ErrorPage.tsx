@@ -1,8 +1,17 @@
 import React from "react";
 import Data from "../text";
 
-export default function Error({ language }) {
-  const text = Data[language].error;
+type DataType = {
+  [language: string]: {
+    error: {
+      first: string;
+      second: string;
+    }
+  }
+}
+
+export default function Error({ language } : { language: string }) {
+  const text = (Data as DataType)[language].error;
 
   return (
     <p

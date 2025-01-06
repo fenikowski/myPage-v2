@@ -34,7 +34,7 @@ export default function Projects() {
   const projectsSection = useRef(null);
 
   // states
-  const [hover, setHover] = useState("none");
+  const [hover, setHover] = useState<string | number>("none");
   const [pictures, setPictures] = useState(Array(9).fill(0));
 
   // effects
@@ -46,7 +46,9 @@ export default function Projects() {
   },[]);
 
   const handleScroll = () => {
-    document.querySelectorAll("section.projects div.project").forEach(div => {
+    const divArray = document.querySelectorAll("section.projects div.project") as NodeListOf<HTMLDivElement>;
+    
+    divArray.forEach(div => {
       if (div.offsetTop + div.offsetHeight < window.scrollY) {
         div.style.transform = "none";
       } else if (window.scrollY === 0) {
@@ -55,7 +57,7 @@ export default function Projects() {
     });
   };
 
-  const onProjectHover = display => {
+  const onProjectHover = (display: string | number) => {
     setHover(display);
   };
 
@@ -122,7 +124,7 @@ export default function Projects() {
     }
   ];
 
-  const addClassOnHover = index => {
+  const addClassOnHover = (index: number | "none") => {
     switch (hover) {
       case index:
         return "hover-project";
@@ -135,7 +137,7 @@ export default function Projects() {
     }
   };
 
-  const slide = (index, side, lenght) => {
+  const slide = (index: number, side: string, lenght: number) => {
     let newPictureValue;
     if (side === "right") {
       newPictureValue = pictures[index] === lenght - 1 ? 0 : pictures[index] + 1;

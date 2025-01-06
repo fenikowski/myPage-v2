@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import "./style/skills.css";
 import Projects from "../components/Skills/Projects";
 
-export default function Skills({ language }) {
+export default function Skills() {
   useEffect(() => {
     scrollChecking(window.sessionStorage.getItem("scrollTo"));
   }, [])
 
-  const scrollChecking = scrollTo => {
+  const scrollChecking = (scrollTo: number | string | null) => {
     if (scrollTo === null) return;
 
     window.scrollTo(0, 0);
@@ -23,7 +23,7 @@ export default function Skills({ language }) {
 
   return (
     <React.Fragment>
-      <Projects language={language}/>
+      <Projects/>
     </React.Fragment>
   );
 };

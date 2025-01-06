@@ -4,15 +4,33 @@ import gif2 from "../../img/gif2.gif";
 import Data from "../../text";
 import "./style/games-header.css";
 
-export default function HeaderGames({ language }) {
+type HeaderGamesProps = {
+  language: string
+}
+
+type DataType = {
+  [language: string]: {
+    headers: {
+      gamesh1: string;
+      gamesh2: string;
+    }
+  }
+}
+
+export default function HeaderGames({ language }: HeaderGamesProps) {
   const [backgroundImage, setBackgroundImage] = useState(gif1);
 
   useEffect(() => {
     // give styles to the nav
     document
       .querySelectorAll("nav.main-navigation a")
-      .forEach(a => (a.style.color = "white"));
-    document.querySelector("nav.main-navigation div.shadow").style.boxShadow = "none";
+      .forEach(a => ((a as HTMLElement).style.color = "white"));
+
+    const div = document.querySelector("nav.main-navigation div.shadow") as HTMLElement | null;
+
+    if(div){
+      div.style.boxShadow = "none";
+    }
   });
 
   const fire = () => {
@@ -23,7 +41,7 @@ export default function HeaderGames({ language }) {
     }
   };
 
-  const titles = Data[language].headers;
+  const titles = (Data as DataType)[language].headers;
 
   return (
     <React.Fragment>

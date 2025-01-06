@@ -9,11 +9,16 @@ import SectionTitle from "../components/Introduction/SectionTitle";
 import Projects from "../components/Introduction/Projects";
 import Contact from "../components/Introduction/Contact";
 
-export default function Introduction({ language }) {
-  const { 
-    technologies, 
-    // actualInfo 
-  } = Data[language].introduction;
+type DataType = {
+  [language: string]: {
+    introduction: {
+      technologies: string
+    }
+  }
+}
+
+export default function Introduction({ language } : { language: string }) {
+  const { technologies } = (Data as DataType)[language].introduction;
   
   return (
     <React.Fragment>

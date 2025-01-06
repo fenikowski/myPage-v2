@@ -2,8 +2,25 @@ import React from "react";
 import "./style/Nav.css";
 import Data from "../text";
 
-export default function Navigation({ language }) {
-  const titles = Data[language].navigation;
+type DataType = {
+  [language: string]: {
+    navigation: {
+      start: string;
+      skills: string;
+      contact: string;
+    }
+  }
+}
+
+type NavType = {
+  id: number;
+  name: string;
+  path: string;
+  exact?: boolean;
+}
+
+export default function Navigation({ language } : { language: string }) {
+  const titles = (Data as DataType)[language].navigation;
 
   const navList = [
     {
@@ -34,7 +51,7 @@ export default function Navigation({ language }) {
     }
   ];
 
-  const handleClick = (item) => {
+  const handleClick = (item: NavType) => {
     const hash = item.path.split('#')[1];
     const section = document.getElementById(hash);
     if (section) {

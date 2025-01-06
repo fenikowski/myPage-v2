@@ -1,7 +1,6 @@
 /* eslint-disable no-useless-escape */
 import React from "react";
 import { useState, useEffect } from "react";
-// import PreloadImages from "./components/GeneralComponents/PreloadImages";
 // import LoadingScreen from "./layout/LoadingScreen";
 import Navigation from "./layout/Navigation";
 import Footer from "./layout/Footer";
@@ -23,7 +22,7 @@ export default function App() {
     saveVisitForStatistics();
   }, []);
 
-  const changeLanguage = function(language) {
+  const changeLanguage = function(language: string) {
     window.sessionStorage.setItem("language", language);
     setLanguage(language);
   };
@@ -58,7 +57,6 @@ export default function App() {
 
   return (
     <React.Fragment>
-      {/* <PreloadImages setImagesLoaded={setImagesLoaded}/> */}
       {/* <LoadingScreen imagesLoaded={imagesLoaded}/> */}
       <button className="language US" onClick={() => changeLanguage("en")}/>
       <button className="language ES" onClick={() => changeLanguage("es")}/>

@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { Redirect } from "react-router";
+import { Navigate } from "react-router";
 import { useState, useEffect, useRef } from "react";
 import JavaScriptLogo from "../../img/javaScriptLogo.png";
 import PythonLogo from "../../img/PythonLogo.png";
@@ -9,21 +9,21 @@ import NativeLogo from "../../img/NativeLogo.jpg";
 import GitLogo from "../../img/GitLogo.png";
 import NodeLogo from "../../img/NodeLogo.png";
 import MySqlLogo from "../../img/MySqlLogo.png";
-import "./styles/technologies.css"
+import "./styles/technologies.css";
 
 export default function Technologies() {
     // states
     const [cubesLaunched, setCubesLaunched] = useState(false);
-    const [redirect, setRedirect] = useState(false);
+    const [redirectFlag, setRedirectFlag] = useState(false);
 
     // refs
-    const technologiesSection = useRef(null);
+    const technologiesSection = useRef<HTMLElement | null>(null);
 
     // callbacks
     const handleScroll = useCallback(() => {
         const heightReached = window.scrollY + window.innerHeight >
-            technologiesSection.current.offsetTop +
-            technologiesSection.current.offsetHeight / 2;
+            (technologiesSection.current?.offsetTop || 0) +
+            (technologiesSection.current?.offsetHeight || 0) / 2;
 
         if (!cubesLaunched && heightReached) {
             setCubesLaunched(true);
@@ -87,14 +87,14 @@ export default function Technologies() {
     },[handleScroll]);
 
     const handleOnClick = () => {
-        setRedirect(true);
+        setRedirectFlag(true);
     };
 
-    if (redirect) {
-        return <Redirect push to="/projects" />;
+    if (redirectFlag) {
+        return <Navigate to="/projects" />;
     }
 
-    const cube = (logo, name) => (
+    const cube = (logo: string, name: string) => (
         <div className="cube-holder">
           <div className="scene">
             <div className="cube show-back">

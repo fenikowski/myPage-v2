@@ -2,29 +2,55 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { getElementDistanceFromTop } from "../../utils/usefullFunctions";
 import "./styles/achievement.css"
 
-export default function Achievement({ data }) {
+type AchievementProps = {
+    data: {
+        title: string;
+        logo: string;
+        logo2?: string;
+        text: string;
+        year: string;
+    }
+}
+
+type rotationType = {
+    x: number;
+    y: number;
+}
+
+type shinePositionType = {
+    x: number;
+    y: number;
+}
+
+export default function Achievement({ data }: AchievementProps) {
     const { title, logo, logo2, text, year } = data;
 
     // refs
-    const achievementDiv = useRef(null);
+    const achievementDiv = useRef<HTMLDivElement | null>(null);
 
     // states
-    const [ rotation, setRotation ] = useState({ x:0, y:0 });
-    const [ shinePosition, setShinePosition ] = useState({ x:0, y:0 });
-    const [ transition, setTransition ] = useState(0.4);
-    const [ opacity, setOpacity ] = useState(0);
+    const [ rotation, setRotation ] = useState<rotationType>({ x:0, y:0 });
+    const [ shinePosition, setShinePosition ] = useState<shinePositionType>({ x:0, y:0 });
+    const [ transition, setTransition ] = useState<number>(0.4);
+    const [ opacity, setOpacity ] = useState<number>(0);
 
     // callbacks
     const handleScroll = useCallback(() => {
-        const offsetTop = getElementDistanceFromTop(achievementDiv.current);
-        if ((window.scrollY + window.innerHeight) > (offsetTop + achievementDiv.current.clientHeight / 2)) {
-            achievementDiv.current.classList.add("active");
-        } else if((window.scrollY + window.innerHeight) < offsetTop) {
-            achievementDiv.current.classList.remove("active");
+        if (achievementDiv.current) {
+            const offsetTop = getElementDistanceFromTop(achievementDiv.current);
+            if ((window.scrollY + window.innerHeight) > (offsetTop + achievementDiv.current.clientHeight / 2)) {
+                achievementDiv.current.classList.add("active");
+            } else if((window.scrollY + window.innerHeight) < offsetTop) {
+                achievementDiv.current.classList.remove("active");
+            }
         }
     },[]);
 
-    const handleMouseMove = useCallback((e) => {
+    const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
+        if (!achievementDiv.current){
+            return;
+        };
+        
         const { offsetLeft, clientWidth, clientHeight } = achievementDiv.current;
 
         // opacity

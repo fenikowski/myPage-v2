@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "lib": ["es2018", "dom"],
+    "target": "es2018",
+    "module": "esnext",
+    "jsx": "react-jsx",
+    "strict": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["react", "react-dom", "react-router-dom"]
+  },
+  "include": [
+    "src/**/*",  // Including all files inside src
+    "**/*.d.ts"  // Ensuring custom declaration files are also included
+  ],
+  "exclude": ["node_modules"]
+}

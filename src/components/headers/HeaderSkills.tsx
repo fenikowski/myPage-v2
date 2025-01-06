@@ -14,12 +14,26 @@ import HTMLLogo from "../../img/HTMLLogo.png";
 import "./style/abilities-header.css";
 import Data from "../../text";
 
-export default function HeaderProjects({ language, mobile }) {
+type HeaderProjectsType = {
+  language: string;
+  mobile: boolean;
+}
+
+type DataType = {
+  [language: string]: {
+    headers: {
+      skillsh1: string;
+      skillsh2: string;
+    }
+  }
+}
+
+export default function HeaderProjects({ language, mobile }: HeaderProjectsType) {
   const [numberOfBalls, setNumberOfBalls] = useState(0);
 
-  const scroll = function(reference) {
+  const scroll = function(reference: string) {
     return () => window.scrollTo({
-      top: document.querySelector(reference).offsetTop,
+      top: (document.querySelector(reference) as HTMLElement).offsetTop,
       behavior: "smooth"
     });
   };
@@ -39,7 +53,7 @@ export default function HeaderProjects({ language, mobile }) {
 
   // callbacks
   const createBall = useCallback(() => {
-    const ballStage = document.createElement("div");
+    const ballStage: HTMLElement = document.createElement("div");
     ballStage.className = "ball-stage";
 
     const size = Math.floor(Math.random() * 10) + 5;
@@ -52,7 +66,8 @@ export default function HeaderProjects({ language, mobile }) {
     ballStage.style.animation = `falling ${size}s linear`;
 
     if (document.querySelector(".background-abilities") === null) return;
-    document.querySelector(".background-abilities").appendChild(ballStage);
+
+    (document.querySelector(".background-abilities") as HTMLElement).appendChild(ballStage);
 
     const ball = document.createElement("figure");
     ball.className = "ball";
@@ -73,13 +88,13 @@ export default function HeaderProjects({ language, mobile }) {
     const zIndexRandom = Math.floor(Math.random() * 3);
     switch (zIndexRandom) {
       case 0:
-        ballStage.style.zIndex = 0;
+        ballStage.style.zIndex = '0';
         break;
       case 1:
-        ballStage.style.zIndex = 5;
+        ballStage.style.zIndex = '5';
         break;
       case 2:
-        ballStage.style.zIndex = 7;
+        ballStage.style.zIndex = '7';
         break;
       default:
         break;
@@ -99,8 +114,12 @@ export default function HeaderProjects({ language, mobile }) {
     // give styles to the nav
     document
       .querySelectorAll("nav.main-navigation a")
-      .forEach(a => (a.style.color = "white"));
-    document.querySelector("nav.main-navigation div.shadow").style.boxShadow = "none";
+      .forEach(a => ((a as HTMLElement).style.color = "white"));
+    
+    const div = document.querySelector("nav.main-navigation div.shadow") as HTMLElement | null;
+    if(div){
+      div.style.boxShadow = "none";
+    };
 
     // start the animation if it hasn't started yet
     !numberOfBalls && createBall();
@@ -113,7 +132,7 @@ export default function HeaderProjects({ language, mobile }) {
     }
   }, [createBall, numberOfBalls]);
 
-  const titles = Data[language].headers;
+  const titles = (Data as DataType)[language].headers;
 
   return (
     <div className="background-abilities">

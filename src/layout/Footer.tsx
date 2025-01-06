@@ -3,9 +3,21 @@ import "./style/Footer.css";
 import Data from "../text";
 // import { Route } from "react-router";
 
-export default function Footer({ language }) {
+type DataType = {
+  [language: string]: {
+    footer: {
+      code: string;
+      design: string;
+      link: string;
+      author: string;
+      up: string;
+    }
+  }
+};
+
+export default function Footer({ language } : { language: string }) {
   // states
-  const [boxRotation, setBoxRotation] = useState(0); 
+  const [boxRotation, setBoxRotation] = useState('0'); 
 
   // callbacks
   const footerSwitch = useCallback(() => {
@@ -28,7 +40,7 @@ export default function Footer({ language }) {
   //   else return <span>{window.location.pathname}</span>;
   // };
 
-  const text = Data[language].footer;
+  const text = (Data as DataType)[language].footer;
 
   return (
     <div className="footer">

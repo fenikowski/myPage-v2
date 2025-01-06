@@ -9,11 +9,25 @@ import Data from "../../text";
 import CVenglish from "../../downloads/igor_fenikowski_cv.pdf";
 import presentationPDF from "../../downloads/lava.pdf";
 
-export default function Contact({ language }) {
+type ContactProps = {
+  language: string;
+};
+
+type DataType = {
+  [language: string]: {
+    contact: {
+      copied: string;
+      clipboard: string;
+      cvEnglish: string;
+    }
+  }
+};
+
+export default function Contact({ language }: ContactProps) {
 
   // refs
-  const tooltip1 = useRef();
-  const tooltip2 = useRef();
+  const tooltip1 = useRef<HTMLSpanElement | null>(null);
+  const tooltip2 = useRef<HTMLSpanElement | null>(null);
 
   // effects
   useEffect(() => {
@@ -24,7 +38,7 @@ export default function Contact({ language }) {
   }, []);
 
   const handleScroll = () => {
-    const boxes = document.querySelectorAll("div.address *");
+    const boxes: NodeListOf<HTMLElement> = document.querySelectorAll("div.address *");
     boxes.forEach((box) => {
       const boxTop = box.offsetTop;
       if (window.scrollY + window.innerHeight > boxTop) {
@@ -33,20 +47,25 @@ export default function Contact({ language }) {
     });
   };
 
-  const text = Data[language].contact;
+  const text = (Data as DataType)[language].contact;
 
-  const handleAddressClick = node => {
-    const copyText = document.querySelector(node);
-    copyText.select();
-    document.execCommand("copy");
+  const handleAddressClick = (node: string) => {
+    const copyText = document.querySelector(node) as HTMLInputElement | null;
 
-    tooltip1.innerHTML = text.copied;
-    tooltip2.innerHTML = text.copied;
+    if(copyText && tooltip1.current && tooltip2.current){
+      copyText.select();
+      document.execCommand("copy");
+  
+      tooltip1.current.innerHTML = text.copied;
+      tooltip2.current.innerHTML = text.copied;
+    }
   };
 
   const handleMouseOut = () => {
-    tooltip1.innerHTML = text.clipboard;
-    tooltip2.innerHTML = text.clipboard;
+    if(tooltip1.current && tooltip2.current){
+      tooltip1.current.innerHTML = text.clipboard;
+      tooltip2.current.innerHTML = text.clipboard;
+    }
   };
 
   return (

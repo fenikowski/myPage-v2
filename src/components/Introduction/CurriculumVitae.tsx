@@ -1,10 +1,23 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import Data from "../../text.js"
-import Bio from "./Bio.js";
-import Career from "./Career.js";
-import { getElementDistanceFromTop } from "../../utils/usefullFunctions.js";
+import Data from "../../text"
+import Bio from "./Bio";
+import Career from "./Career";
+import { getElementDistanceFromTop } from "../../utils/usefullFunctions";
 
-export default function CurriculumVitae({ language }) {
+type CvProps = {
+    language: string;
+};
+
+type DataType = {
+    [language: string]: {
+        introduction: {
+            career: string[];
+            text: string;
+        }
+    }
+}
+
+export default function CurriculumVitae({ language }: CvProps) {
     // refs
     const bioSection = useRef(null);
   
@@ -49,7 +62,7 @@ export default function CurriculumVitae({ language }) {
         </div>
     );
 
-    const { text, career } = Data[language].introduction;
+    const { text, career } = (Data as DataType)[language].introduction;
 
     return (
         <section className="introduction" ref={bioSection}>

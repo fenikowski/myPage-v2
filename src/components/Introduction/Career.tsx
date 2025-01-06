@@ -8,7 +8,11 @@ import UvLogo from "../../img/UvLogo.png";
 import UdemyLogo from "../../img/UdemyLogo.png";
 import LavaLogo from "../../img/white_on_black_enhanced.png";
 
-export default function Career({ text }) {
+type CareerProps = {
+    text: string[];
+};
+
+export default function Career({ text }: CareerProps) {
     const achievements = [
         { title: "Bachelor in Management", logo: UwLogo, logo2: UvLogo, text: text[0], year: "2016-2018" },
         { title: "Full-stack Developer", logo: UdemyLogo, text: text[1], year: "2018" },

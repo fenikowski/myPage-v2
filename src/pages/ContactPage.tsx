@@ -12,7 +12,21 @@ import Data from "../text";
 // import CVspanish from "../Downloads/Igor Fenikowski CV es.pdf";
 import CVenglish from "../Downloads/Igor Fenikowski CV en.pdf";
 
-export default function Contact({ language }) {
+type DataType = {
+  [language: string]: {
+    contact: {
+      copied: string;
+      clipboard: string;
+      cvEnglish: string;
+      name: string;
+      email: string;
+      message: string;
+      button: string;
+    }
+  }
+}
+
+export default function Contact({ language } : { language: string }) {
   // states
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
@@ -20,8 +34,8 @@ export default function Contact({ language }) {
   const [info, setInfo] = useState("");
 
   // refs
-  const tooltip1 = useRef();
-  const tooltip2 = useRef();
+  const tooltip1 = useRef<HTMLElement | null>(null);
+  const tooltip2 = useRef<HTMLElement | null>(null);
 
   // effects
   useEffect(() => {
@@ -32,7 +46,7 @@ export default function Contact({ language }) {
   }, []);
 
   const handleScroll = () => {
-    const boxes = document.querySelectorAll("div.address *");
+    const boxes = document.querySelectorAll("div.address *") as NodeListOf<HTMLElement>;
     boxes.forEach((box) => {
       const boxTop = box.offsetTop;
       if (window.scrollY + window.innerHeight > boxTop) {
@@ -41,7 +55,7 @@ export default function Contact({ language }) {
     });
   };
 
-  const handleInput = e => {
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     switch (e.target.id) {
       case "userName":
         setUserName(e.target.value)
@@ -74,20 +88,24 @@ export default function Contact({ language }) {
       });
   };
 
-  const text = Data[language].contact;
+  const text = (Data as DataType)[language].contact;
 
-  const handleAddressClick = node => {
-    const copyText = document.querySelector(node);
+  const handleAddressClick = (node: string) => {
+    const copyText = document.querySelector(node) as HTMLInputElement;
     copyText.select();
     document.execCommand("copy");
 
-    tooltip1.innerHTML = text.copied;
-    tooltip2.innerHTML = text.copied;
+    if(tooltip1.current && tooltip2.current){
+      tooltip1.current.innerHTML = text.copied;
+      tooltip2.current.innerHTML = text.copied;
+    }
   };
 
   const handleMouseOut = () => {
-    tooltip1.innerHTML = text.clipboard;
-    tooltip2.innerHTML = text.clipboard;
+    if(tooltip1.current && tooltip2.current){
+      tooltip1.current.innerHTML = text.clipboard;
+      tooltip2.current.innerHTML = text.clipboard;
+    }
   };
 
   return (
@@ -122,7 +140,6 @@ export default function Contact({ language }) {
             onChange={handleInput}
           />
           <textarea
-            type="textarea"
             id="message"
             placeholder={text.message}
             value={message}

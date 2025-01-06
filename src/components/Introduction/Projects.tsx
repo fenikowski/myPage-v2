@@ -52,12 +52,12 @@ export default function Projects(){
     ];
 
     // refs
-    const project1 = useRef(null);
-    const project2 = useRef(null);
-    const project3 = useRef(null);
-    const company1 = useRef(null);
-    const company2 = useRef(null);
-    const company3 = useRef(null);
+    const project1 = useRef<HTMLDivElement | null>(null);
+    const project2 = useRef<HTMLDivElement | null>(null);
+    const project3 = useRef<HTMLDivElement | null>(null);
+    const company1 = useRef<HTMLDivElement | null>(null);
+    const company2 = useRef<HTMLDivElement | null>(null);
+    const company3 = useRef<HTMLDivElement | null>(null);
 
     const refs = useMemo(() => [project1, project2, project3], []);
     const refsLogo = useMemo(() => [company1, company2, company3], []);
@@ -66,12 +66,12 @@ export default function Projects(){
     const handleScroll = useCallback(() => {
         refs.forEach((ref, index) => {
             const offsetTop = getElementDistanceFromTop(ref.current);
-            if ((window.scrollY + window.innerHeight) > (offsetTop + ref.current.clientHeight / 2)) {
-                ref.current.classList.add("active");
-                refsLogo[index].current.classList.add("active");
+            if ((window.scrollY + window.innerHeight) > (offsetTop + (ref.current?.clientHeight || 1) / 2)) {
+                ref.current?.classList.add("active");
+                refsLogo[index].current?.classList.add("active");
             } else if((window.scrollY + window.innerHeight) < offsetTop) {
-                ref.current.classList.remove("active");
-                refsLogo[index].current.classList.remove("active");
+                ref.current?.classList.remove("active");
+                refsLogo[index].current?.classList.remove("active");
             }
         })
     }, [refs, refsLogo]);
@@ -84,13 +84,13 @@ export default function Projects(){
         return () => window.removeEventListener("scroll", handleScroll);
     }, [handleScroll]);
 
-    const photosComponents = (photosArray, photoHeight) => photosArray.map((item, index) => (
+    const photosComponents = (photosArray: string[], photoHeight: string) => photosArray.map((item, index) => (
         <SwiperSlide key={index}>
             <div className="photo" style={{ backgroundImage: `url(${item})`, height: photoHeight }}/>
         </SwiperSlide>
     ))
 
-    const swiperComponent = (photosArray, slides = [1, 2, 2, 3], photoHeight = '30vh') => (
+    const swiperComponent = (photosArray: string[], slides = [1, 2, 2, 3], photoHeight = '30vh') => (
         <Swiper
             modules={[Autoplay]}
             spaceBetween={"20px"}

@@ -11,7 +11,16 @@ import Data from "../../text";
 import { getElementDistanceFromTop } from "../../utils/usefullFunctions";
 import "./styles/code.css";
 
-export default function Code({ language }) {
+type DataType = {
+  [language: string]: {
+    skills: {
+      textTechInfo: string[];
+      generalInfo: string;
+    }
+  }
+}
+
+export default function Code({ language } : { language: string }) {
   // refs
   const divCode = useRef(null);
 
@@ -57,7 +66,7 @@ export default function Code({ language }) {
     }
   },[animationFlag]);
 
-  const handleMouseEnter = useCallback((index) => {
+  const handleMouseEnter = useCallback((index: number) => {
     setActiveText(index)
   }, []);
 
@@ -70,7 +79,7 @@ export default function Code({ language }) {
   },[handleScroll]);
 
 
-  const createLevelsComponent = (color, experience, percentage, index) => (
+  const createLevelsComponent = (color: string, experience: string, percentage: number, index: number) => (
     <div 
       className="code-info scene" 
       onMouseEnter={() => handleMouseEnter(index)}
@@ -111,7 +120,7 @@ export default function Code({ language }) {
     </div>
   );
 
-  const { textTechInfo, generalInfo } = Data[language].skills;
+  const { textTechInfo, generalInfo } = (Data as DataType)[language].skills;
 
   const skills = [
     { src: JavaScriptLogo, alt: "JavaScript Logo"},

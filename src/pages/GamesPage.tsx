@@ -4,8 +4,30 @@ import JavaScriptLogo from "../img/javaScriptLogo.png";
 import GitHubLogo from "../img/githubLogo.png";
 import Data from "../text";
 
-export default function Games({ language }) {
-  const { games } = Data[language];
+type game = {
+  h3: string;
+  p: string;
+  description: {
+    one: string;
+    two: string;
+    three: string;
+    four: string;
+    image: string;
+  };
+  links: {
+    game: string;
+    github: string;
+  };
+};
+
+type DataType = {
+  [language: string]: {
+    games: game[]
+  }
+}
+
+export default function Games({ language } : { language: string }) {
+  const { games } = (Data as DataType)[language];
 
   const gamesComponents = games.map((game, index) => (
     <section className="juegos" key={index}>

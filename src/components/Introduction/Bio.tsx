@@ -3,9 +3,13 @@ import { useState, useEffect, useRef } from "react";
 import "./styles/bio.css"
 import { getElementDistanceFromTop } from "../../utils/usefullFunctions";
 
-export default function Bio({ text }) {
+type BioProps = {
+    text: string;
+}
+
+export default function Bio({ text }: BioProps) {
     // refs
-    const introductionSection = useRef(null);
+    const introductionSection = useRef<HTMLElement | null>(null);
   
     // states
     const [passedText, setPassedText] = useState("");
@@ -30,6 +34,10 @@ export default function Bio({ text }) {
     }, [text]);
     
     const handleScroll = useCallback(() => {
+        if(!introductionSection.current){
+            return;
+        };
+
         const offsetTop = getElementDistanceFromTop(introductionSection.current);
         if (
             (window.scrollY + window.innerHeight) > 
